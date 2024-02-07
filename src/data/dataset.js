@@ -1,5 +1,5 @@
 //exportar la data
- [
+ export default [
     {
       id: "beaDog",
       name: "Bea",
