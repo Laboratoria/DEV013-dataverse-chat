@@ -4,8 +4,9 @@
 
 export default Example;*/
 
-const renderItems = (data) => {
-    const divRoot = document.querySelector("#root");
+const renderItems = (data) => {//ejemplo de lo que se va a mostrar
+  return document.createElement("h1").textContent("WIKINOOK");
+    /*const divRoot = document.querySelector("#root");
     const header = document.createElement("header");
     const main = document.createElement("main");
     const footer = document.createElement("footer");
@@ -18,7 +19,8 @@ const renderItems = (data) => {
     <img src="./images/user.png" alt="user"/> 
     Usuario </div> `;
     divRoot.before(header); //antes del div root
-    main.innerHTML = ` <aside>
+    main.innerHTML = ` 
+    <aside>
     <div data-testid="select-filterGender" name="gender">
           <label for="filter"><h2>Género</h2></label>
           <ul>
@@ -297,7 +299,7 @@ const renderItems = (data) => {
     divDate.appendChild(ddBirthday);
     //console.log(listLi);
   });
-  return divRoot.appendChild(listUl);
+  return divRoot.appendChild(listUl);*/
   };
 
   export default renderItems;
