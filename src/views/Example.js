@@ -4,8 +4,7 @@
 
 export default Example;*/
 
-const renderItems = (data) => {//ejemplo de lo que se va a mostrar
-  return document.createElement("h1").textContent("WIKINOOK");
+//const renderItems = (data) => {//ejemplo de lo que se va a mostrar
     /*const divRoot = document.querySelector("#root");
     const header = document.createElement("header");
     const main = document.createElement("main");
@@ -300,6 +299,13 @@ const renderItems = (data) => {//ejemplo de lo que se va a mostrar
     //console.log(listLi);
   });
   return divRoot.appendChild(listUl);*/
-  };
+ // };
 
-  export default renderItems;
+  //export default renderItems;
+
+  //este es el home.js
+/*export const Example = () => {
+  const titulo = document.createElement("p");
+  titulo.innerHTML = "WIKINOOK";
+  return titulo;
+}*/
