@@ -8,14 +8,15 @@ setRoutes({
 //   "/chatkey": Chat_key,
 });
 
-let ROUTES = {}; //Almacena las rutas
+let ROUTES = {}; //Almacena la información sobre las rutas
 let rootEl; //Referencia el root donde se renderizan las vistas
 
 export const setRootEl = (el) => {
   rootEl = el;
 };
 
-export const setRoutes = (routes) => {
+//Esta función asigna el valor del parámetro routes al objeto ROUTES
+export const setRoutes = (routes) => { 
   // optional Throw errors if routes isn't an object
   // optional Throw errors if routes doesn't define an /error route
   // assign ROUTES

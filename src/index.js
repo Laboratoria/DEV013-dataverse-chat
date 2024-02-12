@@ -8,7 +8,7 @@ setRoutes({
   "/": Home,
 });
 
-
+navigateTo("/");
 window.addEventListener("popstate", (event) => {
   onURLChange(event.location);
 });
@@ -18,7 +18,7 @@ window.addEventListener("DOMContentLoaded", () => {
   // set root element
   // invoke onURLChange
 });
-navigateTo("/");
+
 /*
 TODO:
 1.- Definir rutas en router.
@@ -29,7 +29,7 @@ TODO:
 // Define your routes and their associated views
 
 // Assign the routes
-setRoutes(routes);
+setRoutes(routes); 
 
 // Set the root element where views will be rendered
 window.addEventListener("DOMContentLoaded", () => {
