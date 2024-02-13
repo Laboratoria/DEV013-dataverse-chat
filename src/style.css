@@ -394,3 +394,6 @@
     gap: 5px;
     align-items: center;
   }
+  .imagen {
+    background-image: url(./images/error/error10.jpg);
+  }

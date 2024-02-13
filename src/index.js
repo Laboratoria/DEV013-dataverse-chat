@@ -53,7 +53,7 @@ console.log(cat);*/
 
 
 import { home } from './views/home.js';
-import startingScreen from './views/startingScreen.js';
+import {startingScreen} from './views/startingScreen.js';
 import { groupal } from './views/groupalChat.js';
 import { individual } from './views/individualChat.js';
 import { api } from './views/API.js'
@@ -62,8 +62,8 @@ import {onURLChange, setRootEl, setRoutes} from './router.js';
 
 const routes = {
     "/": home,
+    "/startingScreen": startingScreen,
     "/groupal": groupal,
-    "/starting": startingScreen,
     "/individual":individual,
     "/api": api,
     "/error": error,
@@ -77,17 +77,14 @@ document.addEventListener("DOMContentLoaded", (event) => {
     onURLChange(event.target.location.pathname);
 });
 
-// Handle URL changes
-// window.onpopstate = (event) => {
-//     console.log("hola");
-//     onURLChange(event.target.location.pathname);
-//  };
-//  history.back();
-
-window.addEventListener('popstate', (event) => {
-    console.log("como estas?")
+window.addEventListener("popstate", (event) => {
     onURLChange(event.target.location.pathname);
- });
+});
+
+// Handle URL changes
+// window.addEventListener('popstate', ({objetivo}) => {
+//    onURLChange(/* location */);
+// });
 
 
 /*if () {

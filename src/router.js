@@ -95,7 +95,7 @@ export const navigateTo = (pathname, props={}) => {
     }
   }
   
-  const renderView = (pathname, props= {}) => {//ERROR EN IF
+  const renderView = (pathname, props= {}) => {
     // clear the root element
     // find the correct view in ROUTES for the pathname
     // in case not found render the error view
