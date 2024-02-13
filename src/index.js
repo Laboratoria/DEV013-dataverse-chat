@@ -1,37 +1,66 @@
 // En este archivo definirás tus rutas e importarás los componentes que vas a renderizar.
-import { setRootEl, setRoutes, navigateTo } from "./router.js";
+import {setRoutes, navigateTo, setRootElement , onURLChange} from "./router.js";
+import {Home} from "./views/home.js";
+import {error} from "./views/error.js"
 
-const root = document.getElementById("root");
-setRootEl(root);
 
-setRoutes({
+//1.- Definir rutas en router.
+const routes = {
   "/": Home,
+  "/error": error,
+  //   "/individual": Chat_individual,
+  //   "/groupal": Chat_Groupal,
+  //   "/chatkey": Chat_key,
+};
+
+//2.- Pasar "root element" a router.
+const root = document.getElementById("root");
+setRootElement(root);
+setRoutes(routes);
+
+//3.- Invocar el router para renderizar la vista correcta.
+document.addEventListener('DOMContentLoaded',(event)=>{
+  onURLChange(event.target.location.pathname); 
 });
 
-navigateTo("/");
-window.addEventListener("popstate", (event) => {
-  onURLChange(event.location);
-});
 
-// Handle initial URL load
+
+
+// window.addEventListener("popstate", (event) => {
+//   onURLChange(event.location);
+// });
+
+// // Handle initial URL load
+// window.addEventListener("DOMContentLoaded", () => {
+//   // set root element
+//   // invoke onURLChange
+// });
+// navigateTo("/");
+
+
+
+
+
+
+
+
+
+/* Handle initial URL load
 window.addEventListener("DOMContentLoaded", () => {
   // set root element
+  const pathname = window.location.pathname; // Get initial pathname
+  navigateTo(pathname); // Use your router's navigation function
+
   // invoke onURLChange
 });
 
-/*
-TODO:
-1.- Definir rutas en router.
-2.- Pasar "root element" a router.
-3.- Invocar el router para renderizar la vista correcta.
-*/
 
-// Define your routes and their associated views
 
-// Assign the routes
-setRoutes(routes); 
-
-// Set the root element where views will be rendered
+ Set the root element where views will be rendered
 window.addEventListener("DOMContentLoaded", () => {
-  setRootEl(/* root element */);
+  setRootEl(root element);
 });
+navigateTo();
+window.addEventListener("popstate", (event) => {
+  onURLChange(event.location);
+});*/
