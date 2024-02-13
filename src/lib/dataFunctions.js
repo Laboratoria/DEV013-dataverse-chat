@@ -15,20 +15,20 @@ const filterData = (data, filterBy, value) => {
 };
 
 const computeStats = (data) => {
-  const acumuladorMen = data.reduce((acumuladorMen, item) => {
-    if (item.gender === "Masculino") {
-      acumuladorMen++;
+  const acumulador = data.reduce((acumulador, item) => {//reduce tiene la data, el valor inicial y 0=suma total de lo acumulado
+    if (!acumulador.hasOwnProperty(item.gender)) {//hasOwnProperty devuelve true si la propiedad existe
+      acumulador[item.gender] = 1;
     }
-    return acumuladorMen;
-  }, 0);
-  
-  const acumuladorWomen = data.reduce((acumuladorWomen, item) => {
-    if (item.gender === "Femenino") {
-      acumuladorWomen++;
+    else {
+      acumulador[item.gender]++;
     }
-    return acumuladorWomen;
-  }, 0);
-  const totalMen = parseFloat((acumuladorMen/data.length)*100).toFixed(2); 
-  const totalWomen = parseFloat((acumuladorWomen/data.length)*100).toFixed(2); 
-  return `Porcentaje personajes masculinos: ${totalMen}% \nPorcentaje personajes femeninos: ${totalWomen}%`; 
+    console.log(acumulador);
+    return acumulador;
+  }, {});
+
+  const totalWomen = acumulador.Femenino;
+  const totalMen = acumulador.Masculino;
+  const totalFemale = parseFloat((totalWomen/data.length)*100).toFixed(2); 
+  const totalMale = parseFloat((totalMen/data.length)*100).toFixed(2);
+  return `${totalFemale} \n ${totalMale} `;
 };

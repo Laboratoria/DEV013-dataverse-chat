@@ -26,3 +26,22 @@ export const home = () => {
     return titulo;
   }
   
+
+//   Codigo de Chris 
+//   const contenedor = document.createElement("section");
+
+//     contenedor.innerHTML = `
+//       <h1>Titulo</h1>
+//       <a id="individual">Chat Individual</a>
+//       <a id="API">API</a>
+//       <a id="grupal">Chat Grupal</a>
+//       <a id="error">Error</a>
+//     `
+    
+//     contenedor.querySelector('#individual').addEventListener("click", () => alert('GRUPAL'));
+//     contenedor.querySelector('#API').addEventListener("click", () => alert('API'));
+//     contenedor.querySelector('#grupal').addEventListener("click", () => alert('INDIVIDUAL') );
+//     contenedor.querySelector('#error').addEventListener("click", () => alert('ERROR') );
+
+
+// document.getElementById('root').appendChild(contenedor)

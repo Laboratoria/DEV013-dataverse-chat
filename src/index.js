@@ -77,7 +77,17 @@ document.addEventListener("DOMContentLoaded", (event) => {
     onURLChange(event.target.location.pathname);
 });
 
+// Handle URL changes
+// window.onpopstate = (event) => {
+//     console.log("hola");
+//     onURLChange(event.target.location.pathname);
+//  };
+//  history.back();
 
+window.addEventListener('popstate', (event) => {
+    console.log("como estas?")
+    onURLChange(event.target.location.pathname);
+ });
 
 
 /*if () {

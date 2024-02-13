@@ -104,11 +104,11 @@ export const navigateTo = (pathname, props={}) => {
     const cleanRoot = rootElement;
     cleanRoot.innerHTML = "";
     if(ROUTES[pathname]) {
-        const template = ROUTES[pathname](props);
+        const template = ROUTES[pathname]();
         console.log(template);
         cleanRoot.appendChild(template);
     } else {
-        cleanRoot.appendChild(ROUTES["/error"](props));
+        cleanRoot.appendChild(ROUTES["/error"]());
     }
   } 
   
