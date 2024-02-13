@@ -95,7 +95,7 @@ export const navigateTo = (pathname, props={}) => {
     }
   }
   
-  const renderView = (pathname, props= {}) => {//ERROR EN IF
+  const renderView = (pathname, props= {}) => {
     // clear the root element
     // find the correct view in ROUTES for the pathname
     // in case not found render the error view
@@ -104,11 +104,11 @@ export const navigateTo = (pathname, props={}) => {
     const cleanRoot = rootElement;
     cleanRoot.innerHTML = "";
     if(ROUTES[pathname]) {
-        const template = ROUTES[pathname](props);
+        const template = ROUTES[pathname]();
         console.log(template);
         cleanRoot.appendChild(template);
     } else {
-        cleanRoot.appendChild(ROUTES["/error"](props));
+        cleanRoot.appendChild(ROUTES["/error"]());
     }
   } 
   
