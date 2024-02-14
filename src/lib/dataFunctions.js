@@ -16,7 +16,7 @@ const filterData = (data, filterBy, value) => {
 
 const computeStats = (data) => {
   const acumulador = data.reduce((acumulador, item) => {//reduce tiene la data, el valor inicial y 0=suma total de lo acumulado
-    if (!acumulador.hasOwnProperty(item.gender)) {//hasOwnProperty devuelve true si la propiedad existe, si un objeto tiene una propiedad con un nombre específico
+    if (!acumulador[item.gender]) {//hasOwnProperty devuelve true si la propiedad existe, si un objeto tiene una propiedad con un nombre específico
       acumulador[item.gender] = 1;
     }
     else {

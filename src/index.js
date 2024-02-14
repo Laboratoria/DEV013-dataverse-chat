@@ -51,7 +51,6 @@ document.addEventListener("DOMContentLoaded", (event) => {//document va a escuch
 var cat = localStorage.getItem("API-KEY");
 console.log(cat);*/
 
-
 import { home } from './views/home.js';
 import {startingScreen} from './views/startingScreen.js';
 import { groupal } from './views/groupalChat.js';
@@ -59,7 +58,11 @@ import { individual } from './views/individualChat.js';
 import { api } from './views/API.js'
 import { error } from './views/error.js';
 import {onURLChange, setRootEl, setRoutes} from './router.js';
-
+import data from '../data/dataset.js';
+//home(data);
+//let copyData;
+//copyData = [...data];
+ 
 const routes = {
     "/": home,
     "/startingScreen": startingScreen,
@@ -70,8 +73,10 @@ const routes = {
 };
 
 const root = document.getElementById("root");
+//root.appendChild(copyData);
 setRoutes(routes);
 setRootEl(root)
+
 document.addEventListener("DOMContentLoaded", (event) => {
     console.log(event.target.location.pathname);
     onURLChange(event.target.location.pathname);
