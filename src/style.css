@@ -141,7 +141,7 @@
     display: flex;
     background-size: cover;
   }
-  .cardGruñon {/*puestas y agregadas con view*/
+  .cardGrunon {/*puestas y agregadas con view*/
     background-image: url("./images/cardGruñon.png");
   }
   .cardPerezoso {
@@ -393,7 +393,4 @@
     display: flex;
     gap: 5px;
     align-items: center;
-  }
-  .imagen {
-    background-image: url(./images/error/error10.jpg);
   }

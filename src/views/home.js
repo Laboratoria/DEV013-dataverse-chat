@@ -1,51 +1,58 @@
 //PANTALLA PRINCIPAL
 import { navigateTo } from '../router.js';
-/*
-export const home = () => {
-  const root = document.querySelector("#root");
-  const container = document.createElement("div");
-  container.innerHTML = `
-  <h1> TITULO </h1>
-  <a id="starting">Inicio</a> <br/>
-  <a id="groupal">Chat Grupal</a> <br/>
-  <a id="individual">Chat Individual</a> <br/>
-  <a id="API">API</a> <br/>
-  <a id="error">Error</a> <br/>
-  `;
-  container.querySelector("#API").addEventListener("click", () => navigateTo("/api", { }));
-  container.querySelector("#starting").addEventListener("click", () => navigateTo("/startingScreen", { }));
-  container.querySelector("#groupal").addEventListener("click", () => navigateTo("/groupal", { }));
-  container.querySelector("#individual").addEventListener("click", () => navigateTo("/individual", { }));
-  container.querySelector("#error").addEventListener("click", () => navigateTo("/error", { }));
-  //linkGrupal.addEventListener("click", () => navigateTo("/groupal", { }) );
-  console.log(container);
-  root.appendChild(container);
-  
-  };*/
-  import { Footer } from './components/Footer.js';
+import { Header } from '../components/Header.js';
+import { Footer } from '../components/Footer.js';
+import { cards } from '../components/Cards.js'; 
+import data from '../data/dataset.js';
 
   export const home = () => {
-    const root = document.querySelector("#root");
     const container = document.createElement("div");
-    container.innerHTML = `
-    <h1> TITULO </h1>
+    const homePage = document.createElement("main");
+  //   const listUl = document.createElement("ul");
+  //   data.forEach(element => {
+  //     console.log({element})
+  //     const listLi = document.createElement('li');
+  //     listLi.setAttribute("class", `card ${element.personality} ${element.gender} ${element.facts.zodiacSign} `);//css
+  //     listLi.setAttribute("itemscope", "");
+  //     listLi.setAttribute("itemtype", "http://schema.org/Person");
+  //     listLi.innerHTML = `
+  //       <dl>
+  //       <img class="img" src=${element.imageUrl} alt=${element.name}/>
+  //       <dt>Nombre:</dt><dd itemprop="name">${element.name}</dd>
+  //       <div class="details">
+  //       <dt>Especies:</dt><dd itemprop="species">${element.species}</dd>
+  //       <dt>Genero:</dt><dd itemprop="gender" hidden>${element.gender}</dd>
+  //       </div>
+  //       <dt>Personalidad:</dt><dd itemprop="personality">${element.personality}</dd>
+  //       <dt>Signo zodiacal:</dt><dd itemprop="zodiacSign" hidden>${element.facts.zodiacSign}</dd>
+  //       <dt>Cumpleaños:</dt><dd itemprop="birthDate">${element.facts.birthDate}</dd>
+  //       <dt>Descripción:</dt><dd itemprop="shortDescription" hidden>${element.shortDescription}</dd>
+  //       <div>
+  //         <button id="seeMoreModal"> Ver mas... </button>
+  //       </div>
+  //       </dl>`
+  //       //console.log(listUl)
+  //     listUl.appendChild(listLi);
+  //   });
+
+    homePage.innerHTML = `
     <a id="starting">Inicio</a> <br/>
     <a id="groupal"><ion-icon name="logo-wechat"></ion-icon>Chat Grupal</a> <br/>
     <a id="individual"><ion-icon name="chatbubble-ellipses-outline"></ion-icon>chat individual</a> <br/>
     <a id="API"><ion-icon name="key-outline"></ion-icon></a> <br/>
     <a id="error"><ion-icon name="bug-outline"></ion-icon></a> <br/>
-    `;
-    container.querySelector("#API").addEventListener("click", () => navigateTo("/api", { }));
-    container.querySelector("#starting").addEventListener("click", () => navigateTo("/startingScreen", { }));
-    container.querySelector("#groupal").addEventListener("click", () => navigateTo("/groupal", { }));
-    container.querySelector("#individual").addEventListener("click", () => navigateTo("/individual", { }));
-    container.querySelector("#error").addEventListener("click", () => navigateTo("/error", { }));
-    //linkGrupal.addEventListener("click", () => navigateTo("/groupal", { }) );
-    console.log(container);
-    root.appendChild(container, Footer());
-    console.log(root);
-    return root;
-    
+    `; 
+
+    homePage.querySelector("#API").addEventListener("click", () => navigateTo("/api", { }));
+    homePage.querySelector("#starting").addEventListener("click", () => navigateTo("/startingScreen", { }));
+    homePage.querySelector("#groupal").addEventListener("click", () => navigateTo("/groupal", { }));
+    homePage.querySelector("#individual").addEventListener("click", () => navigateTo("/individual", { }));
+    homePage.querySelector("#error").addEventListener("click", () => navigateTo("/error", { }));
+    // linkGrupal.addEventListener("click", () => navigateTo("/groupal", { }) );
+
+    container.append(Header(), homePage, cards(data), Footer());
+    // container.appendChild(listUl);
+    return container;
     };
 
 

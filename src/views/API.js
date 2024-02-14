@@ -3,15 +3,21 @@
 //     titulo.innerHTML = "API-KEY";
 //     return titulo;
 //   }
-
+import { Footer } from "../components/Footer.js";
   export const api = () => {
-    //const root = document.querySelector("#root");
+    const container = document.createElement("div");
     const form = document.createElement("form");
     form.innerHTML = `
+    <div>
+    <label for="nameUser">USUARIO: </label>
+    <input type="text id="nameUser placeholder="Usuario">
+    </div>
+    <div>
     <label for="api-key">CLAVE API: </label>
     <input type="text id="api-key placeholder="Api-key">
-    <button type="button"> <ion-icon name="bookmark-sharp"></ion-icon>SAVE </button>
-    `
-    //root.appendChild(form);    
-    return form;
+    <button type="button"> SAVE </button>
+    </div>
+    `;
+    container.append(form, Footer());    
+    return container;
   }

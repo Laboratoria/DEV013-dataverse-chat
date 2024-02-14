@@ -104,6 +104,7 @@ export const navigateTo = (pathname, props={}) => {
     const cleanRoot = rootElement;
     cleanRoot.innerHTML = "";
     if(ROUTES[pathname]) {
+      console.log({pathname})
         const template = ROUTES[pathname]();
         console.log(template);
         cleanRoot.appendChild(template);
@@ -116,9 +117,9 @@ export const navigateTo = (pathname, props={}) => {
     // update window history with pushState
     // render the view with the pathname and props
     //hostname
-    const urlVisited = window.location.hostname + pathname;
-    history.pushState({}, "", urlVisited);
-    console.log(urlVisited);
+    // const urlVisited = window.location.hostname + pathname;
+    history.pushState({}, "", pathname);
+    // console.log(urlVisited);
     renderView(pathname, props);
   }
   
