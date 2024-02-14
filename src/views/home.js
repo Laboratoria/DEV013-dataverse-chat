@@ -22,6 +22,7 @@ export const home = () => {
   root.appendChild(container);
   
   };*/
+  import { Footer } from './components/Footer.js';
 
   export const home = () => {
     const root = document.querySelector("#root");
@@ -41,7 +42,9 @@ export const home = () => {
     container.querySelector("#error").addEventListener("click", () => navigateTo("/error", { }));
     //linkGrupal.addEventListener("click", () => navigateTo("/groupal", { }) );
     console.log(container);
-    root.appendChild(container);
+    root.appendChild(container, Footer());
+    console.log(root);
+    return root;
     
     };
 

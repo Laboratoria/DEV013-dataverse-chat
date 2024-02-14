@@ -68,6 +68,7 @@ const routes = {
     "/api": api,
     "/error": error,
 };
+//const root = document.querySelector("#root");
 
 const root = document.getElementById("root");
 setRoutes(routes);
@@ -80,6 +81,8 @@ document.addEventListener("DOMContentLoaded", (event) => {
 window.addEventListener("popstate", (event) => {
     onURLChange(event.target.location.pathname);
 });
+
+
 
 // Handle URL changes
 // window.addEventListener('popstate', ({objetivo}) => {
