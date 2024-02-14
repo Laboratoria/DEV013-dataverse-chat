@@ -1,7 +1,15 @@
+import { Header } from "../components/Header.js";
+import { Footer } from "./../components/Footer.js";
+
 export const error = () => {
-  const page = document.createElement("p");
-  page.innerHTML = "VISTA ERROR";
-  return page;
+  const container = document.createElement("div");
+  const errorPage = document.createElement("main");
+  errorPage.innerHTML = `
+  <img src="../images/error/error.png" alt="img-error"/>
+  <p>Error 404 not found</p>
+  `;
+  container.append(Header(), errorPage, Footer());
+  return container;
   };
 /*
   export const error = () => {

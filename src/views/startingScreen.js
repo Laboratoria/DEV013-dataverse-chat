@@ -1,10 +1,14 @@
-//pantalla 
+//pantalla
 //import { navigateTo } from '../router';
-
 export const startingScreen = () => {
-    const header = document.createElement("header");
-    header.innerHTML = "PANTALLA DE INICIO";
-    return header;
+  const container = document.createElement("div");
+  container.innerHTML = `
+    <img src="../images/Logo.png" alt="logo"/>
+    <h1>WIKINOOK</h1>
+    <button class="btn-clear-search">INICIO</button>
+    <img src="../images/Imagen-pantalla-bienvenida.png" alt="imagen-inicio"/>`;
+  
+  return container;
 };
 /*
 export const startingScreen = () => {
