@@ -309,3 +309,40 @@ export default Example;*/
   titulo.innerHTML = "WIKINOOK";
   return titulo;
 }*/
+
+
+
+
+
+
+/*
+const num = "h o la"
+let array = "";
+let array2 = ""
+for (let index = 0; index < num.length; index++) {
+  if (num.length == " "){
+    array2+= num[index]-1;
+  } else {
+   array+= num[index];
+  }
+}
+console.log(array);
+console.log(array2);
+*/
+
+
+/*const num = "hola"
+let array = "";
+for (let index = 0; index < num.length; index++) {
+  array+= num[index];
+}
+console.log(array);*/
+
+/* PARA HACERLO EN REVERSA
+const num2 = "hola"
+let array2 = "";
+for (let index = 0; index > num2.length-1; index--) {
+  array2+= num2[index].length-1;
+}
+console.log(array2);
+*/

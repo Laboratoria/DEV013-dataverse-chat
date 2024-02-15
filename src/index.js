@@ -52,20 +52,18 @@ var cat = localStorage.getItem("API-KEY");
 console.log(cat);*/
 
 import { home } from './views/home.js';
-import {startingScreen} from './views/startingScreen.js';
+import {StartingScreen} from './views/startingScreen.js';
 import { groupal } from './views/groupalChat.js';
 import { individual } from './views/individualChat.js';
 import { api } from './views/API.js'
-import { error } from './views/error.js';
-import {onURLChange, setRootEl, setRoutes} from './router.js';
-import data from '../data/dataset.js';
-//home(data);
-//let copyData;
-//copyData = [...data];
- 
+import { error } from './error.js';
+import { onURLChange, setRootEl, setRoutes } from './router.js';
+//import { computeStats, filterData, sortData } from './lib/dataFunctions.js';
+// import data from '../data/dataset.js';
+
 const routes = {
-    "/": home,
-    "/startingScreen": startingScreen,
+    "/": StartingScreen,
+    "/home": home,
     "/groupal": groupal,
     "/individual":individual,
     "/api": api,
@@ -73,7 +71,6 @@ const routes = {
 };
 
 const root = document.getElementById("root");
-//root.appendChild(copyData);
 setRoutes(routes);
 setRootEl(root)
 
@@ -86,16 +83,16 @@ window.addEventListener("popstate", (event) => {
     onURLChange(event.target.location.pathname);
 });
 
-// Handle URL changes
-// window.addEventListener('popstate', ({objetivo}) => {
-//    onURLChange(/* location */);
-// });
+//const buttonClearFilter = document.querySelector("button[data-testid='button-clear']"); //botón limpiar filtros
+//const order = document.querySelector("[data-testid='select-sort']");//para ordenar
+//const filterGender = document.querySelector("[data-testid='select-filterGender']");
+//const filterSpecie = document.querySelector("[data-testid='select-filter']");
+//const filterPersonality = document.querySelector("[data-testid='select-filterPersonality']");
+
+//order.addEventListener("change", () => {
+//     console.log("botón order");
+//   });
 
 
-/*if () {
-    window.addEventListener("click", () => navigateTo ("/groupal", { }));
-}if (document == "individual") {
-    document.addEventListener("click", () => navigateTo ("/individual", { }));
-}*/
 
-// linkEl.addEventListener('click', () => navigateTo("/about", { name: "Xochitl" }))
+  

@@ -1,5 +1,5 @@
 //exportar funciones
-const sortData = (data, sortBy, sortOrder ) => {
+export const sortData = (data, sortBy, sortOrder ) => {
     data.sort( (a, b) => {
       const valueA = a[sortBy];  
       const valueB = b[sortBy]; 
@@ -9,12 +9,12 @@ const sortData = (data, sortBy, sortOrder ) => {
     return data;
   };
 
-const filterData = (data, filterBy, value) => {
+export const filterData = (data, filterBy, value) => {
   const array = data.filter((items => items[filterBy] === value));
   return array;
 };
 
-const computeStats = (data) => {
+export const computeStats = (data) => {
   const acumulador = data.reduce((acumulador, item) => {//reduce tiene la data, el valor inicial y 0=suma total de lo acumulado
     if (!acumulador[item.gender]) {//hasOwnProperty devuelve true si la propiedad existe, si un objeto tiene una propiedad con un nombre específico
       acumulador[item.gender] = 1;
