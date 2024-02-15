@@ -1,0 +1,94 @@
+
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    /*para que el footer este abajo usando grid*/
+    display: grid;
+    min-height: 100vh;
+    grid-template-rows: auto 1fr auto;
+}
+
+#articleMenu{
+    border-top-style: solid;
+    border-color: rgb(0, 0, 0);
+    justify-content:space-evenly;
+    display: flex;
+    background-color: white;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    padding: 3px;
+}
+#sectionHeader{
+    font-family: "Ubuntu";
+    background-color: black;
+    color: white;
+    height:8.5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 45px;
+}
+#logoHeader{
+    width:53px;
+    height: auto;
+    padding-right:10px;
+}
+#contentError{
+    background-image: url("./Imagenes/ERROR.jpg");
+   
+
+    margin: 0;
+    padding: 0;
+   
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    height: 100%;
+}
+.titleError{
+    display: flex;
+    justify-content: center; 
+    padding-top: 100px;
+    font-family: "JetBrains Mono";
+    font-weight: bold;
+    font-size:50px;
+    justify-content: center; 
+}
+.textEror{
+    display: flex;
+    justify-content: center; 
+    padding-top: 10px;
+    font-family: "JetBrains Mono";
+}
+
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24;
+  font-size:40px;
+  height: auto;
+}
+/* .material-symbols-outlined-home {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24
+}
+.material-symbols-outlined-chat {
+    font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24
+} */
+
