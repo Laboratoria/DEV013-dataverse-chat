@@ -1,20 +1,11 @@
-export const error = () => {
-  const viewError = document.createElement("main");
+import {headerComponent} from "../components/Header.js";
 
-  const header = document.createElement("section");
-  header.id = "sectionHeader";
-
-  // Crear un elemento de imagen
-  const logoHeader = document.createElement("img");
-  logoHeader.id = "logoHeader";
-  logoHeader.src = "./Imagenes/logo.png";
-  // logoHeader.alt = "logo de la pagina";
-
-  
-
-  header.appendChild(logoHeader);
-
-  header.innerHTML += "ART PLACE";   /* += : para concatenar */
+export const Error = () => {
+  const viewError = document.createElement("section");
+  viewError.id = "viewError";
+ 
+  const sectionError=  headerComponent();
+  viewError.appendChild(sectionError);
 
   const contentError = document.createElement("section");
   contentError.id = "contentError"
@@ -24,27 +15,19 @@ export const error = () => {
 <br>
 <p class=textEror> Pagina no encontrada </p>`;
 
-  // const imgBackground = document.createElement("img");
-  // imgBackground.src = "./Imagenes/BackgroundError.jpg";
-  // // logoHeader.alt = "logo de la pagina";
-  // contentError.appendChild(imgBackground);
-
-
-
   const articleMenu = document.createElement("article");
   articleMenu.id = "articleMenu";
   articleMenu.innerHTML = `
-  <span class="material-symbols-outlined" id="icon-key">
-  vpn_key </span>
   <span class="material-symbols-outlined" id="icon-home">
   home </span>
   <span class="material-symbols-outlined" id="icon-chat">
   groups </span>
   `;
-  viewError.append(header,contentError,articleMenu);
-
+  viewError.append(contentError,articleMenu);
   return viewError;
 };
+
+
 
 
 // export const error = () => {
