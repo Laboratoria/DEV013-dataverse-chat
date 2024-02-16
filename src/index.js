@@ -6,17 +6,17 @@ import { ChatGrupal } from './views/ChatGrupal.js';
 import { About } from './views/About.js';
 import { ApiKey } from './views/ApiKey.js';
 
-import { setRootEl, setRoutes, navigateTo, onURLChange} from './router.js'
+import { setRootEl, setRoutes, navigateTo, onURLChange } from './router.js'
 //Ejemplo de definición de rutas:
 
 const routes = {
-    "/" : Home,
-    "/about" : About,
-    "/error" : Error,
-    "/chatindividual" : ChatIndividual,
-    "/chatgrupal" : ChatGrupal,
-    "/apikey" : ApiKey,
-    
+  "/": Home,
+  "/about": About,
+  "/error": Error,
+  "/chatindividual": ChatIndividual,
+  "/chatgrupal": ChatGrupal,
+  "/apikey": ApiKey,
+
 }
 
 const viewContainer = document.getElementById('root');
@@ -28,7 +28,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
   console.log(event);
   setRootEl(viewContainer);
   onURLChange(event.target.location.pathname)
-  
+
 });
 
 /*
