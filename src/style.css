@@ -563,88 +563,121 @@ header nav {
  }
 
  /*Chat individual*/
- .chat-container {
-  width: 100%;
-  height: 100vh;
-  background: #F7F8EA;
+ .page-container{
   display: flex;
-  gap: 1rem;
+  align-items: center;
   justify-content: center;
-  padding: 2rem;
+  gap: 1rem;
+  background-color: rosybrown;
+  width: 100%;
+  height: calc(100vh - 200px);
   flex-wrap: wrap;
-}
-
-.passport-wrapper, .chat-wrapper {
-  width: 40%;
-  height: 100%;
-  background: thistle;
-  min-width: 500px;
+ }
+ .passport-container{
   display: flex;
-}
-
-.passport-background, .chat-background {
-  flex: 1;
-  width: auto;
-  background: rosybrown;
-  display: flex;
-  flex-direction: column;
-  margin: 4rem 2rem;
-}
-
-.upper-flap, .lower-flap {
-  border: 1px solid ;
-  flex: 1;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  background-color: plum;
+  min-width: 400px;
+  max-width: 500px;
+  width: 35%;
+  height: 90%;
   position: relative;
-}
+ }
+ .passport{
+  width: 100%;
+  margin: 4rem 2rem;
+  height: 500px;
+  background-color: #fff;
+  position: relative;
+ }
 
-.passport-icon {
+ .passport-icon{
   width: 60px;
-  height: 80px;
-  background: honeydew;
+  height: 100px;
+  background-color: #ff6f6f;
   position: absolute;
+  top: -30px;
   right: -10px;
-  top: -20px;
-  transform: rotate(-25deg)
+  transform: rotate(-20deg);
 }
-
-.lower-flap {
-  padding: 2rem;
+.top-flap{
+  width: 100%;
+  height: 50%;
+  background-color: midnightblue;
+}
+.bottom-flap{
+  width: 100%;
+  height: 50%;
+  background-color: rgb(92, 92, 184);
   display: flex;
   flex-direction: column;
 }
-
-.lower-flap .flap-header,
-.lower-flap .flap-body,
-.lower-flap .flap-footer {
-  border: 1px solid pink;
-  min-height: 40px;
+.passport-header{
+  background-color: #8ac68a;
+  padding: 1rem;
 }
-
-.lower-flap .flap-body {
+.passport-body{
+  display: flex;
+  background-color: #b7e989;
+  gap: 1rem;
+  padding: 1rem;
   flex: 1;
 }
-
-.flap-body {
-  display: flex;
-  padding: 1rem;
+.passport-img{
+  width: 40%;
+  background-color: #ff6f6f;
+}
+.passport-info{
+  width: 60%;
+  background-color: rgb(153, 90, 153);
   gap: 1rem;
 }
-
-.passport-image {
-  width: 140px;
-  background: violet;
-  border: 1px solid black;
+.passport-footer{
+  background-color: antiquewhite;
+  padding: 1rem;
 }
 
-.passport-info {
-  flex: 1;
-  background: pink;
-  border: 1px solid black;
-}
+ .chat-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  background-color: lightcoral;
+  min-width: 400px;
+  max-width: 700px;
 
-.chat-content {
-  background: white;
-  flex: 1;
+  width: 45%;
+  height: 90%;
+ }
+
+ .chat-background{
+  width: 100%;
+  height: 500px;
+  margin: 4rem 2rem;
+  background-color: #fff;
+  display: flex;
+ }
+
+ .chat{
+  background-color: #8ac68a;
+  margin: 3rem 1rem;
   width: auto;
-  margin: 2rem;
-}
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+ }
+ .chat-header{
+  background-color: olivedrab;
+  padding: 2rem;
+ }
+ .chat-body{
+  background-color: pink;
+  flex: 1;
+  padding: 2rem;
+ }
+ .chat-footer{
+  background-color: papayawhip;
+  padding: 2rem;
+ }

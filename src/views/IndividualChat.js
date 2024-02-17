@@ -5,33 +5,31 @@ export const IndividualChat = () => {
   const container = document.createElement("div");
   const main = document.createElement("main");
   main.innerHTML = `
-    <h2>Chat individual</h2>
-    <div class="chat-container">
-   <div class="passport-wrapper">
-    <div class="passport-background">
-      <div class="upper-flap">
-        <div class="passport-icon"></div>
-      </div>
-      <div class="lower-flap">
-        <div class="flap-header"></div>
-        <div class="flap-body">
-          <div class="passport-image"></div>
-          <div class="passport-info"></div>
+  <div class="page-container">
+    <div class="passport-container">
+        <div class="passport">
+            <div class="passport-icon"></div>
+            <div class="top-flap"></div>
+            <div class="bottom-flap">
+                <div class="passport-header"></div>
+                <div class="passport-body">
+                    <div class="passport-img"></div>
+                    <div class="passport-info"></div>
+                </div>
+                <div class="passport-footer"></div>
+            </div>
         </div>
-        <div class="flap-footer"></div>
-      </div>
+    </div>
+    <div class="chat-container">
+        <div class="chat-background">
+            <div class="chat">
+                <div class="chat-header"></div>
+                <div class="chat-body"></div>
+                <div class="chat-footer"></div>
+            </div>
+        </div>
     </div>
   </div>
-  <div class="chat-wrapper">
-    <div class="chat-background">
-      <div class="chat-content">
-        <div class="chat-header"></div>
-        <div class="chat-body"></div>
-        <div class="chat-footer"></div>
-      </div>
-    </div>
-  </div>
-</div>
   `;
 
   container.append(Header(), main, Footer());
