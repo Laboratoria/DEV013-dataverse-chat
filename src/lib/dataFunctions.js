@@ -14,24 +14,28 @@ export const filterData = (data, filterBy, value) => {
   return array;
 };
 
-export const computeStats = (data) => {
+export const computeStats = (data, groupBy) => {
   const acumulador = data.reduce((acumulador, item) => {//reduce tiene la data, el valor inicial y 0=suma total de lo acumulado
-    if (!acumulador[item.gender]) {//hasOwnProperty devuelve true si la propiedad existe, si un objeto tiene una propiedad con un nombre específico
-      acumulador[item.gender] = 1;
+    if (!acumulador[item[groupBy]]) {//hasOwnProperty devuelve true si la propiedad existe, si un objeto tiene una propiedad con un nombre específico
+      acumulador[item[groupBy]] = 1;
     }
     else {
-      acumulador[item.gender]++;
+      acumulador[item[groupBy]]++;
     }
-    console.log(acumulador);
+    // console.log(acumulador);
     return acumulador;
   }, {});
+console.log('acumulador', acumulador)
+
+
   //{femenino: 8
   //masculino: 16}
   
-  const totalWomen = acumulador.Femenino;
-  const totalMen = acumulador.Masculino;
-  const totalFemale = parseFloat((totalWomen/data.length)*100).toFixed(2); 
-  const totalMale = parseFloat((totalMen/data.length)*100).toFixed(2);
-  return `${totalFemale} \n ${totalMale} `;
+  // const totalWomen = acumulador.Femenino;
+  // const totalMen = acumulador.Masculino;
+  // const totalFemale = parseFloat((totalWomen/data.length)*100).toFixed(2); 
+  // const totalMale = parseFloat((totalMen/data.length)*100).toFixed(2);
+  // return `${totalFemale} \n ${totalMale} `;
+  return acumulador;
   //return `Porcentaje personajes masculinos: ${totalMen}% `; // \n se usa para hacer un salto de linea en un texto 
 };

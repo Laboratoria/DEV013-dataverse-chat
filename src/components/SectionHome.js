@@ -1,7 +1,9 @@
-export const SectionOrder = () => {
-    const container = document.createElement("div");
-    const option = document.createElement("section");
-    option.innerHTML = `
+import { Cards } from "./Cards.js";
+import data from '../data/dataset.js';
+
+export const SectionHome = () => {
+    const section = document.createElement("section");
+    section.innerHTML = `
     <div class="container">
               <div class="buscador">
                 <h2>Lista de vecinos</h2>
@@ -28,7 +30,7 @@ export const SectionOrder = () => {
                   </button>
                 </div>
               </div>
-              <div id="root"></div>
+              <div id="content"></div>
               <div class="content-modal" id="modal">
                 <div class="modal-body">
                   <div class="modal-header">
@@ -50,6 +52,6 @@ export const SectionOrder = () => {
               </div>
             </div>
     `;
-    container.appendChild(option);
-    return container;
+    section.querySelector("#content").append(Cards(data));
+    return section;
 }

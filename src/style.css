@@ -1,9 +1,31 @@
+@font-face {
+  font-family: 'EncodeSansCondensedBold';
+  src: url('fonts/EncodeSans_Condensed-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'EncodeSansCondensedRegular';
+  src: url('fonts/EncodeSans_Condensed-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'EncodeSansCondensedLight';
+  src: url('fonts/EncodeSans_Condensed-Light.ttf') format('truetype');
+  font-weight: lighter;
+  font-style: normal;
+}
+
 * {
-    padding: 0;
-    margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    box-sizing: border-box;/*MODELO DE CAJA*/
-  }
+  padding: 0;
+  margin: 0;
+  font-family: "Encode Sans Condensed", sans-serif;
+  box-sizing: border-box;
+  font-family: "EncodeSansCondensedRegular", sans-serif;
+}
   /*PANTALLA DE INICIO*/
   .container__imageStart {
     text-align: center;
@@ -125,6 +147,27 @@ header {
   padding: 20px 10%;
   border-bottom: 1px solid #e0e0e0;
 }
+
+header nav {
+  display: flex;
+  align-items: center;
+  gap: 3rem
+}
+
+.nav-ul {
+  display: flex;
+  list-style: none;
+  gap: 2rem
+}
+
+.nav-ul li a {
+  text-decoration: none;
+  color: #000;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
   .header-title {
     display: flex;
     align-items: center;
@@ -353,27 +396,28 @@ header {
     border-bottom: 2px solid white;
     align-items: flex-end;
   }
-  /*.asideFilter {
+  /* .asideFilter {
     display: flex;
     gap: 1rem;
     flex-wrap: wrap;
-  }*/
-  ul {
+  } */
+
+  /* ul {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  } */
+  #content ul {
     display: flex;
     gap: 1rem;
     flex-wrap: wrap;
   }
-  /*#root ul {
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
-  }*/
   .bodyCard img {
     max-width: 147px;
     max-height: 164px;
   }
   dd[itemprop="name"]{
-    color: black;
+    color: white;
     font-size: 20px;
     font-weight: bold;
   }
@@ -497,3 +541,24 @@ header {
     gap: 5px;
     align-items: center;
   }
+
+ /* //Estilos para la vista de estadisticas */
+ .stats-main{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem;
+  margin: 1rem;
+  margin-bottom: 4rem;
+ }
+ .graphic-container{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+ }
+

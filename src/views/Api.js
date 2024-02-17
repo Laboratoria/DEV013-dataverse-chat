@@ -6,8 +6,8 @@
 import { Header } from "../components/Header.js"; 
 import { Footer } from "../components/Footer.js";
 import { navigateTo } from "../router.js";
-import { ButtonHome } from "../components/Button.js";
-  export const api = () => {
+import { Button } from "../components/Button.js";
+  export const Api = () => {
     const container = document.createElement("div");
     const apiPage = document.createElement("main");
     apiPage.className = "mainForm";
@@ -25,7 +25,7 @@ import { ButtonHome } from "../components/Button.js";
     </from>
     `;
     apiPage.querySelector(".buttonApi").addEventListener("click", () => {navigateTo("/chat Individual", {})})
-    container.append(Header(), apiPage, ButtonHome(), Footer());
+    container.append(Header(), apiPage, Button(), Footer());
     console.log(container);    
     return container;
   }

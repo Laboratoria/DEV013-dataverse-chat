@@ -3,7 +3,7 @@ import { Footer } from "./../components/Footer.js";
 import { navigateTo } from "./router.js";
 //import { navigateTo } from "./router.js";
 
-export const error = () => {
+export const Error = () => {
   const container = document.createElement("div");
   const errorPage = document.createElement("main");
   errorPage.innerHTML = `
