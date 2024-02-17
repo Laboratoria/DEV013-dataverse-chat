@@ -5,10 +5,16 @@ import { ChatIndividual } from './views/ChatIndividual.js';
 import { ChatGrupal } from './views/ChatGrupal.js';
 import { About } from './views/About.js';
 import { ApiKey } from './views/ApiKey.js';
-
 import { setRootEl, setRoutes, navigateTo, onURLChange } from './router.js'
-//Ejemplo de definición de rutas:
+/*
+TODO:
+1.- Definir rutas en router.
+2.- Pasar "root element" a router.
+3.- Invocar el router para renderizar la vista correcta.
+*/
 
+
+//definición de rutas:
 const routes = {
   "/": Home,
   "/about": About,
@@ -16,7 +22,6 @@ const routes = {
   "/chatindividual": ChatIndividual,
   "/chatgrupal": ChatGrupal,
   "/apikey": ApiKey,
-
 }
 
 const viewContainer = document.getElementById('root');
@@ -25,15 +30,10 @@ setRoutes(routes);
 
 // Establecer el elemento raíz donde se representarán las vistas.
 window.addEventListener("DOMContentLoaded", (event) => {
-  console.log(event);
+  console.log(event, );
   setRootEl(viewContainer);
-  onURLChange(event.target.location.pathname)
+  //obtener la ruta de la ventana global por eso mejor usar window
+  onURLChange(window.location.pathname)
 
 });
 
-/*
-TODO:
-1.- Definir rutas en router.
-2.- Pasar "root element" a router.
-3.- Invocar el router para renderizar la vista correcta.
-*/
