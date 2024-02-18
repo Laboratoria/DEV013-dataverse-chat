@@ -1,4 +1,4 @@
-//elmento que mapea las rutas de nuestro sitio 
+//Esta variable almacena información sobre las rutas en tu SPA.
 let ROUTES = {};
 
 //  va a ser la referencia al elmento html en donde vamos a dibujar el contenido de nuestros componentes
@@ -19,7 +19,7 @@ export const setRoutes = (newRoutesValue) => {
     if (newRoutesValue['/error']) {
       // asignar RUTAS
       ROUTES = newRoutesValue;
-      console.log(ROUTES);
+      console.log("routes",ROUTES);
     }
   }
 }
@@ -44,13 +44,15 @@ const renderView = (pathname, props = {}) => {
   } else {
     template = ROUTES['/error'];
   }
+  console.log('aqui es template',template);
   const component = template(props);
+  console.log(typeof component);
+  console.log(component);
   root.appendChild(component);
   // en caso de que no se encuentre, renderice la vista de error
   // renderiza la vista correcta pasando el valor de los accesorios
   // agrega el elemento de vista al elemento raíz del DOM
 }
-
 export const navigateTo = (pathname, props = {}) => {
   // actualiza el historial de la ventana (navegador) con pushState
   const URLvisited = window.location.hostname + pathname;
