@@ -23,9 +23,20 @@ export const IndividualChat = () => {
     <div class="chat-container">
         <div class="chat-background">
             <div class="chat">
-                <div class="chat-header"></div>
+                <div class="chat-header">
+                <p class="character-name">Personaje</p>
+                <p class="last-seen">Visto por últ. vez 00:00</p>
+                </div>
                 <div class="chat-body"></div>
-                <div class="chat-footer"></div>
+                <div class="chat-footer">
+
+                    <div class="chat-placeholder">
+                        <div><i id="pencil-icon"class="fa-solid fa-pencil"></i></div>
+                        <input type="text" class="send-txt" placeholder="Escribe un mensaje...">
+                        <div><button id="send-icon"><i class="fa-regular fa-paper-plane"></i></button></div>
+                    </div>
+
+                </div>
             </div>
         </div>
     </div>

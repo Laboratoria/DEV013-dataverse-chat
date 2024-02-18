@@ -8,11 +8,6 @@ export const SectionHome = () => {
               <div class="buscador">
                 <h2>Lista de vecinos</h2>
                 <div>
-                  <button class="btn-statics" id="openModal">
-                    <ion-icon name="stats-chart-outline"></ion-icon>
-                  </button>
-                </div>
-                <div>
                   <label for="sort">Ordenar por:</label>
                   <select name="sort" id="sort" data-testid="select-sort">
                     <option value="all">Elige una opción</option>
@@ -55,3 +50,11 @@ export const SectionHome = () => {
     section.querySelector("#content").append(Cards(data));
     return section;
 }
+
+
+// Botón de modal del home eliminado 
+/* <div>
+<button class="btn-statics" id="openModal">
+  <ion-icon name="stats-chart-outline"></ion-icon>
+</button>
+</div> */

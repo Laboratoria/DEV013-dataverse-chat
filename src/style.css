@@ -128,18 +128,7 @@ form {
   cursor: grab;
   background-color: #8ac68a;
 }
-/*VISTA ERROR*/
-.containerError {
-  align-items: center;
-  justify-content: center;
-  background-color: #fc736d;
 
-}
-.buttonBack {
-  border-radius: 20px;
-  padding: 20px;
-  cursor: pointer;
-}
 header {
   display: flex; /*PARA DESAPARECER EL TITULO*/
   justify-content: space-between;
@@ -270,7 +259,8 @@ header nav {
       gap: 0.5rem;
     }
   }
-  
+
+  /*Estilos de las cards*/
   .card {/*creada desde view*/
     width: 184px;
     height: 279px;
@@ -396,17 +386,6 @@ header nav {
     border-bottom: 2px solid white;
     align-items: flex-end;
   }
-  /* .asideFilter {
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
-  } */
-
-  /* ul {
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
-  } */
   #content ul {
     display: flex;
     gap: 1rem;
@@ -436,18 +415,7 @@ header nav {
     width: 790px;
     height: 100%;
   }
-  .content-modal {/*lo ocupo para el modal*/
-    display: none;
-    position: fixed;
-    z-index: 1;  
-    left: 0; top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgb(0, 0, 0, 0.5);
-    align-items: center;
-    justify-content: center;
-  }
+
   #page {/*esto se puede modificar*/
     font-size: 28px;
   }
@@ -489,8 +457,10 @@ header nav {
   .btn-clear-search:hover,.btn-clear-search:focus {/*hover estilo al pasar el cursor sobre el botón*/
     background-color: #7ab37a;
   }
-  .btn-statics{/*botón estadistica*/
-    background-color: #8ac68a;
+
+  /*Antiguo modal de estadistica*/
+  /* .btn-statics{/*botón estadistica*/
+   /* background-color: #8ac68a;
     border-radius: 8px;
     border-style: none;
     color: #FFFFFF;
@@ -540,7 +510,19 @@ header nav {
     display: flex;
     gap: 5px;
     align-items: center;
-  }
+  } 
+  /* .content-modal {lo ocupo para el modal
+    display: none;
+    position: fixed;
+    z-index: 1;  
+    left: 0; top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0, 0.5);
+    align-items: center;
+    justify-content: center;
+  } */
 
  /* //Estilos para la vista de estadisticas */
  .stats-main{
@@ -563,6 +545,7 @@ header nav {
  }
 
  /*Chat individual*/
+ /* Estilos del pasaporte */
  .page-container{
   display: flex;
   align-items: center;
@@ -637,6 +620,7 @@ header nav {
   padding: 1rem;
 }
 
+/* Estilos del chat */
  .chat-container{
   display: flex;
   gap: 1rem;
@@ -650,12 +634,13 @@ header nav {
  .chat-background{
   width: 100%;
   margin: 1rem 2rem;
-  background-color: #fff;
+  background-color: #CDB289;
   display: flex;
+  border-radius: 8px;
  }
 
  .chat{
-  background-color: #8ac68a;
+  background-image: url("./images/chat-and-passport/chatBackground.png");
   margin: 3rem 1rem;
   width: auto;
   flex: 1;
@@ -663,15 +648,70 @@ header nav {
   flex-direction: column;
  }
  .chat-header{
-  background-color: olivedrab;
-  padding: 2rem;
+  background-color: #EEE9CA;
+  padding: 0.8rem;
+  text-align: center;
+ }
+ .character-name{
+  font-size: 20px;
+ }
+ .last-seen{
+  font-size: 14px;
  }
  .chat-body{
-  background-color: pink;
   flex: 1;
   padding: 2rem;
  }
  .chat-footer{
-  background-color: papayawhip;
-  padding: 2rem;
+  padding: 0.5rem;
  }
+
+ .chat-placeholder {
+  display: flex;
+  padding: 10px;
+  gap: 1rem;
+  align-items: center;
+  background-color: #EEE9CA;
+  border-radius: 8px;
+}
+
+.send-txt {
+  flex: 1;
+  padding: 8px;
+  background-color: #EEE9CA;
+  border: none!important;
+}
+.send-txt:focus-visible {
+  outline: none;
+}
+
+#send-icon {
+border: none;
+background:#EEE9CA;
+padding: 0rem 0.5rem;
+cursor: pointer;
+font-size: 20px;
+color: #8E8E93;
+}
+
+#pencil-icon{
+padding: 0rem 0.5rem;
+font-size: 20px;
+color: #8E8E93;
+}
+
+/*VISTA ERROR*/
+.container-error {
+  align-items: center;
+  justify-content: center;
+  /* background-color: #fc736d; */
+  display: flex;
+  flex:1;
+  flex-direction: column ;
+  height: calc(100vh - 200px);
+  gap: 1.5rem;
+}
+
+.container-error img{
+  width: 260px;
+}
