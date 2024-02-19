@@ -1,7 +1,7 @@
-export const filter = () => {
-    const container = document.createElement("div");
-    container.innerHTML = `
-    <aside class="asideFilter>
+export const AsideHome = () => {
+    const aside = document.createElement("aside");
+    aside.className = "asideFilter";
+    aside.innerHTML = `
       <div data-testid="select-filterGender" name="gender">
         <label for="filter"><h2>Género</h2></label>
           <ul>
@@ -113,8 +113,7 @@ export const filter = () => {
                 Limpiar filtros
               </button>
       </div>
-      </aside>
     `;
-    console.log({container});
-    return container;
+    console.log({aside});
+    return aside;
 }
