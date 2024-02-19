@@ -9,6 +9,22 @@ export const error = () => {
   errorPage.innerHTML = `
   <div class="containerError">
   <img  src="../images/error/error.png" alt="img-error"/>
+  <p>Error 404 not found</p>
+  </div>
+  `;
+  //errorPage.querySelector(".buttonBack").addEventListener("click", () => {navigateTo("/home", {})});
+  container.append(Header(), errorPage, Footer());
+  return container;
+  };
+
+
+  /*
+  export const error = () => {
+  const container = document.createElement("div");
+  const errorPage = document.createElement("main");
+  errorPage.innerHTML = `
+  <div class="containerError">
+  <img  src="../images/error/error.png" alt="img-error"/>
   <button type="button" class="buttonBack">Home</button>
   <p>Error 404 not found</p>
   </div>
@@ -17,6 +33,7 @@ export const error = () => {
   container.append(Header(), errorPage, Footer());
   return container;
   };
+  */
 /*
   export const error = () => {
    const root = document.querySelector("#root");

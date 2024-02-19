@@ -1,3 +1,4 @@
+import { ButtonHome } from "./Button.js";
 export const Header = () => {
     const header = document.createElement("header");
     header.innerHTML = `
@@ -10,5 +11,6 @@ export const Header = () => {
         Usuario
       </div>
     `;
+    header.appendChild(ButtonHome());
     return header;
 }

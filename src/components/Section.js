@@ -1,5 +1,5 @@
 export const SectionOrder = () => {
-    const container = document.createElement("div");
+    //const container = document.createElement("div");
     const option = document.createElement("section");
     option.innerHTML = `
     <div class="container">
@@ -50,6 +50,6 @@ export const SectionOrder = () => {
               </div>
             </div>
     `;
-    container.appendChild(option);
-    return container;
+    //container.appendChild(option);
+    return option;
 }
