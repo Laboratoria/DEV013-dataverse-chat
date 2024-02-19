@@ -65,8 +65,9 @@ export const onURLChange = (location) => {
   // analiza la ubicación de la ruta y los parámetros de búsqueda
   // convierte los parámetros de búsqueda en un objeto
   // renderiza la vista con la ruta y el objeto
-  console.log(location);
-  renderView(location);
+  console.log({location});
+  //renderView(location);
+  navigateTo(location)
 }
 
 
