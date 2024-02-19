@@ -3,7 +3,7 @@ import { Home } from './views/Home.js';
 import { Error } from './views/Error.js';
 import { ChatIndividual } from './views/ChatIndividual.js';
 import { ChatGrupal } from './views/ChatGrupal.js';
-import { DetailCard } from './views/detailCard.js';
+import { DetailCard } from './views/DetailCard.js'
 import { ApiKey } from './views/ApiKey.js';
 import { setRootEl, setRoutes, navigateTo, onURLChange } from './router.js'
 /*

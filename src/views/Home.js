@@ -9,6 +9,11 @@ export const Home = () => {
   const header = document.createElement("section");
   header.setAttribute("class", "header")
   //let currentData = [...data];
+  // const detailCardTotal = renderItems(data.container.itemContainer)
+  // detailCardTotal.addEventListener("click", function () {
+  //   console.log(detailCardTotal);
+  // })
+
   header.appendChild(Header());
   header.appendChild(MenuSelect());
   header.appendChild(renderItems(data));
