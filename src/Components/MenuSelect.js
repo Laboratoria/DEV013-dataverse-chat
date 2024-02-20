@@ -54,6 +54,5 @@ export const MenuSelect = () => {
     </div>
   
     </div>
-    `
   return selects;
 }

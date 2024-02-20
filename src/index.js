@@ -3,7 +3,7 @@ import { Home } from './views/Home.js';
 import { Error } from './views/Error.js';
 import { ChatIndividual } from './views/ChatIndividual.js';
 import { ChatGrupal } from './views/ChatGrupal.js';
-import { About } from './views/About.js';
+import { DetailCard } from './views/DetailCard.js'
 import { ApiKey } from './views/ApiKey.js';
 import { setRootEl, setRoutes, onURLChange } from './router.js'
 /*
@@ -17,7 +17,7 @@ TODO:
 //definición de rutas:
 const routes = {
   "/": Home,
-  "/about": About,
+  "/detailcard": DetailCard,
   "/error": Error,
   "/chatindividual": ChatIndividual,
   "/chatgrupal": ChatGrupal,
@@ -30,8 +30,7 @@ setRoutes(routes);
 
 // Establecer el elemento raíz donde se representarán las vistas.
 window.addEventListener("DOMContentLoaded", (event) => {
-  console.log(event,);
-  //console.log(window.location.pathname);
+
   setRootEl(viewContainer);
   //obtener la ruta de la ventana global por eso mejor usar window
   onURLChange(window.location.pathname)

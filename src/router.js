@@ -56,7 +56,9 @@ const renderView = (pathname, props = {}) => {
 export const navigateTo = (pathname, props = {}) => {
   // actualiza el historial de la ventana (navegador) con pushState
   const URLvisited = window.location.hostname + pathname;
+  console.log(window.location.hostname);
   history.pushState({}, '', URLvisited);
+
   // renderiza la vista con el nombre de la ruta y los accesorios
   renderView(pathname, props);
 }
@@ -65,8 +67,7 @@ export const onURLChange = (location) => {
   // analiza la ubicación de la ruta y los parámetros de búsqueda
   // convierte los parámetros de búsqueda en un objeto
   // renderiza la vista con la ruta y el objeto
-  //console.log(location);
-  renderView(location);
+renderView(location);
 }
 
 
