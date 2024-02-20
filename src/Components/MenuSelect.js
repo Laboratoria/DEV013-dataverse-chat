@@ -1,7 +1,7 @@
 export const MenuSelect = () => {
-    const selects = document.createElement("div");
-    selects.id = "inputs";
-    selects.innerHTML = `
+  const selects = document.createElement("div");
+  selects.id = "inputs";
+  selects.innerHTML = `
     <div class= menu>
     <!--Seccion genero-->
     <div class="menuGenero">
@@ -54,7 +54,6 @@ export const MenuSelect = () => {
     </div>
   
     </div>
-    `;
-
+    `
   return selects;
-};
+}
