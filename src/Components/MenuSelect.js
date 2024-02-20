@@ -54,7 +54,5 @@ export const MenuSelect = () => {
     </div>
   
     </div>
-    `;
-  console.log(document.querySelector('#Genero1'))
   return selects;
-};
+}

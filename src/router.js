@@ -19,7 +19,7 @@ export const setRoutes = (newRoutesValue) => {
     if (newRoutesValue['/error']) {
       // asignar RUTAS
       ROUTES = newRoutesValue;
-      console.log("routes",ROUTES);
+      //console.log("routes", ROUTES);
     }
   }
 }
@@ -37,17 +37,17 @@ const renderView = (pathname, props = {}) => {
   let template;
   const root = rootEl;
   root.innerHTML = '';
-  console.log(ROUTES);
+  //console.log(ROUTES);
   // busca la vista correcta en RUTAS para el nombre de ruta
   if (ROUTES[pathname]) {
     template = ROUTES[pathname];
   } else {
     template = ROUTES['/error'];
   }
-  console.log('aqui es template',template);
+  //console.log('aqui es template', template);
   const component = template(props);
-  console.log(typeof component);
-  console.log(component);
+  //console.log(typeof component);
+  //console.log(component);
   root.appendChild(component);
   // en caso de que no se encuentre, renderice la vista de error
   // renderiza la vista correcta pasando el valor de los accesorios
@@ -67,9 +67,7 @@ export const onURLChange = (location) => {
   // analiza la ubicación de la ruta y los parámetros de búsqueda
   // convierte los parámetros de búsqueda en un objeto
   // renderiza la vista con la ruta y el objeto
-  console.log({location});
-  //renderView(location);
-  navigateTo(location)
+renderView(location);
 }
 
 

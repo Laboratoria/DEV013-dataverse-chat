@@ -5,7 +5,7 @@ import { ChatIndividual } from './views/ChatIndividual.js';
 import { ChatGrupal } from './views/ChatGrupal.js';
 import { DetailCard } from './views/DetailCard.js'
 import { ApiKey } from './views/ApiKey.js';
-import { setRootEl, setRoutes, navigateTo, onURLChange } from './router.js'
+import { setRootEl, setRoutes, onURLChange } from './router.js'
 /*
 TODO:
 1.- Definir rutas en router.
@@ -30,8 +30,7 @@ setRoutes(routes);
 
 // Establecer el elemento raíz donde se representarán las vistas.
 window.addEventListener("DOMContentLoaded", (event) => {
-  console.log("#HOLI")
-  console.log(event, );
+
   setRootEl(viewContainer);
   //obtener la ruta de la ventana global por eso mejor usar window
   onURLChange(window.location.pathname)
