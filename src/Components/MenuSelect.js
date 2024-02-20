@@ -53,6 +53,6 @@ export const MenuSelect = () => {
         Limpiar filtros</button>
     </div>
   
-    </div>
+    </div>`
   return selects;
 }
