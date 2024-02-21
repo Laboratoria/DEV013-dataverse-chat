@@ -2,6 +2,7 @@
 
 
 export const DetailCard = (props) => {
+    
     console.log(props);
   const detailCard = document.createElement('div');
   detailCard.innerText = `
