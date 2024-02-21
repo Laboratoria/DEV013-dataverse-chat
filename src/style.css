@@ -1,3 +1,4 @@
+/* Estilos de fonts */
 @font-face {
   font-family: 'EncodeSansCondensedBold';
   src: url('fonts/EncodeSans_Condensed-Bold.ttf') format('truetype');
@@ -18,7 +19,7 @@
   font-weight: lighter;
   font-style: normal;
 }
-
+/* GLOBAL */
 * {
   padding: 0;
   margin: 0;
@@ -26,7 +27,8 @@
   box-sizing: border-box;
   font-family: "EncodeSansCondensedRegular", sans-serif;
 }
-  /*PANTALLA DE INICIO*/
+
+  /*PANTALLA DE INICIO/PORTADA*/
   .container__imageStart {
     text-align: center;
     justify-content: space-between;
@@ -129,6 +131,7 @@ form {
   background-color: #8ac68a;
 }
 
+/* Estios del header */
 header {
   display: flex; /*PARA DESAPARECER EL TITULO*/
   justify-content: space-between;
@@ -136,31 +139,32 @@ header {
   padding: 20px 10%;
   border-bottom: 1px solid #e0e0e0;
 }
-
 header nav {
   display: flex;
   align-items: center;
-  gap: 3rem
+  gap: 2rem
 }
-
 .nav-ul {
   display: flex;
   list-style: none;
-  gap: 2rem
+  gap: 2rem;
+  margin-top: 0.6rem;
 }
-
 .nav-ul li a {
   text-decoration: none;
-  color: #000;
-  font-size: 1rem;
+  color: #285B10;
+  font-size: 1.1rem;
   font-weight: bold;
   cursor: pointer;
 }
-
   .header-title {
     display: flex;
     align-items: center;
     gap: 8px;
+  }
+  .header-title img{
+    width: 38px;
+    height: 36px;
   }
   .header-user {
     display: flex;
@@ -170,9 +174,12 @@ header nav {
   .header-user img {
     width: 3rem;
   }
+  /* Estilos del body */
   body {
     background-color: #f7f3e7;
   }
+
+  /* Estilos del footer */
   footer {
     position: fixed;/*FIJA*/
     width: 100%;
@@ -200,13 +207,19 @@ header nav {
     bottom: 10px;
     z-index: 2;
   }
+
+/* Estilos del aside */
   aside {
     padding: 3rem 3rem 3rem 10%;
   } 
+
+  /* Estilos del main */
   main {
     display: flex;
     margin-bottom: 100px;
   }
+
+  /* Estilos del section */
   section {
     flex: 1;
     display: flex;
@@ -227,37 +240,13 @@ header nav {
     justify-content: center;
     margin: 0
   }
-  .buscador {/*html titulo vecinos*/
+  /* Este estilo es para el titulo vecinos, el search bar y el select, ES EL CONTENEDOR DE TODOS*/
+  .buscador {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin: 1rem 0;
     padding: 1rem;
-  }
-  
-  @media (max-width: 600px) {/*para pantallas de máximo 600px*/
-    /* CSS rules for sizes smaller than 600px */
-    header {
-      padding: 10px 5%;
-    }
-    aside {
-      padding: 1.5rem;
-      display: none;
-    }
-    main {
-      flex-direction: column;
-    }
-    section {
-      width: 100%;
-    }
-    .buscador h2 {
-      display: none;
-    }
-    .buscador div {
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-    }
   }
 
   /*Estilos de las cards*/
@@ -410,12 +399,15 @@ header nav {
     overflow: hidden;
     text-align: right;
   }
+
+  /* Contenedor de todas las cards */
   .container {
     max-width: 790px;
     width: 790px;
     height: 100%;
   }
 
+  /* Estilos del select */
   #page {/*esto se puede modificar*/
     font-size: 28px;
   }
@@ -427,6 +419,8 @@ header nav {
     border-radius: 5px;
     border: 1px solid #e0e0e0;
   }
+
+  /* Estilos del searchbar */
   input[type="text"] {
     padding: 0.5rem;
     border-radius: 5px;
@@ -437,6 +431,8 @@ header nav {
     align-items: center;
     gap: 8px;
   }
+
+  /* Estilos botones */
   .btn-clear,.btn-clear-search {
     background-color: #8ac68a;
     border-radius: 8px;
@@ -458,72 +454,6 @@ header nav {
     background-color: #7ab37a;
   }
 
-  /*Antiguo modal de estadistica*/
-  /* .btn-statics{/*botón estadistica*/
-   /* background-color: #8ac68a;
-    border-radius: 8px;
-    border-style: none;
-    color: #FFFFFF;
-    cursor: pointer;
-    font-size: 16px;
-    padding: 10px 16px;
-    text-align: center;
-    position: relative;
-    z-index: 1;
-  }
-  .modal-body {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    width: 50%;
-    height: 600px;
-    background-color: #fff;
-    border: 1px solid rgba(0,0,0,.2);
-    border-radius: 0.3rem;
-  }
-  .modal-header {
-    padding: 1rem;
-    border-bottom: 1px solid #e9ecef;
-    text-align: center;
-  }
-  .modal-main {
-    flex: 1;
-    padding: 0 1rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .modal-footer {
-    padding: 1rem;
-    display: flex;
-    flex-direction: row-reverse;
-  }
-  .btn-close {
-    background-color: #fc736d;
-    border-radius: 8px;
-    border-style: none;
-    color: #FFFFFF;
-    cursor: pointer;
-    font-size: 16px;
-    padding: 10px 16px;
-    text-align: center;
-    display: flex;
-    gap: 5px;
-    align-items: center;
-  } 
-  /* .content-modal {lo ocupo para el modal
-    display: none;
-    position: fixed;
-    z-index: 1;  
-    left: 0; top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgb(0, 0, 0, 0.5);
-    align-items: center;
-    justify-content: center;
-  } */
-
  /* //Estilos para la vista de estadisticas */
  .stats-main{
   display: flex;
@@ -544,14 +474,15 @@ header nav {
   gap: 0.5rem;
  }
 
- /*Chat individual*/
+  /*Chat individual*/
+
  /* Estilos del pasaporte */
  .page-container{
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 1rem;
-  background-color: rosybrown;
+  /* background-color: rosybrown; */
   width: 100%;
   height: calc(100vh);
   max-height: 700px;
@@ -560,7 +491,7 @@ header nav {
  .passport-container{
   display: flex;
   gap: 1rem;
-  background-color: plum;
+  /* background-color: plum; */
   min-width: 400px;
   max-width: 500px;
   width: 35%;
@@ -570,53 +501,100 @@ header nav {
  .passport{
   width: 100%;
   margin: 2rem 2rem;
-  background-color: #fff;
+  background-color: transparent;
   position: relative;
  }
 
  .passport-icon{
-  width: 60px;
-  height: 100px;
-  background-color: #ff6f6f;
+  z-index: 1;
+  background-size: cover;
+  width: 40px;
+  height: 60px;
+  background-image: url(./images/chat-and-passport/Passport-icon.png);
   position: absolute;
-  top: -30px;
+  top: -21px;
   right: -10px;
-  transform: rotate(-20deg);
+  transform: rotate(-30deg);
 }
 .top-flap{
   width: 100%;
   height: 50%;
-  background-color: midnightblue;
+  position: relative;
+}
+.top-flap img{
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
 }
 .bottom-flap{
   width: 100%;
   height: 50%;
-  background-color: rgb(92, 92, 184);
   display: flex;
   flex-direction: column;
+  background-image: url(./images/chat-and-passport/bottom-flap.png);
+  background-size: cover;
+  border-radius: 0 0 15px 15px;
 }
+
 .passport-header{
-  background-color: #8ac68a;
-  padding: 1rem;
+  display: flex;
+  width: 100%;
+  padding: 0.5rem 0;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
 }
+.passport-text p{
+  color:  #9D9C80;
+  font-weight: bold;
+}
+.passport-title-line{
+background-color: #ABAA8C;
+width: 60px;
+height: 2px;
+}
+
 .passport-body{
   display: flex;
-  background-color: #b7e989;
+  background-color: rgba(190, 181, 129, 0.71);
   gap: 1rem;
   padding: 1rem;
   flex: 1;
+  /* border-radius: 12px; */
+  /* position: absolute; */
 }
 .passport-img{
   width: 40%;
-  background-color: #ff6f6f;
+  background-color: #fff;
+  border: #ECEDC1 solid 3px;
+  border-radius: 16px;
 }
 .passport-info{
   width: 60%;
-  background-color: rgb(153, 90, 153);
-  gap: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  box-sizing: border-box;
+  padding-right: 2rem;
+}
+.personal-info-container{
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+  margin-left: 1rem;
+}
+.personal-info-container > div {
+  border-bottom: 2px solid #ecedc1;
+}
+.catchphrase-container {
+  /* margin-left: 10px; */
+  margin-right: 1rem;
+  margin-top: 4px;
+  background: #ecedc1;
+  border-radius: 11px;
+  border-bottom-left-radius: 0;
 }
 .passport-footer{
-  background-color: antiquewhite;
   padding: 1rem;
 }
 
@@ -624,7 +602,7 @@ header nav {
  .chat-container{
   display: flex;
   gap: 1rem;
-  background-color: lightcoral;
+  /* background-color: lightcoral; */
   min-width: 400px;
   max-width: 700px;
   width: 45%;
@@ -704,7 +682,6 @@ color: #8E8E93;
 .container-error {
   align-items: center;
   justify-content: center;
-  /* background-color: #fc736d; */
   display: flex;
   flex:1;
   flex-direction: column ;
@@ -714,4 +691,43 @@ color: #8E8E93;
 
 .container-error img{
   width: 260px;
+}
+.container-error h3{
+  font-size: 24px;
+}
+.container-error a{
+  text-decoration: underline;
+  text-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  color: darkslategrey;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+
+
+/* Media Querys */
+  
+@media (max-width: 600px) {/*para pantallas de máximo 600px*/
+  /* CSS rules for sizes smaller than 600px */
+  header {
+    padding: 10px 5%;
+  }
+  aside {
+    padding: 1.5rem;
+    display: none;
+  }
+  main {
+    flex-direction: column;
+  }
+  section {
+    width: 100%;
+  }
+  .buscador h2 {
+    display: none;
+  }
+  .buscador div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
 }

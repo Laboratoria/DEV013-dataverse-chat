@@ -8,12 +8,14 @@ export const Error = () => {
   const errorPage = document.createElement("main");
   errorPage.innerHTML = `
   <div class="container-error">
-  <img  src="../images/error/error.png" alt="img-error"/>
-  <h3>Oooops! no hemos podido encontrar lo que buscas :( </h3>
-  <a>Regresa al inicio</a>
+    <img  src="../images/error/error.png" alt="img-error"/>
+    <h3>Oooops! no hemos podido encontrar lo que buscas :( </h3>
+    <a class="back-to-home">Regresa al inicio</a>
   </div>
   `;
-  // errorPage.querySelector(".buttonBack").addEventListener("click", () => {navigateTo("/home", {})});
+  errorPage.querySelector(".back-to-home").addEventListener("click", () => {
+    navigateTo("/home", {})
+  });
   container.append(Header(), errorPage, Footer());
   return container;
   };
