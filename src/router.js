@@ -1,10 +1,4 @@
-let ROUTES = {
-  //   "/": Welcome,
-  //   "/home": Home,
-  //   "/individual": IndividualChat,
-  //   "/group": GroupChat,
-  //   "/notfound": NotFound,
-};
+let ROUTES = {};
 
 let rootElement; // referencia al elemento html
 
@@ -20,18 +14,22 @@ export const setRootElement = (newRootElementValue) => {
 
 export const setRoutes = (newRoutesValue) => {
   // optional Throw errors if routes isn't an object
+  if (typeof newRoutesValue === "object") {
+    if (newRoutesValue["/Notfound"]) {
+      ROUTES = newRoutesValue;
+    }
+  }
   // optional Throw errors if routes doesn't define an /error route
   // assign ROUTES
   //si la url no se encuentra en ROUTES enviame a notfound
-  ROUTES = newRoutesValue;
 };
 // quien va a llamar a setRoutes(Home()); ?
 
-const queryStringToObject = (queryString) => {
-  // convert query string to URLSearchParams
-  // convert URLSearchParams to an object
-  // return the object
-};
+//const queryStringToObject = (queryString) => {
+// convert query string to URLSearchParams
+// convert URLSearchParams to an object
+// return the object
+//};
 
 const renderView = (pathname, props = {}) => {
   const root = rootElement;

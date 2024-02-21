@@ -1,4 +1,4 @@
-export function Welcome(props) {
+export default function Welcome(props) {
   const viewWelcome = document.createElement("div");
   viewWelcome.textContent = "Welcome";
   return viewWelcome;
