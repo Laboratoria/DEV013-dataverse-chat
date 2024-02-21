@@ -4,12 +4,12 @@ export const StartingScreen = () => {
   const container = document.createElement("div");
   container.classList = "container__imageStart"
   container.innerHTML = `
-  <div class="container__title"> 
+  <div class="container__imageStart__title"> 
   <img src="../images/Logo.png" alt="logo" class="logo"/>
   <h1 class="titleStart">WIKINOOK</h1>
   </div>
   <img src="../images/Imagen-pantalla-bienvenida.png" alt="imagen-inicio"/>
-  <div class="container__start">
+  <div class="container__imageStart__button">
   <button class="btn-start">INICIO</button>
   </div>
   <div>

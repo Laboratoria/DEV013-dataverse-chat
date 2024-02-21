@@ -1,4 +1,4 @@
-import { Footer } from "../components/Footer.js";
+//import { Footer } from "../components/Footer.js";
 import { Header } from "../components/Header.js";
 import { computeStats } from "../lib/dataFunctions.js";
 import data from "../data/dataset.js";
@@ -28,7 +28,7 @@ export const Stats = () => {
   renderChartPersonality(main);
   renderChartSpecies(main);
 
-  container.append(Header(), main, Footer());
+  container.append(Header(), main);
 
   return container;
 };

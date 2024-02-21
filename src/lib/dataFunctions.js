@@ -16,17 +16,14 @@ export const filterData = (data, filterBy, value) => {
 
 export const computeStats = (data, groupBy) => {
   const acumulador = data.reduce((acumulador, item) => {//reduce tiene la data, el valor inicial y 0=suma total de lo acumulado
-    if (!acumulador[item[groupBy]]) {//hasOwnProperty devuelve true si la propiedad existe, si un objeto tiene una propiedad con un nombre específico
+    if (!acumulador[item[groupBy]]) {
       acumulador[item[groupBy]] = 1;
     }
     else {
       acumulador[item[groupBy]]++;
     }
-    // console.log(acumulador);
     return acumulador;
   }, {});
-console.log('acumulador', acumulador)
-
 
   //{femenino: 8
   //masculino: 16}

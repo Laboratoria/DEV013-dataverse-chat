@@ -1,0 +1,39 @@
+@media (max-width: 600px) {/*para pantallas de máximo 600px*/
+  /* CSS rules for sizes smaller than 600px */
+  .buttonBack { /*BOTÓN HOME*/
+    background-color: #4ca94c;
+    color: black;
+    box-shadow: -50px 0 rgba(0, 0, 0, 0.5);
+    font-weight: 600;
+    border-radius: 20px;
+    padding: 10px 30PX;
+    border: none;
+    cursor: pointer;
+    transition-duration: 0.5s;
+  }
+  .buttonBack:hover {
+    box-shadow: 0px 0 rgba(0, 0, 0, 0.5);
+  }
+
+  header {
+    padding: 10px 5%;
+  }
+  aside {
+    padding: 1.5rem;
+    display: none;
+  }
+  main {
+    flex-direction: column;
+  }
+  section {
+    width: 100%;
+  }
+  .buscador h2 {
+    display: none;
+  }
+  .buscador div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}

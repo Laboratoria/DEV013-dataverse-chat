@@ -1,7 +1,6 @@
 import { Header } from "../components/Header.js";
-import { Footer } from "../components/Footer.js";
-import { navigateTo } from "../router.js";
-//import { navigateTo } from "./router.js";
+//import { Footer } from "../components/Footer.js";
+//import { navigateTo } from "../router.js";
 
 export const Error = () => {
   const container = document.createElement("div");
@@ -19,16 +18,3 @@ export const Error = () => {
   container.append(Header(), errorPage, Footer());
   return container;
   };
-/*
-  export const error = () => {
-   const root = document.querySelector("#root");
-  const figure = document.createElement("figure");
-  figure.innerHTML = `
-  <figcaption>
-  <img src="./images/error/error1.jpg" alt="error 404"/>
-  </figcaption>`
-  root.appendChild(figure);
-  console.log(figure);
-  return figure;
-  };
-  */

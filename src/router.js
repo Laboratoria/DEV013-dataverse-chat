@@ -106,7 +106,7 @@ export const navigateTo = (pathname, props={}) => {
     if(ROUTES[pathname]) {
       console.log({pathname})
         const template = ROUTES[pathname]();
-        console.log(template);
+        //console.log(template);
         cleanRoot.appendChild(template);
     } else {
         cleanRoot.appendChild(ROUTES["/error"]());
