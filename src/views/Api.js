@@ -28,8 +28,9 @@ export const Api = () => {
     <button type="button" class="buttonApiSave show"> SAVE API KEY</button>
     <button type="button" class="buttonApiDelete hide"> DELETE </button>
   </from>
-    `;
-  const apiKeyPass= apiPage.querySelector(".api__key");
+    `;/*CAMBIAR MI BOTÓN POR UN INPUT TIPO BOTÓN */
+  const apiKeyInput= apiPage.querySelector("#api-key");
+  const apiKeyPass= apiPage.querySelector(".api__key");//checar, si la comento no aparece el texto
   const iconSHow = apiPage.querySelector(".bx");
   iconSHow.addEventListener("click", ()=> {
     if(apiKeyPass.type == "password"){
@@ -42,26 +43,29 @@ export const Api = () => {
       iconSHow.classList.remove("bx-show");
     }
   });
-    const buttonSave = apiPage.querySelector(".buttonApiSave");
-    const buttonDelete = apiPage.querySelector(".buttonApiDelete")
+  const buttonSave = apiPage.querySelector(".buttonApiSave");
+  const buttonDelete = apiPage.querySelector(".buttonApiDelete")
     buttonSave.addEventListener("click", () => {
         buttonDelete.classList.remove("hide");
         buttonDelete.classList.add("show");
         buttonSave.classList.remove("show");
         buttonSave.classList.add("hide");
-        localStorage.setItem("miGato", "Juan");
       } );
     buttonDelete.addEventListener("click", () =>{
       buttonSave.classList.remove("hide");
       buttonSave.classList.add("show");
       buttonDelete.classList.remove("show");
       buttonDelete.classList.add("hide");
-      localStorage.removeItem("miGato", "Juan");
-
     } );
-    //buttonDelete.addEventListener("click", () => {navigateTo("/home", {})});
-    //buttonSave.addEventListener("click", () => {navigateTo("/individual", {})});
-    container.append(Button(), apiPage);
-    container.append(apiPage);
+
+    // apiKeyInput.addEventListener("keydown", functionApi);
+    
+    // function functionApi() {
+    //   // alert("hola"); 
+    //   getApiKey(); 
+
+    // }
+    container.append(Button("CERRAR"), apiPage);
+      // container.append(apiPage);
     return container;
   }

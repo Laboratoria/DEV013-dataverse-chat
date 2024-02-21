@@ -2,7 +2,7 @@ import { Home } from './views/Home.js';
 import {StartingScreen} from './views/StartingScreen.js';
 import { GroupalChat } from './views/GroupalChat.js';
 import { IndividualChat } from './views/IndividualChat.js';
-import { Api } from './views/API.js';
+import { Api } from './views/Api.js';
 import { Error } from './views/Error.js';
 import { onURLChange, setRootEl, setRoutes } from './router.js';
 import { Stats } from './views/Stats.js';
@@ -21,6 +21,8 @@ const routes = {
     "/error": Error,
     "/stats": Stats,
 };
+
+
 
 const root = document.getElementById("root");
 setRoutes(routes);
