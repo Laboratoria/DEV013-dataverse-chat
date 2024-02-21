@@ -1,12 +1,12 @@
-import { ButtonHome } from "../components/Button.js";
-import { Footer } from "../components/Footer.js";
-//import { navigateTo } from "../router.js";
 //import { ButtonHome } from "../components/Button.js";
-  export const api = () => {
-    const container = document.createElement("div");
-    const apiPage = document.createElement("main");
-    apiPage.innerHTML = `
-    <form>
+//import { Footer } from "../components/Footer.js";
+//import { navigateTo } from "../router.js";
+import { Button } from "../components/Button.js";
+export const Api = () => {
+  const container = document.createElement("div");
+  const apiPage = document.createElement("main");
+  apiPage.innerHTML = `
+  <form>
     <div class="header-title headerApiKey">
       <img src="./images/Logo.png" alt="Logo" />
       <h1>WikiNook</h1>
@@ -27,21 +27,21 @@ import { Footer } from "../components/Footer.js";
     </div>
     <button type="button" class="buttonApiSave show"> SAVE API KEY</button>
     <button type="button" class="buttonApiDelete hide"> DELETE </button>
-    </from>
+  </from>
     `;
-    const apiKeyPass= apiPage.querySelector(".api__key");
-    const iconSHow = apiPage.querySelector(".bx");
-    iconSHow.addEventListener("click", ()=> {
-      if(apiKeyPass.type == "password"){
-        apiKeyPass.type = "text";
-        iconSHow.classList.remove("bx-show");
-        iconSHow.classList.add("bx-hide");
-      } else {
-        apiKeyPass.type = "password";
-        iconSHow.classList.add("bx-hide");
-        iconSHow.classList.remove("bx-show");
-      }
-    });
+  const apiKeyPass= apiPage.querySelector(".api__key");
+  const iconSHow = apiPage.querySelector(".bx");
+  iconSHow.addEventListener("click", ()=> {
+    if(apiKeyPass.type == "password"){
+      apiKeyPass.type = "text";
+      iconSHow.classList.remove("bx-show");
+      iconSHow.classList.add("bx-hide");
+    } else {
+      apiKeyPass.type = "password";
+      iconSHow.classList.add("bx-hide");
+      iconSHow.classList.remove("bx-show");
+    }
+  });
     const buttonSave = apiPage.querySelector(".buttonApiSave");
     const buttonDelete = apiPage.querySelector(".buttonApiDelete")
     buttonSave.addEventListener("click", () => {
@@ -61,10 +61,7 @@ import { Footer } from "../components/Footer.js";
     } );
     //buttonDelete.addEventListener("click", () => {navigateTo("/home", {})});
     //buttonSave.addEventListener("click", () => {navigateTo("/individual", {})});
-    
-    container.append(ButtonHome(), apiPage, Footer());
-    console.log(container);    
-    console.log([apiPage]);    
-
+    container.append(Button(), apiPage);
+    container.append(apiPage);
     return container;
   }

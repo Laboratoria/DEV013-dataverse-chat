@@ -1,5 +1,6 @@
- import { navigateTo } from "../router.js";
-export const ButtonHome = () => {
+import { navigateTo } from "../router.js";
+
+export const Button = () => {
     const container = document.createElement("div");
     container.innerHTML = `
     <button type="button" class="buttonBack"> HOME </button>`;
@@ -7,6 +8,3 @@ export const ButtonHome = () => {
     //container.querySelector(".buttonBack").addEventListener("click", () => console.log("home"));
     return container;
 };
-
-    //buttonDelete.addEventListener("click", () => {navigateTo("/home", {})});
-//homePage.querySelector("#API").addEventListener("click", () => navigateTo("/api", { }));

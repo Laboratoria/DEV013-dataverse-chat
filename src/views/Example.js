@@ -410,6 +410,3 @@ document.addEventListener("DOMContentLoaded", (event) => {//document va a escuch
 })*/
 
 
-/*localStorage.setItem("perro", "12355");
-var cat = localStorage.getItem("API-KEY");
-console.log(cat);*/

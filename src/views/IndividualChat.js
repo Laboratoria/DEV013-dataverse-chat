@@ -1,4 +1,4 @@
-//import { Footer } from "../components/Footer.js";
+import { Footer } from "../components/Footer.js";
 import { Header } from "../components/Header.js";
 
 export const IndividualChat = () => {
@@ -43,7 +43,7 @@ export const IndividualChat = () => {
   </div>
   `;
 
-  container.append(Header(), main);
+  container.append(Header(), main, Footer());
 
   return container;
 };

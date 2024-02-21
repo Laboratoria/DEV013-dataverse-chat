@@ -1,8 +1,27 @@
+@font-face {
+  font-family: 'EncodeSansCondensedBold';
+  src: url('fonts/EncodeSans_Condensed-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'EncodeSansCondensedRegular';
+  src: url('fonts/EncodeSans_Condensed-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'EncodeSansCondensedLight';
+  src: url('fonts/EncodeSans_Condensed-Light.ttf') format('truetype');
+  font-weight: lighter;
+  font-style: normal;
+}
 * {
   padding: 0;
   margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-  box-sizing: border-box;/*MODELO DE CAJA*/
+  font-family: "Encode Sans Condensed", sans-serif;
+  box-sizing: border-box;
+  font-family: "EncodeSansCondensedRegular", sans-serif;
 }
 /*PANTALLA DE INICIO*/
 .container__imageStart {/*contenedor principal de la portada*/
@@ -165,13 +184,16 @@ form {
 .buttonApiDelete:hover {
   background-color: #e9ecef;
 }
-.keyApi {/*icono de llave que esta en el home*/
+/*.keyApi {/*icono de llave que esta en el home*
   font-size: 2rem;
   padding: 8px;
   position: relative;
   left: 80%;
   top: -60px;
   cursor: url(images/keyIcon.png), auto;
+}*/
+.keyApi {
+  cursor: url(images/keyIcon.png), auto !important;
 }
 .buttonBack { /*BOTÓN HOME*/
   background-color:rgb(0, 167, 167);
@@ -189,11 +211,39 @@ form {
     font-weight: 800;
     transform: scale(1.2);
 }
-/*VISTA ERROR*/
-.containerError {
-  align-items: center;
-  justify-content: center;
+/*CHAT GRUPAL*/
+.containerGroupal {
+  background-color: #8E8E93;
+  width: 700px;
+  height: 700px;
 }
+.containerUsers {
+  background-color: #bfbfc4;
+  width: 400px;
+  height: 700px;
+  display: flex;
+}
+.iconChat {/*contenedor*/
+  display: flex;
+  font-size: 60px;
+  background: none;
+  border: none;
+  position:fixed;
+  /*transform: translateX(2000%, 100%);/*X= HORIZONTAL, Y VERTICAL*/
+  transform: translate(2400%, 750%);
+}
+.container-ico {
+  background: none;
+  border: none;
+  font-size: 60px;
+  cursor: pointer;
+}
+/*.imgChat {
+  position: absolute;
+  top: 60px;
+  width: 80px;
+  height: 80px;
+}*/
 header {
   display: flex; /*PARA DESAPARECER EL TITULO*/
   justify-content: space-between;
@@ -201,24 +251,41 @@ header {
   padding: 20px 10%;
   border-bottom: 1px solid #e0e0e0;
 }
-.header-title {
+header nav {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 3rem
+}
+.nav-ul {
+  display: flex;
+  list-style: none;
+  gap: 2rem
+}
+.nav-ul li a {
+  text-decoration: none;
+  color: #000;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+.header-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
 .header-user {
-  display: flex;
-  align-items: center;
-  gap: 8px;/*ESPACIADO*/
+    display: flex;
+    align-items: center;
+    gap: 8px;/*ESPACIADO*/
 }
 .header-user img {
-  width: 3rem;
+    width: 3rem;
 }
-  body {
+body {
     background-color: #f7f3e7;
-  }
+}
 footer {
-  position: fixed;/*FIJA*/
+  position:relative;
   width: 100%;
   height: 150px;
   bottom: 0;
@@ -243,10 +310,12 @@ footer img {
   bottom: 10px;
   z-index: 2;
 }
-aside ul{
-  /*margin-left: 50px;
-  margin-right: 1355px;*/
-  padding: 3em, 3em, 3em, 10%;
+aside {
+  /*padding: 3em, 3em, 3em, 10%;*/
+  padding-left: 10%;
+  padding-top: 3em;
+  padding-bottom: 3em;
+  padding-right: 3em;
 } 
   main {
     display: flex;
@@ -278,16 +347,76 @@ aside ul{
     align-items: center;
     margin: 1rem 0;
     padding: 1rem;
-  }  
-  .card {/*creada desde view*/
-    width: 184px;
-    height: 279px;
-    display: flex;
-    background-size: cover;
   }
-  .cardGruñon {/*puestas y agregadas con view*/
-    background-image: url("./images/cardGruñon.png");
+  
+  @media (max-width: 600px) {/*para pantallas de máximo 600px*/
+    /* CSS rules for sizes smaller than 600px */
+    header {
+      padding: 10px 5%;
+    }
+    aside {
+      padding: 1.5rem;
+      display: none;
+    }
+    main {
+      flex-direction: column;
+    }
+    section {
+      width: 100%;
+    }
+    .buscador h2 {
+      display: none;
+    }
+    .buscador div {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
   }
+
+.card {/*creada desde view*/
+  width: 184px;
+  height: 279px;
+  display: flex;
+  background-size: cover;
+}
+/*.card:hover {
+  transform: scale(1.2);
+  opacity: 0.7;
+}
+.card:hover::before {
+  content: "ver mas";
+  &.Leo {
+    color: transparent;
+  }
+}*/
+.cardGruñon {/*puestas y agregadas con view*/
+  background-image: url("./images/cardGruñon.png");
+}
+.cardGruñon:hover {
+  opacity: 0.8;
+  transform: scale(1.1);
+  cursor: pointer;
+}
+.cardGruñon:hover::before {
+  content:  url("./images/cardGruñon.png");
+  font-size: 16px;
+  position: absolute;
+  font-weight: 800;
+  left: 155%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.cardGruñon:hover::after {
+  content: "¿Quiéres chatear conmigo? da clic" ;
+  font-size: 16px;
+  position: absolute;
+  color: blue;
+  font-weight: 800;
+  left: 155%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
   .cardPerezoso {
     background-image: url("./images/cardPerezoso.png");
   }
@@ -404,12 +533,7 @@ aside ul{
     border-bottom: 2px solid white;
     align-items: flex-end;
   }
-  /*.asideFilter {
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
-  }*/
-  #root ul {
+  #content ul {
     display: flex;
     gap: 1rem;
     flex-wrap: wrap;
@@ -419,7 +543,7 @@ aside ul{
     max-height: 164px;
   }
   dd[itemprop="name"]{
-    color: black;
+    color: white;
     font-size: 20px;
     font-weight: bold;
   }
@@ -438,18 +562,7 @@ aside ul{
     width: 790px;
     height: 100%;
   }
-  .content-modal {/*lo ocupo para el modal*/
-    display: none;
-    position: fixed;
-    z-index: 1;  
-    left: 0; top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgb(0, 0, 0, 0.5);
-    align-items: center;
-    justify-content: center;
-  }
+
   #page {/*esto se puede modificar*/
     font-size: 28px;
   }
@@ -471,7 +584,7 @@ aside ul{
     align-items: center;
     gap: 8px;
   }
-  .btn-clear,.btn-clear-search {
+  .btn-clear, .btn-clear-search {/*TRATAR DE MODIFICAR UN POCO*/
     background-color: #8ac68a;
     border-radius: 8px;
     border-style: none;
@@ -487,12 +600,14 @@ aside ul{
     padding: 0.4rem 0.5rem;
     border-radius: 5px;
   }
-  .btn-clear:hover,.btn-clear:focus,
+  .btn-clear:hover, .btn-clear:focus,
   .btn-clear-search:hover,.btn-clear-search:focus {/*hover estilo al pasar el cursor sobre el botón*/
     background-color: #7ab37a;
   }
-  .btn-statics{/*botón estadistica*/
-    background-color: #8ac68a;
+
+  /*Antiguo modal de estadistica*/
+  /* .btn-statics{/*botón estadistica*/
+   /* background-color: #8ac68a;
     border-radius: 8px;
     border-style: none;
     color: #FFFFFF;
@@ -542,4 +657,196 @@ aside ul{
     display: flex;
     gap: 5px;
     align-items: center;
-  }
+  } 
+  /* .content-modal {lo ocupo para el modal
+    display: none;
+    position: fixed;
+    z-index: 1;  
+    left: 0; top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0, 0.5);
+    align-items: center;
+    justify-content: center;
+  } */
+ /* //Estilos para la vista de estadisticas */
+ .stats-main{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem;
+  margin: 1rem;
+  margin-bottom: 4rem;
+ }
+ .graphic-container{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+ }
+ /*Chat individual*/
+ /* Estilos del pasaporte */
+ .page-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  background-color: rosybrown;
+  width: 100%;
+  height: calc(100vh);
+  max-height: 700px;
+  flex-wrap: wrap;
+ }
+ .passport-container{
+  display: flex;
+  gap: 1rem;
+  background-color: plum;
+  min-width: 400px;
+  max-width: 500px;
+  width: 35%;
+  height: 90%;
+  position: relative;
+ }
+ .passport{
+  width: 100%;
+  margin: 2rem 2rem;
+  background-color: #fff;
+  position: relative;
+ }
+.passport-icon{
+  width: 60px;
+  height: 100px;
+  background-color: #ff6f6f;
+  position: absolute;
+  top: -30px;
+  right: -10px;
+  transform: rotate(-20deg);
+}
+.top-flap{
+  width: 100%;
+  height: 50%;
+  background-color: midnightblue;
+}
+.bottom-flap{
+  width: 100%;
+  height: 50%;
+  background-color: rgb(92, 92, 184);
+  display: flex;
+  flex-direction: column;
+}
+.passport-header{
+  background-color: #8ac68a;
+  padding: 1rem;
+}
+.passport-body{
+  display: flex;
+  background-color: #b7e989;
+  gap: 1rem;
+  padding: 1rem;
+  flex: 1;
+}
+.passport-img{
+  width: 40%;
+  background-color: #ff6f6f;
+}
+.passport-info{
+  width: 60%;
+  background-color: rgb(153, 90, 153);
+  gap: 1rem;
+}
+.passport-footer{
+  background-color: antiquewhite;
+  padding: 1rem;
+}
+/* Estilos del chat */
+.chat-container{
+  display: flex;
+  gap: 1rem;
+  background-color: lightcoral;
+  min-width: 400px;
+  max-width: 700px;
+  width: 45%;
+  height: 90%;
+ }
+.chat-background{
+  width: 100%;
+  margin: 1rem 2rem;
+  background-color: #CDB289;
+  display: flex;
+  border-radius: 8px;
+}
+.chat{
+  background-image: url("./images/chat-and-passport/chatBackground.png");
+  margin: 3rem 1rem;
+  width: auto;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.chat-header{
+  background-color: #EEE9CA;
+  padding: 0.8rem;
+  text-align: center;
+}
+.character-name{
+  font-size: 20px;
+}
+.last-seen{
+  font-size: 14px;
+}
+.chat-body{
+  flex: 1;
+  padding: 2rem;
+}
+.chat-footer{
+  padding: 0.5rem;
+}
+.chat-placeholder {
+  display: flex;
+  padding: 10px;
+  gap: 1rem;
+  align-items: center;
+  background-color: #EEE9CA;
+  border-radius: 8px;
+}
+.send-txt {
+  flex: 1;
+  padding: 8px;
+  background-color: #EEE9CA;
+  border: none!important;
+}
+.send-txt:focus-visible {
+  outline: none;
+}
+#send-icon {
+border: none;
+background:#EEE9CA;
+padding: 0rem 0.5rem;
+cursor: pointer;
+font-size: 20px;
+color: #8E8E93;
+}
+#pencil-icon{
+padding: 0rem 0.5rem;
+font-size: 20px;
+color: #8E8E93;
+}
+/*VISTA ERROR*/
+.container-error {
+  align-items: center;
+  justify-content: center;
+  /* background-color: #fc736d; */
+  display: flex;
+  flex:1;
+  flex-direction: column ;
+  height: calc(100vh - 200px);
+  gap: 1.5rem;
+}
+.container-error img{
+  width: 260px;
+}

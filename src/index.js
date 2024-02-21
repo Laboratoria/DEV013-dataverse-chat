@@ -1,20 +1,25 @@
-import { home } from './views/home.js';
-import {StartingScreen} from './views/startingScreen.js';
-import { groupal } from './views/groupalChat.js';
-import { Individual } from './views/individualChat.js';
-import { api } from './views/API.js'
-import { error } from './error.js';
+import { Home } from './views/Home.js';
+import {StartingScreen} from './views/StartingScreen.js';
+import { GroupalChat } from './views/GroupalChat.js';
+import { IndividualChat } from './views/IndividualChat.js';
+import { Api } from './views/API.js';
+import { Error } from './views/Error.js';
 import { onURLChange, setRootEl, setRoutes } from './router.js';
+import { Stats } from './views/Stats.js';
 //import { computeStats, filterData, sortData } from './lib/dataFunctions.js';
+//import { SectionHomeS } from './components/SectionHome.js';
 // import data from '../data/dataset.js';
+//const sort = document.querySelector('[data-testid="select-sort"]');
+//sort.addEventListener("change", ()=> {console.log("ordenado");})
 
 const routes = {
     "/": StartingScreen,
-    "/home": home,
-    "/groupal": groupal,
-    "/individual":Individual,
-    "/api": api,
-    "/error": error,
+    "/home": Home,
+    "/groupal": GroupalChat,
+    "/individual": IndividualChat,
+    "/api": Api,
+    "/error": Error,
+    "/stats": Stats,
 };
 
 const root = document.getElementById("root");
@@ -30,16 +35,3 @@ window.addEventListener("popstate", (event) => {
     onURLChange(event.target.location.pathname);
 });
 
-//const buttonClearFilter = document.querySelector("button[data-testid='button-clear']"); //botón limpiar filtros
-//const order = document.querySelector("[data-testid='select-sort']");//para ordenar
-//const filterGender = document.querySelector("[data-testid='select-filterGender']");
-//const filterSpecie = document.querySelector("[data-testid='select-filter']");
-//const filterPersonality = document.querySelector("[data-testid='select-filterPersonality']");
-
-//order.addEventListener("change", () => {
-//     console.log("botón order");
-//   });
-
-
-
-  
