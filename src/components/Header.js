@@ -1,5 +1,6 @@
 import { navigateTo } from '../router.js';
-import { Button } from './Button.js'
+// import { Button } from './Button.js'
+// import { Api } from '../views/Api.js';
 
 export const Header = () => {
     const header = document.createElement("header");
@@ -13,7 +14,7 @@ export const Header = () => {
             <li><a id="home">Inicio</a></li>
             <li><a id="groupal">Chat Grupal</a></li>
             <li><a id="stats">Estadisticas</a></li>
-            <li><a id="api">Sobre Nosotros</a></li>
+            <li><a id="api" class="keyApi">Sobre Nosotros</a></li>
           </ul>
       </nav>
      
@@ -23,7 +24,7 @@ export const Header = () => {
         </div>
     `;
     header.querySelector("#home").addEventListener("click", () => navigateTo("/home", { }));
-    // header.querySelector("#api").addEventListener("click", () => navigateTo("/api", { }));
+    header.querySelector("#api").addEventListener("click", () => navigateTo("/api", { }));
     header.querySelector("#groupal").addEventListener("click", () => navigateTo("/groupal", { }));
     // header.querySelector("#individual").addEventListener("click", () => navigateTo("/individual", { }));
     header.querySelector("#stats").addEventListener("click", () => navigateTo("/stats", { }));

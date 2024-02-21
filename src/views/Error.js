@@ -1,6 +1,6 @@
 import { Header } from "../components/Header.js";
-//import { Footer } from "../components/Footer.js";
-//import { navigateTo } from "../router.js";
+import { Footer } from "../components/Footer.js";
+import { navigateTo } from "../router.js";
 
 export const Error = () => {
   const container = document.createElement("div");
