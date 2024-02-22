@@ -48,7 +48,8 @@ const renderView = (pathname, props = {}) => {
 };
 
 export const navigateTo = (pathname, props = {}) => {
-  const URLvisited = window.location.hostname + pathname;
+  const URLvisited = pathname;
+  console.log(URLvisited);
   history.pushState({}, "", URLvisited);
   //el objeto state {objeto asociado al nuevo registro}
   // update window history with pushState
