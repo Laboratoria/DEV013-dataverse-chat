@@ -1,5 +1,5 @@
 import { Header } from "../Components/Header.js";
-import { Card } from "../Components/Card.js";
+//import { Card } from "../Components/Card.js";
 
 export const DetailCard = (props) => {
   console.log(props);
@@ -9,7 +9,7 @@ export const DetailCard = (props) => {
   const detailCard = document.createElement("main");
   const card = document.createElement("div");
   const buttonsContainer = document.createElement("div");
-  // Agregando clases
+  // Agregando clases a las vistas 
   viewDetailCard.setAttribute("class","viewDetailCard");
   detailCard.setAttribute("class", "detailCard");
   card.setAttribute("class", "card");
