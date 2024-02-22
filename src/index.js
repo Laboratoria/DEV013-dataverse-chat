@@ -1,14 +1,15 @@
 import { setRootElement, setRoutes, onURLChange } from "./router.js";
 import Welcome from "./views/Welcome.js";
 import Home from "./views/Home.js";
-//import IndividualChat from "./views/Individual.js";
+import IndividualChat from "./views/Individual.js";
 import GroupChat from "./views/Group.js";
 import NotFound from "./views/Notfound.js";
+// import Header from "./components/Header.js";
 
 const routes = {
   "/": Welcome,
   "/Home": Home,
-  //"/Individual": IndividualChat,
+  "/Individual": IndividualChat,
   "/Group": GroupChat,
   "/Notfound": NotFound,
 };
@@ -19,13 +20,9 @@ setRoutes(routes);
 setRootElement(mainContainer);
 
 document.addEventListener("DOMContentLoaded", (event) => {
-  console.log("still working");
+  //console.log("still working");
   onURLChange(event.target.location.pathname);
 });
-
-// window.addEventListener("DOMContentLoaded", () => {
-//   setRootElement(mainContainer);
-// });
 
 /*
 TODO:

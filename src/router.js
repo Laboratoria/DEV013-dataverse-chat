@@ -33,12 +33,12 @@ export const setRoutes = (newRoutesValue) => {
 
 const renderView = (pathname, props = {}) => {
   const root = rootElement;
-  root.innerHTml = ""; // clear the root element
+  root.innerHTML = ""; // clear the root element
   if (ROUTES[pathname]) {
-    const template = ROUTES[pathname]();
+    const template = ROUTES[pathname](props);
     root.appendChild(template);
   } else {
-    root.appendChild(ROUTES["/notfound"]);
+    root.appendChild(ROUTES["/Notfound"]());
   }
   // find the correct view in ROUTES for the pathname
   // in case not found render the error view
@@ -48,7 +48,8 @@ const renderView = (pathname, props = {}) => {
 };
 
 export const navigateTo = (pathname, props = {}) => {
-  const URLvisited = window.location.hostname + pathname;
+  const URLvisited = pathname;
+  console.log(URLvisited);
   history.pushState({}, "", URLvisited);
   //el objeto state {objeto asociado al nuevo registro}
   // update window history with pushState
