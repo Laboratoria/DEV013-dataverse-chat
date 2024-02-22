@@ -15,7 +15,7 @@ export const DetailCard = (props) => {
   card.setAttribute("class", "card");
   buttonsContainer.setAttribute("class", "buttonsContainer");
 
-  //agregando html a los botones
+  //agregando html a los dos botones 
   buttonsContainer.innerHTML=`
   <button class="button-principal">
     <img src="src/images/home.png" class="logo-home">
