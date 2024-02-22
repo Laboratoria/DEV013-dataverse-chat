@@ -4,7 +4,6 @@ import Home from "./views/Home.js";
 import IndividualChat from "./views/Individual.js";
 import GroupChat from "./views/Group.js";
 import NotFound from "./views/Notfound.js";
-// import Header from "./components/Header.js";
 
 const routes = {
   "/": Welcome,
@@ -20,7 +19,6 @@ setRoutes(routes);
 setRootElement(mainContainer);
 
 document.addEventListener("DOMContentLoaded", (event) => {
-  //console.log("still working");
   onURLChange(event.target.location.pathname);
 });
 

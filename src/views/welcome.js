@@ -25,14 +25,3 @@ function creatingHeader() {
   header.innerHTML = "My Beauty Plants";
   return header;
 }
-// {
-// Header: function () {
-// const homeContainer = document.getElementById("welcome");
-
-// const header = document.createElement("h1");
-// header.innerHTML = "My Beauty Plants";
-// homeContainer.appendChild(header);
-// return header;
-// },
-// })
-//);
