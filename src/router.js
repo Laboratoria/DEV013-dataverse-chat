@@ -47,7 +47,7 @@ const renderView = (pathname, props = {}) => {
   //console.log('aqui es template', template);
   const component = template(props);
   //console.log(typeof component);
-  //console.log(component);
+  console.log("es el componente ", component);
   root.appendChild(component);
   // en caso de que no se encuentre, renderice la vista de error
   // renderiza la vista correcta pasando el valor de los accesorios
@@ -55,19 +55,19 @@ const renderView = (pathname, props = {}) => {
 }
 export const navigateTo = (pathname, props = {}) => {
   // actualiza el historial de la ventana (navegador) con pushState
-  const URLvisited = window.location.hostname + pathname;
+  //const URLvisited = window.location.hostname + pathname;
   console.log(window.location.hostname);
-  history.pushState({}, '', URLvisited);
+  history.pushState({}, '', pathname);
 
   // renderiza la vista con el nombre de la ruta y los accesorios
   renderView(pathname, props);
 }
 
-export const onURLChange = (location) => {
+export const onURLChange = (location, props) => {
   // analiza la ubicación de la ruta y los parámetros de búsqueda
   // convierte los parámetros de búsqueda en un objeto
   // renderiza la vista con la ruta y el objeto
-renderView(location);
+renderView(location, props);
 }
 
 

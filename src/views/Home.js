@@ -1,11 +1,12 @@
 import data from '../data/dataset.js';
-import { Cards } from '../Components/Card.js';
+import { TotalCards } from '../Components/TotalCards.js';
 import { filterData, sortData, computeStats } from '../lib/dataFunctions.js';
 let totalData = [...data]
 
 import { Header } from './../Components/Header.js'
 import { MenuSelect } from './../Components/MenuSelect.js'
 import { Footer } from './../Components/Footer.js'
+import { navigateTo } from '../router.js';
 
 export const Home = () => {
   const viewHome = document.createElement("section");
@@ -20,7 +21,7 @@ export const Home = () => {
   viewHome.appendChild(main)
   viewHome.appendChild(Footer());
 
-  main.appendChild(Cards(totalData));
+  main.appendChild(TotalCards(totalData));
 
   const selectFilter = viewHome.querySelector("#Genero1")
   selectFilter.addEventListener("change", (event) => {
@@ -33,7 +34,7 @@ export const Home = () => {
     totalData = [...filterGenre];
     //console.log(totalData);
     main.innerHTML = ""
-    main.appendChild(Cards(totalData));
+    main.appendChild(TotalCards(totalData));
 
 });
 
@@ -51,7 +52,7 @@ export const Home = () => {
       totalData = [...orderAsc]
       //console.log(totalData);
       main.innerHTML = "";
-      main.appendChild(Cards(totalData));
+      main.appendChild(TotalCards(totalData));
     } else {
       // Ordenar por nombre de manera descendente
       const orderDesc = sortData(totalData, "name", "desc");
@@ -85,7 +86,7 @@ export const Home = () => {
   });
 
   // para cerrar la ventana emergente
-  const closeModal = viewHome.querySelector("#close")
+  const closeModal = viewHome.querySelector("#close");
   closeModal.addEventListener("click", () => {
     closeModal.style.display = "none";
   });
@@ -95,7 +96,10 @@ export const Home = () => {
   //   rootElement.innerHTML = "";
   //   rootElement.appendChild(renderItems(data));
   // });
-
+  
+  // cardSelect.addEventListener("click", () =>{
+  //   console.log("Este es el CardSelect", cardSelect);
+  // })
 
   return viewHome;
 

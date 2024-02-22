@@ -1,47 +1,47 @@
 import { Header } from "../Components/Header.js";
-//import { Card } from "../Components/Card.js";
+import { TotalCards } from "../Components/TotalCards.js";
+import { ButtonsContainer } from "../Components/ButtonsContainer.js";
+import data from '../data/dataset.js';
 
-export const DetailCard = (props) => {
-  console.log(props);
+export const DetailCard = (item) => {
+  console.log("Valor de item", item);
   // esto contiene la vista completa de la tarjeta seleccionada
   const viewDetailCard = document.createElement('section');
   // Llamando al DOM que sera para el detalle de la tarjeta
   const detailCard = document.createElement("main");
   const card = document.createElement("div");
-  const buttonsContainer = document.createElement("div");
+
+  card.innerHTML = `
+  <div>
+  <img src="${item.imageUrl}" alt="${item.name}">
+  
+
+  </div>
+  `;
+
   // Agregando clases a las vistas 
   viewDetailCard.setAttribute("class","viewDetailCard");
   detailCard.setAttribute("class", "detailCard");
   card.setAttribute("class", "card");
-  buttonsContainer.setAttribute("class", "buttonsContainer");
-
-  //agregando html a los dos botones 
-  buttonsContainer.innerHTML=`
-  <button class="button-principal">
-    <img src="src/images/home.png" class="logo-home">
-    Pagina principal
-  </button>
-  <button class="button-chat">
-  <img src="src/images/chat.png" class="logo-chat-single">
-  Chatear
-  </button>
-  `;
-  return buttonsContainer;
-  
+ 
   //realizamos el contenedor
   viewDetailCard.appendChild(Header());
-  viewDetailCard.appendChild(DetailCard);
+  viewDetailCard.appendChild(detailCard);
   detailCard.appendChild(card);
-  detailCard.appendChild(buttonsContainer);
+  detailCard.appendChild(ButtonsContainer());
 
+  // const totalCards = TotalCards.querySelector(".lista")
+
+  // totalCards.addEventListener("click" ,function (event) {
+  //   const imageKdrama = element.getAttribute(imageUrl);
+  //   return imageKdrama
+  // } )
+
+ 
+  //agregando html a los dos botones 
   
-  // detailCard.innerText = `
-  //   <div>
-  //       <img src="" class="">
-  //       <h3> Hola </h3>
-
-
-  //   </div>
-  // `;
-  return detailCard;
-}
+  // console.log(viewDetailCard); 
+  return viewDetailCard;
+  
+  
+};
