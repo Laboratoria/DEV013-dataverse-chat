@@ -17,6 +17,7 @@ export const TotalCards = (data) => {
     itemContainer.setAttribute('class', 'lista');
     imageUrl.src = item.imageUrl;
     nameKdrama.setAttribute('itemprop', 'name');
+    descriptionTotal.setAttribute('class', 'descriptionTotal')
     descriptionTotal.setAttribute('itemprop', 'descripcionTotal');
 
     nameKdrama.innerHTML = item.name;

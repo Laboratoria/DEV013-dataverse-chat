@@ -14,8 +14,9 @@ export const DetailCard = (item) => {
   card.innerHTML = `
   <div>
   <img src="${item.imageUrl}" alt="${item.name}">
-  
-
+  <h3> ${item.name} </h3>
+  <p class= "descriptionTotal" > ${item.facts.cantidadEpisodios} Ep. | ${item.facts.totalGenero} | Sub. ${item.facts.totalSubtitulos} </p>
+  <p class= "description"> ${item.description}</p>
   </div>
   `;
 
@@ -30,15 +31,7 @@ export const DetailCard = (item) => {
   detailCard.appendChild(card);
   detailCard.appendChild(ButtonsContainer());
 
-  // const totalCards = TotalCards.querySelector(".lista")
-
-  // totalCards.addEventListener("click" ,function (event) {
-  //   const imageKdrama = element.getAttribute(imageUrl);
-  //   return imageKdrama
-  // } )
-
- 
-  //agregando html a los dos botones 
+  
   
   // console.log(viewDetailCard); 
   return viewDetailCard;

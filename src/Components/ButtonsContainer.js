@@ -23,7 +23,7 @@ export const ButtonsContainer = () => {
 
   const buttonChat = buttonsContainer.querySelector(".button-chat");
   buttonChat.addEventListener("click", () => {
-    navigateTo("/chatindividual", {})
+    navigateTo("/apikey", {})
   })
 
   return buttonsContainer;
