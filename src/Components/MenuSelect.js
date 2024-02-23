@@ -26,13 +26,13 @@ export const MenuSelect = () => {
       </select>
     </div>
     <!--Seccion Estadisticas-->
-    <div class="statistics-menu">
-      <label for="statistics1">Estadística: </label>
-      <button id="statistics1">Número de episodios</button>
+    <div class="stats-menu">
+      <label for="stats1">Estadística: </label>
+      <button id="stats1">Número de episodios</button>
       <div class="content-modal" id="modal">
         <div class="modal-body">
           <div class="modal-header">
-            <h3 id="texto-estadistica">Estadística <br /> por número de episodios</h3><br>
+            <h3 id="texto-stats">Estadística <br /> por número de episodios</h3><br>
             <div class="modal-main">
               <img class="logo-kdrama" src="images/kpop.png"><br />
               <p id="page"> <br /></p>

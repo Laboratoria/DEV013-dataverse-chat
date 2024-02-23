@@ -23,13 +23,13 @@ export const Home = () => {
 
   main.appendChild(TotalCards(totalData));
 
-  const selectFilter = viewHome.querySelector("#Genero1")
+  const selectFilter = viewHome.querySelector("#Genre1")
   selectFilter.addEventListener("change", (event) => {
     // creamos la variable selectGenre que contiene el valor de los generos
     const selectGenre = event.target.value;
     //console.log(selectGenre);
     //llamo a la funcion de filtrar data
-    const filterGenre = filterData(data, "totalGenero", selectGenre);
+    const filterGenre = filterData(data, "totalGender", selectGenre);
     // aqui se almacena los generos filtrados en totalData 
     totalData = [...filterGenre];
     //console.log(totalData);
@@ -39,7 +39,7 @@ export const Home = () => {
 });
 
   // // ordenar de manera ascedente y descendente
-  const selectOrder = viewHome.querySelector("#Ordenar1");
+  const selectOrder = viewHome.querySelector("#Order1");
   selectOrder.addEventListener("change", (event) => {
     // creamos la variable ordenSeleccionado que contiene el valor al hacer click (A-Z) (Z-A)
     //console.log(totalData);
@@ -65,7 +65,7 @@ export const Home = () => {
   });
 
   // //para el boton estadisticas
-  const statsButton = viewHome.querySelector("#Estadisticas1");
+  const statsButton = viewHome.querySelector("#stats1");
   statsButton.addEventListener('click', function (event) {
     statsButton.style.display = "flex"; //se muestra la pantalla emergente
     // aqui alamacenamos la cantidad de kdramas, los resultados y el contenido de texto
