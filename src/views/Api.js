@@ -1,9 +1,9 @@
-//import { ButtonHome } from "../components/Button.js";
-//import { Footer } from "../components/Footer.js";
-//import { navigateTo } from "../router.js";
+// //import { ButtonHome } from "../components/Button.js";
+// //import { Footer } from "../components/Footer.js";
+// //import { navigateTo } from "../router.js";
 import { Button } from "../components/Button.js";
 import { getApiKey } from "../lib/apiKey.js";
-import { Header } from "../components/Header.js";
+//import { Header } from "../components/Header.js";
 export const Api = () => {
   const container = document.createElement("div");
   const apiPage = document.createElement("main");

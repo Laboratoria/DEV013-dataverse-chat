@@ -40,6 +40,7 @@
       shortDescription: "Perro amigable y entusiasta, siempre lleno de energía y buen humor.",
       description: "Bones es un perro amable y relajado en Animal Crossing, conocido por su disposición para hacer nuevos amigos y su actitud positiva. Siempre está sonriendo y tratando de ver el lado bueno de la vida. Bones es un compañero leal para los habitantes del pueblo y disfruta pasar tiempo conversando y compartiendo historias. Aunque su personalidad sea un poco ingenua, su corazón es puro y su amabilidad no conoce límites. Su catchphrase es '¡Yip yip!', una expresión de su entusiasmo. Bones celebra su cumpleaños el 4 de agosto.",
       imageUrl: "https://dodo.ac/np/images/thumb/2/2b/Bones_NH.png/150px-Bones_NH.png",
+      imageUrlFace: "https://dodo.ac/np/images/9/9d/Bones_PC_Villager_Icon.png",
       facts: {
         zodiacSign: "Geminis",
         catchPhrase: "¡Amigo!",

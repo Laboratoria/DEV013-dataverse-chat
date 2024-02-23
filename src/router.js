@@ -94,6 +94,14 @@ export const navigateTo = (pathname, props={}) => {
         }
     }
   }
+
+  const queryStringToObject = (queryString) => {
+    const searchParams = window.location.search;//devuelve lo despues de la ruta
+    console.log(searchParams, "search");
+    const urlProps = new URLSearchParams(searchParams);
+    console.log(urlProps, "url");
+
+  }
   
   const renderView = (pathname, props= {}) => {
     // clear the root element
@@ -126,10 +134,7 @@ export const navigateTo = (pathname, props={}) => {
   
   export const onURLChange = (pathname, props) => {
     // parse the location for the pathname and search params
-    const searchParams = window.location.search;//devuelve lo despues de la ruta
-    console.log(searchParams, "search");
-    const urlProps = new URLSearchParams(searchParams);
-    console.log(urlProps, "url");
+    
     //const search = new URLSearchParams()
     // convert the search params to an object
     // render the view with the pathname and object
