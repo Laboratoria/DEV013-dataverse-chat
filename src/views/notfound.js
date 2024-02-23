@@ -11,7 +11,6 @@ export default function NotFound() {
       llegado al final del jardín
     </p>
     <p>Para ver más plantas</p>
-    <!--<button id="homeButton">Ir a inicio</button>-->
   `;
 
   const homeButton = document.createElement("button");
@@ -21,21 +20,12 @@ export default function NotFound() {
 
   homeButton.addEventListener("click", () => navigateTo("/Home"));
 
+  const modalButton = document.createElement("button");
+  viewNotFound.appendChild(modalButton);
+  const text = document.createTextNode("Go to modal");
+  modalButton.appendChild(text);
+
+  modalButton.addEventListener("click", () => navigateTo("/EmptyApiKey"));
+
   return viewNotFound;
 }
-
-// function goHome() {
-//   const button = document.getElementById("homeButton");
-//   button.addEventListener("click", () => {
-//     navigateTo("/Home");
-//   });
-// }
-
-// const creatingNotFound = () => {
-//   const viewNotFound = document.createElement("div");
-//   viewNotFound.innerHTML += `
-//   <h1>404</h1>
-//   <button>Go back home</button>
-//   `;
-//   return viewNotFound;
-// };
