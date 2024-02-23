@@ -662,6 +662,7 @@ export const Cards = (data) => {
       navigateTo(`/individual-${(element.name).toLowerCase()}`, element)
     })
   });
+
   return listUl;
 };
 

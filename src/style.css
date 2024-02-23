@@ -396,32 +396,6 @@ aside {
     margin: 1rem 0;
     padding: 1rem;
   }
-  
-  @media (max-width: 600px) {/*para pantallas de máximo 600px*/
-    /* CSS rules for sizes smaller than 600px */
-    header {
-      padding: 10px 5%;
-    }
-    aside {
-      padding: 1.5rem;
-      display: none;
-    }
-    main {
-      flex-direction: column;
-    }
-    section {
-      width: 100%;
-    }
-    .buscador h2 {
-      display: none;
-    }
-    .buscador div {
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-    }
-  }
-
 .card {/*creada desde view*/
   width: 184px;
   height: 279px;
@@ -472,26 +446,21 @@ aside {
 .cardPerezoso:hover {
   transform: translateY(20px);
   & ::before {
-    opacity: 0.5;
+    opacity: 1;
   }
-  /*&:before{
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  display: block;
-  width: 100%;
-  height: 100%;
-  border-radius: 15px;
-  background: rgba(black, 0.6);
-  z-index: 2;
-  transition: 0.5s;
-  opacity: 0;
-  }*/
 }
   .cardDeportista {
     background-image: url("./images/cardDeportista.png");
   }
+  /*.cardDeportista:hover {
+    opacity: 0.8  ;
+  }
+  .cardDeportista:hover::after {
+    content: "Platica conmigo";
+    position: relative;
+    color: #000;
+    margin-right: 100px;
+  }*/
   .cardAltanera {
     background-image: url("./images/cardAltanera.png");
   }
@@ -504,13 +473,27 @@ aside {
   .cardVivaracha {
     background-image: url("./images/cardVivaracha.png");
   }
-  .bodyCard {/*creada des view*/
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 147px;
-  }
+.bodyCard {/*creada desde view*/
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 147px;
+}
+/*.bodyCard:hover {
+  position: relative;
+  right: 160px;
+  top: 20px;
+}
+.bodyCard:hover::before {
+  content: "Chatea conmigo...";
+  font-size: 18px;
+  color: blue;
+  font-weight: 600;
+  text-align: center;
+  transform: translate(210px, 10px);
+  cursor: pointer;
+}*/
   .headerCard {
     display: flex;
     justify-content: space-between;

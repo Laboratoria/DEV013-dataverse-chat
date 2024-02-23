@@ -1,7 +1,8 @@
 //import { Footer } from "../components/Footer.js";
 import { Header } from "../components/Header.js";
 
-export const IndividualChat = () => {
+export const IndividualChat = (element) => {
+  console.log(element, "eleme");
   const container = document.createElement("div");
   const main = document.createElement("main");
   main.innerHTML = `
@@ -24,7 +25,7 @@ export const IndividualChat = () => {
         <div class="chat-background">
             <div class="chat">
                 <div class="chat-header">
-                <p class="character-name">Personaje</p>
+                <p class="character-name">${element.name}</p>
                 <p class="last-seen">Visto por últ. vez 00:00</p>
                 </div>
                 <div class="chat-body"></div>

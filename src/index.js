@@ -6,6 +6,7 @@ import { Api } from './views/Api.js';
 import { Error } from './views/Error.js';
 import { onURLChange, setRootEl, setRoutes } from './router.js';
 import { Stats } from './views/Stats.js';
+import data from "./data/dataset.js";
 //import { computeStats, filterData, sortData } from './lib/dataFunctions.js';
 //import { SectionHomeS } from './components/SectionHome.js';
 // import data from '../data/dataset.js';
@@ -22,14 +23,15 @@ const routes = {
     "/stats": Stats,
 };
 
-
+// data.forEach(element => {
+//     routes[(`/individual-${element.name}`).toLowerCase()] = IndividualChat;
+// });
 
 const root = document.getElementById("root");
 setRoutes(routes);
 setRootEl(root)
 
 document.addEventListener("DOMContentLoaded", (event) => {
-    console.log(event.target.location.pathname);
     onURLChange(event.target.location.pathname);
 });
 

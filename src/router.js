@@ -105,8 +105,8 @@ export const navigateTo = (pathname, props={}) => {
     cleanRoot.innerHTML = "";
     if(ROUTES[pathname]) {
       console.log({pathname})
-        const template = ROUTES[pathname]();
-        //console.log(template);
+        const template = ROUTES[pathname](props);
+        // console.log(template, "tem");
         cleanRoot.appendChild(template);
     } else {
         cleanRoot.appendChild(ROUTES["/error"]());
@@ -118,17 +118,24 @@ export const navigateTo = (pathname, props={}) => {
     // update window history with pushState
     // render the view with the pathname and props
     //hostname
-    // const urlVisited = window.location.hostname + pathname;
+    //const urlVisited = window.location.hostname + pathname;
     history.pushState({}, "", pathname);
     // console.log(urlVisited);
     renderView(pathname, props);
   }
   
-  export const onURLChange = (pathname) => {
+  export const onURLChange = (pathname, props) => {
     // parse the location for the pathname and search params
+    const searchParams = window.location.search;//devuelve lo despues de la ruta
+    console.log(searchParams, "search");
+    const urlProps = new URLSearchParams(searchParams);
+    console.log(urlProps, "url");
+    //const search = new URLSearchParams()
     // convert the search params to an object
     // render the view with the pathname and object
-    renderView(pathname);
+    console.log("path", pathname);
+    console.log("props", props);
+    renderView(pathname, props);
   }
   /*http://www.ejemplo.com:8080/pagina/ejemplo?clave=valor#seccion
 

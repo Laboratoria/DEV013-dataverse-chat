@@ -229,7 +229,6 @@ buttonClearName.addEventListener("click", function(e) {
 iconChat.addEventListener("click", () => {navigateTo("/groupal", {})});
 
   main.append(aside, section, buttonDiv);
-  console.log(main);
   return main;
 }
 

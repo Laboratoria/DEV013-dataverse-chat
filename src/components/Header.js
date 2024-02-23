@@ -33,7 +33,7 @@ export const Header = () => {
 
 import { navigateTo } from '../router.js';
 
-export const Header = () => {
+export const Header = (name = "user") => {
   const header = document.createElement("header");
   header.innerHTML = `
   <div class="header-title">
@@ -49,12 +49,12 @@ export const Header = () => {
     </ul>
     <div class="header-user">
       <img src="./images/User.png" alt="User" />
-          Usuario
+          ${name}
     </div>
   </nav>
     `;
   header.querySelector("#home").addEventListener("click", () => navigateTo("/home", { }));
-  header.querySelector("#individual").addEventListener("click", () => navigateTo("/individual", { }));
+  header.querySelector("#individual").addEventListener("click", () => navigateTo("/individual", { name: "sldjf"}));
   header.querySelector("#api").addEventListener("click", () => navigateTo("/api", { }));
   header.querySelector("#stats").addEventListener("click", () => navigateTo("/stats", { }));
   return header;

@@ -9,6 +9,7 @@
       shortDescription: "Perro deportista y enérgico, amante del ejercicio y las competiciones.",
       description: "Bea es un perro orgulloso y elegante que se considera a sí misma una autoridad en moda y alta sociedad en Animal Crossing. Siempre está al tanto de las últimas tendencias y eventos de la alta sociedad. Bea se enorgullece de su elegancia y buen gusto, y a menudo ofrece consejos de moda a los demás habitantes. Aunque puede parecer algo distante al principio, aprecia la amistad genuina y siempre está dispuesta a ayudar a sus amigos. ¡Celebra su cumpleaños el 15 de octubre!",
       imageUrl: "https://dodo.ac/np/images/thumb/c/c2/Bea_NH.png/150px-Bea_NH.png",
+      imageUrlFace: "https://dodo.ac/np/images/b/bc/Bea_PC_Villager_Icon.png",
       facts: {
         zodiacSign: "Leo",
         catchPhrase: "¡A darlo todo!",

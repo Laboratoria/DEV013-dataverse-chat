@@ -1,3 +1,6 @@
+import { navigateTo } from "../router.js";
+import { IndividualChat } from "../views/IndividualChat.js";
+
 export const Cards = (data) => {
   const listUl = document.createElement("ul");
   data.forEach((element) => {
@@ -108,6 +111,10 @@ export const Cards = (data) => {
     ddBirthday.setAttribute("itemprop", "birthDate");
     ddBirthday.innerText = element.facts.birthDate;
     divDate.appendChild(ddBirthday);
+    listLi.addEventListener("click", () => {
+      navigateTo(`/individual`, {id: element.id});
+    });
+    
   });
   return listUl;
 };
