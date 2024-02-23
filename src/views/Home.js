@@ -6,7 +6,7 @@ let totalData = [...data]
 import { Header } from './../Components/Header.js'
 import { MenuSelect } from './../Components/MenuSelect.js'
 import { Footer } from './../Components/Footer.js'
-import { navigateTo } from '../router.js';
+
 
 export const Home = () => {
   const viewHome = document.createElement("section");
