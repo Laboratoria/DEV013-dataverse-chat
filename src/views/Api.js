@@ -1,6 +1,6 @@
-//import { ButtonHome } from "../components/Button.js";
-//import { Footer } from "../components/Footer.js";
-//import { navigateTo } from "../router.js";
+// //import { ButtonHome } from "../components/Button.js";
+// //import { Footer } from "../components/Footer.js";
+// //import { navigateTo } from "../router.js";
 import { Button } from "../components/Button.js";
 export const Api = () => {
   const container = document.createElement("div");
@@ -62,6 +62,6 @@ export const Api = () => {
     //buttonDelete.addEventListener("click", () => {navigateTo("/home", {})});
     //buttonSave.addEventListener("click", () => {navigateTo("/individual", {})});
     container.append(Button(), apiPage);
-    container.append(apiPage);
+    // container.append(apiPage);
     return container;
   }

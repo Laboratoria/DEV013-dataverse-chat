@@ -244,8 +244,8 @@ import data from '../data/dataset.js';
 import { sortData } from "../lib/dataFunctions.js"; 
 
 export const SectionHome = () => {
-    const section = document.createElement("section");
-    section.innerHTML = `
+  const section = document.createElement("section");
+  section.innerHTML = `
     <div class="container">
               <div class="buscador">
                 <h2>Lista de vecinos</h2>
@@ -289,7 +289,7 @@ export const SectionHome = () => {
 }
 
 
-// Botón de modal del home eliminado 
+// Botón de modal del home eliminado
 /* <div>
 <button class="btn-statics" id="openModal">
   <ion-icon name="stats-chart-outline"></ion-icon>
