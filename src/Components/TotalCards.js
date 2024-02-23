@@ -21,7 +21,7 @@ export const TotalCards = (data) => {
     descriptionTotal.setAttribute('itemprop', 'descripcionTotal');
 
     nameKdrama.innerHTML = item.name;
-    descriptionTotal.innerHTML = `${item.facts.cantidadEpisodios} Ep. | ${item.facts.totalGenero} | Sub. ${item.facts.totalSubtitulos}`;
+    descriptionTotal.innerHTML = `${item.facts.totalEpisodes} Ep. | ${item.facts.totalGender} | Sub. ${item.facts.totalSubtitle}`;
     itemContainer.append(imageUrl, nameKdrama, descriptionTotal);
     container.appendChild(itemContainer);
 
