@@ -1,7 +1,6 @@
 import { navigateTo } from '../router.js';
 import { Header } from './../Components/Header.js'
 
-
 export const ApiKey = () => {
   const viewApiKey = document.createElement('section')
   const apikey = document.createElement('div');
@@ -32,8 +31,6 @@ export const ApiKey = () => {
   viewApiKey.appendChild(Header())
   viewApiKey.appendChild(apikey)
 
-
   return viewApiKey;
-
 
 }
