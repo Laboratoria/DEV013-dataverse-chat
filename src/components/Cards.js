@@ -1,5 +1,4 @@
 import { navigateTo } from "../router.js";
-import { IndividualChat } from "../views/IndividualChat.js";
 
 export const Cards = (data) => {
   const listUl = document.createElement("ul");
