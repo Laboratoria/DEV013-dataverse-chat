@@ -18,7 +18,7 @@ export const DetailCard = (item) => {
   </div>
   `;
 
-  // Agregando clases a las vistas 
+  // Agregando clases a las etiquetas
   viewDetailCard.setAttribute("class","viewDetailCard");
   detailCard.setAttribute("class", "detailCard");
   card.setAttribute("class", "card");

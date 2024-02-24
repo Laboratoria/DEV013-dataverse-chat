@@ -20,7 +20,7 @@ export const ApiKey = () => {
 
   const buttonConfirm = apikey.querySelector(".button-confirm");
   buttonConfirm.addEventListener("click", () => {
-    navigateTo("/chatindividual", {})
+    navigateTo("/individualchat", {})
   })
 
   const buttonCancel = apikey.querySelector(".button-cancel");

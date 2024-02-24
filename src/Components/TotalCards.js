@@ -12,13 +12,13 @@ export const TotalCards = (data) => {
     const descriptionTotal = document.createElement('p');
 
     itemContainer.setAttribute('itemscope', '');
-    itemContainer.setAttribute('itemprop', 'ordenar');
+    itemContainer.setAttribute('itemprop', 'order');
     itemContainer.setAttribute('itemtype', 'kdramas');
-    itemContainer.setAttribute('class', 'lista');
+    itemContainer.setAttribute('class', 'list');
     imageUrl.src = item.imageUrl;
     nameKdrama.setAttribute('itemprop', 'name');
-    descriptionTotal.setAttribute('class', 'descriptionTotal')
-    descriptionTotal.setAttribute('itemprop', 'descripcionTotal');
+    descriptionTotal.setAttribute('class', 'description-Total')
+    descriptionTotal.setAttribute('itemprop', 'descriptionTotal');
 
     nameKdrama.innerHTML = item.name;
     descriptionTotal.innerHTML = `${item.facts.totalEpisodes} Ep. | ${item.facts.totalGender} | Sub. ${item.facts.totalSubtitle}`;
@@ -32,12 +32,7 @@ export const TotalCards = (data) => {
       navigateTo("/detailcard", {...item})
     })
     console.log("Este es el element", itemContainer);
-
-
   });
   console.log(container);
-
-
-
   return container;
 };

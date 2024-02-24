@@ -11,7 +11,6 @@ import { Footer } from './../Components/Footer.js'
 export const Home = () => {
   const viewHome = document.createElement("section");
   viewHome.setAttribute("class", "viewHome")
-  //let currentData = [...data];
 
   const main = document.createElement("main")
   //console.log(MenuSelect());

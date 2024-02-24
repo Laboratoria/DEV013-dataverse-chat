@@ -1,6 +1,6 @@
 export const MenuSelect = () => {
   const selects = document.createElement("div");
-  selects.id = "inputs";
+  selects.setAttribute("id", "input");
   selects.innerHTML = `
     <div class= menu>
     <!--Seccion genero-->
@@ -48,8 +48,8 @@ export const MenuSelect = () => {
     </div>
     <!--Boton Limpiar filtros-->
     <div class="Menu-clean">
-      <button name="button-clear" data-testid="button-clear">
-        <img class="logoLimpiar" src="images/filter.png" />
+      <button name="button-clear" data-testid="button-clean">
+        <img class="logo-clean" src="images/filter.png" />
         Limpiar filtros</button>
     </div>
   
