@@ -1,5 +1,6 @@
 import { Footer } from "../components/Footer.js";
 import { Header } from "../components/Header.js";
+//import { filterData } from "../lib/dataFunctions.js";
 
 export const IndividualChat = (element) => {
     console.log(element, "eleme");
@@ -65,6 +66,7 @@ export const IndividualChat = (element) => {
   `;
 
   container.append(Header(), main, Footer());
+
 
   return container;
 };
