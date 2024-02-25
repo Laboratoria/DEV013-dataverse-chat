@@ -76,120 +76,112 @@ export const navigateTo = (pathname, props={}) => {
 
   */
 
-  let ROUTES = {};
-  let rootElement ="";
+let ROUTES = {};
+let rootElement = "";
 
-  export const setRootEl = (newRoot) => {
-    // assign rootEl
-    rootElement = newRoot;
-  }
-  
-  export const setRoutes = (newRoutes) => { 
-    // optional Throw errors if routes isn't an object
-    // optional Throw errors if routes doesn't define an /error route
-    // assign ROUTES
-    if(typeof newRoutes === "object") {
-        if (newRoutes["/error"]) {
-            ROUTES = newRoutes;
-        }
+export const setRootEl = (newRoot) => {
+  // assign rootEl
+  rootElement = newRoot;
+};
+
+export const setRoutes = (newRoutes) => {
+  // optional Throw errors if routes isn't an object
+  // optional Throw errors if routes doesn't define an /error route
+  // assign ROUTES
+  if (typeof newRoutes === "object") {
+    if (newRoutes["/error"]) {
+      ROUTES = newRoutes;
     }
   }
+};
 
-  const queryStringToObject = (queryString) => {
-    //Esta función tiene como objetivo pasar un string a objeto
+const queryStringToObject = (queryString) => {
+  //Esta función tiene como objetivo pasar un string a objeto
 
-    // console.log("Este es el queryString", queryString)
+  // console.log("Este es el queryString", queryString)
 
-    const urlProps = new URLSearchParams(queryString)
-    // let finalObject;
-    
-    const finalObject = Object.fromEntries(urlProps.entries())
-    console.log("Este es el finalObject", finalObject);
+  const urlProps = new URLSearchParams(queryString);
+  // let finalObject;
 
-    return finalObject;
+  const finalObject = Object.fromEntries(urlProps.entries());
+  console.log("Este es el finalObject", finalObject);
+
+  return finalObject;
   //   for(let prop of urlProps){//con el prop recibimos el id
   // }
 
+  // const finalObject =
+  // const getUrl = urlProps.get("id")
+  // console.log("este es el get URL", getUrl)
 
-    // const finalObject = 
-    // const getUrl = urlProps.get("id")
-    // console.log("este es el get URL", getUrl)
+  // for(urlObject of urlProps){
+  //   console.log("🚀 ~ queryStringToObject ~ urlObject:", urlObject)
+  // }
 
-    // for(urlObject of urlProps){
-    //   console.log("🚀 ~ queryStringToObject ~ urlObject:", urlObject)
-    // }
-    
+  //Esta función la necesitamos porque nos ayudará a acceder a los datos requeridos aunque la página se recargue
+  //Obtener el string que necesitamos
+  // const searchParams = window.location.search;//devuelve lo despues de la ruta
+  // console.log(searchParams, "search");
+  //URLSearchParams convierte la cadena en un objeto
+  // const urlProps = new URLSearchParams(searchParams);
+  // console.log(urlProps, "url");
+};
 
-
-
-
-
-    //Esta función la necesitamos porque nos ayudará a acceder a los datos requeridos aunque la página se recargue
-    //Obtener el string que necesitamos
-    // const searchParams = window.location.search;//devuelve lo despues de la ruta
-    // console.log(searchParams, "search");
-    //URLSearchParams convierte la cadena en un objeto
-    // const urlProps = new URLSearchParams(searchParams);
-    // console.log(urlProps, "url");
-
+const renderView = (pathname, props = {}) => {
+  console.log("props", props);
+  // clear the root element
+  // find the correct view in ROUTES for the pathname
+  // in case not found render the error view
+  // render the correct view passing the value of props
+  // add the view element to the DOM root element
+  const cleanRoot = rootElement;
+  cleanRoot.innerHTML = "";
+  // console.log("Nuestro pathname", [pathname])
+  if (ROUTES[pathname]) {
+    const template = ROUTES[pathname](props);
+    // console.log(template, "tem");
+    cleanRoot.appendChild(template);
+  } else {
+    cleanRoot.appendChild(ROUTES["/error"]());
   }
+};
 
-  const renderView = (pathname, props= {}) => {
-    console.log("props", props)
-    // clear the root element
-    // find the correct view in ROUTES for the pathname
-    // in case not found render the error view
-    // render the correct view passing the value of props
-    // add the view element to the DOM root element
-    const cleanRoot = rootElement;
-    cleanRoot.innerHTML = "";
-    // console.log("Nuestro pathname", [pathname])
-    if(ROUTES[pathname]) {
-        const template = ROUTES[pathname](props);
-        // console.log(template, "tem");
-        cleanRoot.appendChild(template);
-    } else {
-        cleanRoot.appendChild(ROUTES["/error"]());
-    }
-  } 
-  
-  export const navigateTo = (pathname, props={}) => {
-    // console.log("Pathname dentro de navigate", pathname);
-    history.pushState({}, "", pathname);
-    //El signo "?" dentro de una ruta URL sirve para dividir las vistas de las variables.
-    const splitPathname = pathname.split("?")
-    // console.log(typeof splitPathname[0])
-    props = splitPathname[1]
-    // console.log("props modificado", props)
-     pathname = splitPathname[0]
-    //  console.log("pathname modificado", pathname)
-    
-    // update window history with pushState
-    // render the view with the pathname and props
-    //hostname
-    //const urlVisited = window.location.hostname + pathname;
-    // console.log(urlVisited);
-    // const newPathname = pathname + 
-    const objectProps = queryStringToObject(props)
-    console.log("🚀 ~ navigateTo ~ objectProps:", objectProps)
-    
+export const navigateTo = (pathname, props = {}) => {
+  // console.log("Pathname dentro de navigate", pathname);
+  history.pushState({}, "", pathname);
+  //El signo "?" dentro de una ruta URL sirve para dividir las vistas de las variables.
+  const splitPathname = pathname.split("?");
+  // console.log(typeof splitPathname[0])
+  props = splitPathname[1];
+  // console.log("props modificado", props)
+  pathname = splitPathname[0];
+  //  console.log("pathname modificado", pathname)
 
-    renderView(pathname, objectProps);
-  }
-  
-  export const onURLChange = (pathname) => {
-    // parse the location for the pathname and search params
-    const searchURL = window.location.search
-    // console.log("🚀 ~ onURLChange ~ searchURL:", searchURL)
-    //const search = new URLSearchParams()
-    // convert the search params to an object
-    // render the view with the pathname and object
-    // console.log("path", pathname);
-    // console.log("props", props);
-    const objectProps = queryStringToObject(searchURL)
-    renderView(pathname, objectProps);
-  }
-  /*http://www.ejemplo.com:8080/pagina/ejemplo?clave=valor#seccion
+  // update window history with pushState
+  // render the view with the pathname and props
+  //hostname
+  //const urlVisited = window.location.hostname + pathname;
+  // console.log(urlVisited);
+  // const newPathname = pathname +
+  const objectProps = queryStringToObject(props);
+  console.log("🚀 ~ navigateTo ~ objectProps:", objectProps);
+
+  renderView(pathname, objectProps);
+};
+
+export const onURLChange = (pathname) => {
+  // parse the location for the pathname and search params
+  const searchURL = window.location.search;
+  // console.log("🚀 ~ onURLChange ~ searchURL:", searchURL)
+  //const search = new URLSearchParams()
+  // convert the search params to an object
+  // render the view with the pathname and object
+  // console.log("path", pathname);
+  // console.log("props", props);
+  const objectProps = queryStringToObject(searchURL);
+  renderView(pathname, objectProps);
+};
+/*http://www.ejemplo.com:8080/pagina/ejemplo?clave=valor#seccion
 
 search: contiene parámetros de búsqueda para la solicitud. Se inicia con el símbolo de interrogación y tiene la forma clave=valor&clave2=valor2.
 

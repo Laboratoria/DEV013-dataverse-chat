@@ -1,6 +1,6 @@
 export const Footer = () => {
-    const footer = document.createElement("footer");
-    footer.innerHTML = `
+  const footer = document.createElement("footer");
+  footer.innerHTML = `
     <p>2024. All rights reserved</p>
       <img src="./images/island.png" alt="island" width="100" />
       <svg viewBox="0 -20 700 110" width="100%" height="110" preserveAspectRatio="none"><!--Eje x 0-700, Eje y -20-110, w100% del contenedor  preserveAspectRatio que el contenido se estire sin matener su prorporción-->
@@ -8,6 +8,5 @@ export const Footer = () => {
         <path d="M0,10 c80,-18 230,-12 350,7 c80,13 260,17 350,-5 v100 h-700z" fill="#86CFD5"/>
       </svg>
       `;
-      return footer;
-    
-}
+  return footer;
+};

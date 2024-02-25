@@ -1,18 +1,18 @@
 import { Footer } from "../components/Footer.js";
 import { Header } from "../components/Header.js";
-import data from "./../data/dataset.js"
+import data from "./../data/dataset.js";
 /// /import { filterData } from "../lib/dataFunctions.js";
 
 //HAY QUE USAR EL ID
 
 export const IndividualChat = (element) => {
-    // const nameElement = filterData(data, "name", ("name").value)
-    // console.log("nombre", nameElement)
-    const idFilter = data.filter((item) =>  item["id"] === element.id)
-    console.log("Este es nuestro idFilter", idFilter)
-    console.log(element, "eleme");
-    const container = document.createElement("div");
-    const main = document.createElement("main");
+  // const nameElement = filterData(data, "name", ("name").value)
+  // console.log("nombre", nameElement)
+  const idFilter = data.filter((item) => item["id"] === element.id);
+  console.log("Este es nuestro idFilter", idFilter);
+  console.log(element, "eleme");
+  const container = document.createElement("div");
+  const main = document.createElement("main");
   main.innerHTML = `
   <div class="page-container">
     <div class="passport-container">
@@ -76,6 +76,5 @@ export const IndividualChat = (element) => {
 
   return container;
 };
-
 
 // <img src="../images/chat-and-passport/bottom-flap.png" alt="bottom-flap">

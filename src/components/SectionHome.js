@@ -1,6 +1,6 @@
 import { Cards } from "./Cards.js";
-import data from '../data/dataset.js';
-import {filterData, sortData } from "../lib/dataFunctions.js";
+import data from "../data/dataset.js";
+import { filterData, sortData } from "../lib/dataFunctions.js";
 import { navigateTo } from "../router.js";
 
 export const SectionHome = () => {
@@ -9,8 +9,8 @@ export const SectionHome = () => {
   const aside = document.createElement("aside");
   const buttonDiv = document.createElement("div");
   buttonDiv.className = "iconChat";
-    aside.className = "asideFilter";
-    aside.innerHTML = `
+  aside.className = "asideFilter";
+  aside.innerHTML = `
       <div data-testid="select-filterGender" name="gender">
         <label for="filter"><h2>Género</h2></label>
           <ul>
@@ -123,7 +123,7 @@ export const SectionHome = () => {
               </button>
       </div>
     `;
-    section.innerHTML = `
+  section.innerHTML = `
     <div class="container">
       <div class="buscador">
         <h2>Lista de vecinos</h2>
@@ -145,96 +145,104 @@ export const SectionHome = () => {
       <div id="content"></div>
     </div>
     `;
-    buttonDiv.innerHTML = `
+  buttonDiv.innerHTML = `
     <button class="container-ico"> <ion-icon name="logo-wechat"></ion-icon> </button> `;
 
-const content = section.querySelector("#content");
-content.appendChild(Cards(data));
-const order = section.querySelector('[data-testid="select-sort"]');
-const filterGender = aside.querySelector('[data-testid="select-filterGender"]');
-const  filterSpecies= aside.querySelector('[data-testid="select-filter"]');
-const  filterPersonality = aside.querySelector('[data-testid="select-filterPersonality"]');
-const buttonClearFilter = aside.querySelector('[data-testid="button-clear"]');
-const inputSearchAnimal = section.querySelector("#searchAnimal");
-const buttonClearName = section.querySelector('[data-testid="button-clearName"]');
-const iconChat = buttonDiv.querySelector('[name="logo-wechat"]');
-let filteredData;
-Cards(data);
-filteredData = [...data];
-
-buttonClearFilter.addEventListener("click", () => {
-  content.innerHTML = "";
+  const content = section.querySelector("#content");
+  content.appendChild(Cards(data));
+  const order = section.querySelector('[data-testid="select-sort"]');
+  const filterGender = aside.querySelector(
+    '[data-testid="select-filterGender"]'
+  );
+  const filterSpecies = aside.querySelector('[data-testid="select-filter"]');
+  const filterPersonality = aside.querySelector(
+    '[data-testid="select-filterPersonality"]'
+  );
+  const buttonClearFilter = aside.querySelector('[data-testid="button-clear"]');
+  const inputSearchAnimal = section.querySelector("#searchAnimal");
+  const buttonClearName = section.querySelector(
+    '[data-testid="button-clearName"]'
+  );
+  const iconChat = buttonDiv.querySelector('[name="logo-wechat"]');
+  let filteredData;
+  Cards(data);
   filteredData = [...data];
-  order.selectedIndex = 0;
-  const radioButton = document.querySelectorAll('input[type="radio"]');
-  radioButton.forEach(item => item.checked = false);
-  content.appendChild(Cards(filteredData))
-})
 
-order.addEventListener("change", (event)=> {
-  content.textContent = "";
-  filteredData = sortData(filteredData, "name", event.target.value);
-  content.appendChild(Cards(filteredData))
-})
+  buttonClearFilter.addEventListener("click", () => {
+    content.innerHTML = "";
+    filteredData = [...data];
+    order.selectedIndex = 0;
+    const radioButton = document.querySelectorAll('input[type="radio"]');
+    radioButton.forEach((item) => (item.checked = false));
+    content.appendChild(Cards(filteredData));
+  });
 
-const genderMasculine = document.querySelector("#genderMasculine");
-const genderWomen = document.querySelector("#genderWomen");
+  order.addEventListener("change", (event) => {
+    content.textContent = "";
+    filteredData = sortData(filteredData, "name", event.target.value);
+    content.appendChild(Cards(filteredData));
+  });
 
-filterGender.addEventListener("click", (event) =>{
-  if(!event.target.value) { return; }
-  content.innerHTML = "";
-  /*if (!filterGender.checked) {
+  // const genderMasculine = document.querySelector("#genderMasculine");
+  // const genderWomen = document.querySelector("#genderWomen");
+
+  filterGender.addEventListener("click", (event) => {
+    if (!event.target.value) {
+      return;
+    }
+    content.innerHTML = "";
+    /*if (!filterGender.checked) {
     genderWomen.classList.add("hide");
     genderMasculine.classList.remove("hide");
   } else {
     genderWomen.classList.remove("hide");
     genderMasculine.classList.add("hide");
   }*/
-  filteredData = filterData(filteredData, "gender", event.target.value);
-  content.appendChild(Cards(filteredData));
-  })
+    filteredData = filterData(filteredData, "gender", event.target.value);
+    content.appendChild(Cards(filteredData));
+  });
 
-filterPersonality.addEventListener("click", (event) => {
-  if(!event.target.value) {
-    return;
-  }
-  content.innerHTML = "";
-  filteredData = filterData(filteredData, "personality", event.target.value);
-  content.appendChild(Cards(filteredData));
-});
-    
-filterSpecies.addEventListener("click", (event) => {
-  if(!event.target.value) {
-    return;
-  }
-  content.innerHTML = "";
-  filteredData = filterData(filteredData, "species", event.target.value);
-  content.appendChild(Cards(filteredData));
-})
+  filterPersonality.addEventListener("click", (event) => {
+    if (!event.target.value) {
+      return;
+    }
+    content.innerHTML = "";
+    filteredData = filterData(filteredData, "personality", event.target.value);
+    content.appendChild(Cards(filteredData));
+  });
 
-const filterSearchNames = () => { 
-  content.innerHTML = "";
-  const dataNames = inputSearchAnimal.value.toLowerCase() 
-  const filterNames = filteredData.filter(item => item.name.toLowerCase().includes(dataNames));
-  content.appendChild(Cards(filterNames)); 
-}
-inputSearchAnimal.addEventListener("keydown", filterSearchNames);
+  filterSpecies.addEventListener("click", (event) => {
+    if (!event.target.value) {
+      return;
+    }
+    content.innerHTML = "";
+    filteredData = filterData(filteredData, "species", event.target.value);
+    content.appendChild(Cards(filteredData));
+  });
 
-buttonClearName.addEventListener("click", function(e) {
-  e.target.value = inputSearchAnimal.value = "";
-  content.innerHTML = "";
-  content.appendChild(Cards(filteredData));
-});
+  const filterSearchNames = () => {
+    content.innerHTML = "";
+    const dataNames = inputSearchAnimal.value.toLowerCase();
+    const filterNames = filteredData.filter((item) =>
+      item.name.toLowerCase().includes(dataNames)
+    );
+    content.appendChild(Cards(filterNames));
+  };
+  inputSearchAnimal.addEventListener("keydown", filterSearchNames);
 
-iconChat.addEventListener("click", () => {navigateTo("/groupal", {})});
+  buttonClearName.addEventListener("click", function (e) {
+    e.target.value = inputSearchAnimal.value = "";
+    content.innerHTML = "";
+    content.appendChild(Cards(filteredData));
+  });
+
+  iconChat.addEventListener("click", () => {
+    navigateTo("/groupal", {});
+  });
 
   main.append(aside, section, buttonDiv);
   return main;
-}
-
-
-
-
+};
 
 /*
 

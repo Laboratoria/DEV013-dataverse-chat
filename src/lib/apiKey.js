@@ -1,16 +1,14 @@
-export const getApiKey = (apiKey)=>{//OBTENER LA LLAVE
-    //var cat = localStorage.getItem("API-KEY")
-    //miStorage = window.localStorage;
-    //hacer la función y llamarla en la api
-    //console.log("hola");
-    localStorage.setItem("llave", apiKey);
+export const getApiKey = () => {
+  //OBTENER LA LLAVE
+  // const myStorage = window.localStorage;
+  const getStorage = localStorage.getItem("llave");
+  console.log("🚀 ~ getApiKey ~ getStorage:", getStorage);
+};
 
-}
-/*
-export const setApiKey = (apiKey)=>{//PARA GUARDAR LA API
-
-};*/
-
+export const setApiKey = (apiKey) => {
+  //PARA GUARDAR LA API
+  localStorage.setItem("llave", apiKey);
+};
 
 /*
 localStorage.setItem("perro", "12355");
