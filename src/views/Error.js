@@ -13,8 +13,8 @@ export const Error = () => {
   </div>
   `;
   errorPage.querySelector(".back-to-home").addEventListener("click", () => {
-    navigateTo("/home", {})
+    navigateTo("/home", {});
   });
   container.append(Header(), errorPage, Footer());
   return container;
-  };
+};

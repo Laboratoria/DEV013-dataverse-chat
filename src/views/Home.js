@@ -14,8 +14,6 @@ export const Home = () => {
   return container;
 };*/
 
-
-
 //PANTALLA PRINCIPAL
 //import { AsideHome } from "../components/AsideHome.js";
 import { Footer } from "../components/Footer.js";
@@ -31,4 +29,3 @@ export const Home = () => {
 
   return container;
 };
-

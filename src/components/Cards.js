@@ -111,8 +111,8 @@ export const Cards = (data) => {
     ddBirthday.innerText = element.facts.birthDate;
     divDate.appendChild(ddBirthday);
     listLi.addEventListener("click", () => {
-      //navigateTo(`/individual?id=${element.id}&name=${element.name}`);
-      navigateTo(`/individual`, {id:element.id});
+      // navigateTo(`/individual`, {id: element.id});
+      navigateTo(`/individual?id=${element.id}`);
     });
     
   });

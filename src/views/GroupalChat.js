@@ -1,7 +1,7 @@
 import { navigateTo } from "../router.js";
 
 export const GroupalChat = () => {
- // const container = document.createElement("div");
+  // const container = document.createElement("div");
   const main = document.createElement("main");
   main.innerHTML = `
   <div class="closeGroupal"><ion-icon name="close-circle-outline"></ion-icon></div>
@@ -42,8 +42,11 @@ export const GroupalChat = () => {
     <img src="./images/face/rizzo.png" alt="faceRizzo">
     </div>
   </div> `;
-  main.querySelector('[name="close-circle-outline"]').addEventListener("click", () => {navigateTo("/home", {})})
+  main
+    .querySelector('[name="close-circle-outline"]')
+    .addEventListener("click", () => {
+      navigateTo("/home", {});
+    });
   //container.appendChild(main)
-  return main; 
-}
-
+  return main;
+};
