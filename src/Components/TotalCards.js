@@ -29,7 +29,7 @@ export const TotalCards = (data) => {
 
     itemContainer.addEventListener("click", () => {
       //con item traemos todo los valores 
-      navigateTo("/detailcard", {...item})
+      navigateTo("/individualchat", {...item})
     })
     console.log("Este es el element", itemContainer);
   });

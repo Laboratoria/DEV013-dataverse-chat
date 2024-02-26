@@ -3,7 +3,6 @@ import { Home } from './views/Home.js';
 import { Error } from './views/Error.js';
 import { IndividualChat } from './views/IndividualChat.js';
 import { GroupChat } from './views/GroupChat.js';
-import { DetailCard } from './views/DetailCard.js';
 import { ApiKey } from './views/ApiKey.js';
 import { setRootEl, setRoutes, navigateTo, onURLChange } from './router.js'
 /*
@@ -17,7 +16,6 @@ TODO:
 //definición de rutas:
 const routes = {
   "/": Home,
-  "/detailcard": DetailCard,
   "/error": Error,
   "/individualchat": IndividualChat,
   "/groupchat": GroupChat,

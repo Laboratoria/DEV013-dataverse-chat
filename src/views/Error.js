@@ -2,16 +2,16 @@ import { navigateTo } from '../router.js';
 
 export const Error = () => {
   const error = document.createElement('div');
-  error.setAttribute("class", "header")
+  error.className = 'header';
   error.innerHTML = `
   <div>
-    <div class= container-error> 
+    <div class= titulo> 
         <img src="images/robot404.jpg" class=logo-error>
         <h1>{404}</h1>
         <h2> Página no encontrada </h2>
         <button class="button-return-home">
           <img src="images/home.png" class="logo-home">
-          Volver al inicio
+          Volver al Inicio
         </button>
     </div>
   </div>
