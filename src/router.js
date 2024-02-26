@@ -60,6 +60,7 @@ export const navigateTo = (pathname, props = {}) => {
   history.pushState({}, '', pathname);
 
   // renderiza la vista con el nombre de la ruta y los accesorios
+  console.log(props);
   renderView(pathname, props);
 }
 
