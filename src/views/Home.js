@@ -3,9 +3,10 @@ import { TotalCards } from '../Components/TotalCards.js';
 import { filterData, sortData, computeStats } from '../lib/dataFunctions.js';
 let totalData = [...data]
 
-import { Header } from './../Components/Header.js'
-import { MenuSelect } from './../Components/MenuSelect.js'
-import { Footer } from './../Components/Footer.js'
+import { Header } from './../Components/Header.js';
+import { ButtonGroupChat } from '../Components/ButtonGroupChat.js';
+import { MenuSelect } from './../Components/MenuSelect.js';
+import { Footer } from './../Components/Footer.js';
 
 
 export const Home = () => {
