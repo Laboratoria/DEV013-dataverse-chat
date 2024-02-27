@@ -1,14 +1,15 @@
 //import { GroupIconButton } from "../components/GroupIconButton.js";
 import { data } from "../data/data.js";
+import { navigateTo } from "../router.js";
 
 export const Cards = () => {
   const cardsContainer = document.createElement("ul");
-  console.log(cardsContainer);
-  console.log(data);
+  //console.log(cardsContainer);
+  //console.log(data);
   
   data.forEach((element) => {
     const cardItem = document.createElement("li");
-    console.log(cardItem);
+    //console.log(cardItem);
     cardItem.innerHTML = `
   <li class="card-container ${element.categoryPlant}" itemscope itemtype="https://schema.org">
     <article id="front-card" class="front-card">
@@ -47,15 +48,24 @@ export const Cards = () => {
 
       <div class="buttons-container">
         <div class="statics-button">
-          <button> <img src="../Resources/DV Chat/statics.png" alt="Botón de estadísticas"/></button>
+          <button class="statics-button"> <img src="../Resources/DV Chat/statics.png" alt="Botón de estadísticas"/></button>
         </div>
         <div class="individual-chat-button">
-          <button id="detalles" class="detalles">CHATEAR <img src="../Resources/DV Chat/deserticas.png" alt="Chat Individual" /></button>
+          <button id="individual-chat" class="individual-chat">CHATEAR <img src="../Resources/DV Chat/deserticas.png" alt="Chat Individual" /></button>
         </div>
       </div>
     </article>`;
 
     cardsContainer.appendChild(cardItem);
+
+    const goToIndividualChat = cardItem.querySelector(
+      ".individual-chat-button"
+    );
+    //console.log(goToIndividualChat);
+
+    goToIndividualChat.addEventListener("click", () => {
+      navigateTo("/Individual", { name: "Bienvenida al chat" });
+    })
   });
 
   return cardsContainer;
