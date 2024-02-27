@@ -1,18 +1,11 @@
-import { navigateTo } from "../router.js";
+import { GroupIconButton } from "../components/GroupIconButton.js";
+import { Cards } from "../components/Cards.js";
+//import { navigateTo } from "../router.js";
 
-export default function Home(props) {
-  console.log("Props de Home", props);
-  const viewHome = document.createElement("div");
-  viewHome.textContent = "Getting home";
+export const Home = () => {
+  const viewHome = document.createElement("section");
 
-  const welcomeButton = document.createElement("button");
-  viewHome.appendChild(welcomeButton);
-  const textButton = document.createTextNode("Go individual chat");
-  welcomeButton.appendChild(textButton);
-
-  welcomeButton.addEventListener("click", () =>
-    navigateTo("/Individual", props)
-  );
-
+  //viewHome.append(Header(), OrderBySelect(), SearchByNameInput(), FilterByMenu(), Footer());
+  viewHome.append(Cards(), GroupIconButton());
   return viewHome;
-}
+};

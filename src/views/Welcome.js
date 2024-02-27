@@ -1,27 +1,39 @@
 import { navigateTo } from "../router.js";
-import creatingHeaderFromComponents from "../components/Header.js";
 
-export default function Welcome(props) {
-  const viewWelcome = document.createElement("div");
-  viewWelcome.textContent = "Welcome";
+export const Welcome = () => {
+  const viewWelcome = document.createElement("section");
+  viewWelcome.innerHTML = `
+  <div id="welcome-upper">
+  <section id="welcome-brand">
+    <div class="brand-logo">
+      <img src="https://github.com/Etelbina/dataverse/blob/main/src/resources/Icons/Logo.png?raw=true"
+        style="width:50px; heigth:50xp;" alt="Logo">
+    </div>
+    <div class="brand-name">
+      <h2>My Beauty Plants</h2>
+    </div>
+  </section>
+  <div id="greeting-container">
+    <h1 id="greeting">Bienvenida</h1>
+    <p>a nuestro jardín</p>
+  </div>
+  <form action="">
+    <input class="input" type=text placeholder="Por favor ingresa tu nombre..." />
+    <label for="apikey">Para acceder a todas las funcionaliddes:<label>
+        <input class="input" type=text name="apikey" id="apikey" placeholder="Ingresa tu llave... (opcional)" />
+        <p>Si no tienes una apikey solicitala haciendo click <a
+            href="https://platform.openai.com/docs/overview">Aqui</a></p>
+        <button id="enter-button">Iniciar</button>
+  </form>
+</div>
+`;
 
-  viewWelcome.appendChild(creatingHeader());
-  viewWelcome.appendChild(creatingHeaderFromComponents());
+  const enterButton = viewWelcome.querySelector("#enter-button");
+  //console.log(enterButton);
 
-  const homeButton = document.createElement("button");
-  viewWelcome.appendChild(homeButton);
-  const textButton = document.createTextNode("Go home");
-  homeButton.appendChild(textButton);
-
-  homeButton.addEventListener("click", () =>
-    navigateTo("/Home", { name: "menta" })
+  enterButton.addEventListener("click", () =>
+    navigateTo("/Home", { name: "Bienvenida" })
   );
 
   return viewWelcome;
-}
-
-function creatingHeader() {
-  const header = document.createElement("h1");
-  header.innerHTML = "My Beauty Plants";
-  return header;
-}
+};

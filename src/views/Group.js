@@ -1,17 +1,27 @@
-import { navigateTo } from "../router.js";
+import {HomeIconButton} from "../components/HomeIconButton.js";
 
-export default function GroupChat(props) {
-  const viewGroupChat = document.createElement("div");
-  viewGroupChat.textContent = "Group Chat";
+export const GroupChat = () =>  {
+  const viewGroupChat = document.createElement("section");
+  const main = document.createElement("main");
 
-  const notFoundButton = document.createElement("button");
-  viewGroupChat.appendChild(notFoundButton);
-  const textButton = document.createTextNode("Go not found");
-  notFoundButton.appendChild(textButton);
+  viewGroupChat.innerHTML = ` <section id="chat-area" class="chat-area">
+    <h1 id="title">Chat Grupal</h1>
+    <div class="message-area">Zona de Mensajeria</div>
+  </section>
 
-  notFoundButton.addEventListener("click", () =>
-    navigateTo("/Notfound", props)
-  );
+  <section id="carrusel">
+    <img src="image.png" alt="fondo-chat-grupal"/>
+    <h4>Puedes iniciar tu chat con estas tematicas</h4>
+    <ul>
+      <li>Familia Botanica</li>
+      <li>Cuidados</li>
+      <li>Floracion</li>
+      <li>Mantenimiento</li>
+      <li>Usos</li>
+    </ul>
+  </section>
+  `;
 
+  viewGroupChat.append(main, HomeIconButton());
   return viewGroupChat;
 }

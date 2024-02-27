@@ -65,6 +65,8 @@ export const onURLChange = (location) => {
   renderView(location);
 };
 
+
+
 /*--------------------------------------------------------------------------------------------------------------
 // Importaciones de componentes y funciones necesarias
 import { navigateTo } from './router';
