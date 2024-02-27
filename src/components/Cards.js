@@ -44,11 +44,17 @@ export const Cards = () => {
           </div>
         </dl>
       </div>
-      <div class="button-container">
-        <button id="detalles" class="detalles">CHATEAR</button>
-        <img src="" alt="Chat Individual"/>
+
+      <div class="buttons-container">
+        <div class="statics-button">
+          <button> <img src="../Resources/DV Chat/statics.png" alt="Botón de estadísticas"/></button>
+        </div>
+        <div class="individual-chat-button">
+          <button id="detalles" class="detalles">CHATEAR <img src="../Resources/DV Chat/deserticas.png" alt="Chat Individual" /></button>
+        </div>
       </div>
     </article>`;
+
     cardsContainer.appendChild(cardItem);
   });
 

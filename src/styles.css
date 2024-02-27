@@ -129,13 +129,13 @@ li.card-container.aromatica {
     height: 80px;
 }
 
-#front-card .button-container {
+#front-card .buttons-container {
     /* background-color: black; */
     display: flex;
     justify-content: center;
 }
 
-#front-card button {
+#front-card .individual-chat-button {
     background-color: #D7A180;
     width: 137px;
     height: 32px;
@@ -149,19 +149,15 @@ li.card-container.aromatica {
     box-shadow: 2px 2px 5px grey;
 }
 
-.homeButton {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  background-color: blue;
-  border: none;
-  cursor: pointer;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+#front-card .buttons-container img {
+    /* background-color: white; */
+    width: 40px;
+    height: 40px;
+    margin: 4px 0;
 }
 
-.round-button i {
-  color: white;
-  font-size: 24px;
+ .buttons-container .statics-button {
+    margin: 0%;
+    padding: 0%;
+    border-radius: 50%;
 }
