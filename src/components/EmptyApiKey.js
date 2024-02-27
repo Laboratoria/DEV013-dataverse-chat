@@ -1,18 +1,27 @@
-//import { navigateTo } from "../router.js";
-
 export default function EmptyApiKey() {
-  const viewModal = document.createElement("dialog");
-  viewModal.innerHTML += `
-  <h1>404</h1>
-  <p>
-    Para esta zona del jardín <br />
-    ingresa tu llave
-  </p>
+  const viewEmptyModal = document.createElement("dialog");
+  viewEmptyModal.innerHTML += `
+  <form>
   <form method="dialog">
-    <input type="text" required placeholder="Apikey..." /><br />
-    <button>Enviar</button>
+    <p>
+      No has ingresado una llave <br />
+      para esta zona del jardín
+    </p>
+    <input type="text" required placeholder="Ingresa una Api Key..." /><br />
+    <button id="close-function">Enviar</button>
+    <p>
+    Si no tienes una llave solicítala <br />
+    haciendo click <a href="https://www.maisieai.com/help/how-to-get-an-openai-api-key-for-chatgpt" target="_blank">aquí</a>
+  </p>
   </form>
     `;
 
-  return viewModal;
+  //TODO en temas de escalabilidad no es mejor hacerlo por nodos?
+  const closeButon = viewEmptyModal
+    .querySelector("#close-function")
+    .addEventListener("click", () => {
+      viewEmptyModal.close();
+    });
+
+  return viewEmptyModal;
 }

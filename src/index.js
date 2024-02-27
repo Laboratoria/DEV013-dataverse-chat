@@ -4,15 +4,14 @@ import Home from "./views/Home.js";
 import IndividualChat from "./views/Individual.js";
 import GroupChat from "./views/Group.js";
 import NotFound from "./views/Notfound.js";
-import EmptyApiKey from "./components/EmptyApiKey.js";
 
+//This is a dictionary *
 const routes = {
   "/": Welcome,
   "/Home": Home,
   "/Individual": IndividualChat,
   "/Group": GroupChat,
   "/Notfound": NotFound,
-  "/EmptyApiKey": EmptyApiKey,
 };
 
 const mainContainer = document.getElementById("root");
