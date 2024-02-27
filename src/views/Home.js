@@ -10,7 +10,6 @@ import { FilterByMenu } from "../components/FilterByMenu.js";
 export const Home = () => {
   const viewHome = document.createElement("section");
 
-  //viewHome.append(Header(), OrderBySelect(), SearchByNameInput(), FilterByMenu(), Footer());
   viewHome.append(
     Header(),
     SearchByName(),
