@@ -18,11 +18,12 @@ export const Welcome = () => {
     <p>a nuestro jardín</p>
   </div>
   <form action="">
-    <input class="input" type=text placeholder="Por favor ingresa tu nombre..." />
-    <label for="apikey">Para acceder a todas las funcionaliddes:<label>
-        <input class="input" type=text name="apikey" id="apikey" placeholder="Ingresa tu llave... (opcional)" />
-        <p>Si no tienes una apikey solicitala haciendo click <a
-            href="https://platform.openai.com/docs/overview">Aqui</a></p>
+    <input class="input" type=text placeholder="Por favor ingresa tu nombre..." /><br/>
+    <label for="apikey">Para acceder a todas las funcionaliddes:<label><br/>
+        <input class="input" type=text name="apikey" id="apikey" placeholder="Ingresa tu llave... (opcional)" /><br/>
+        <p>Si no tienes una apikey <br/>
+        solicitala haciendo click <a
+            href="https://platform.openai.com/docs/overview">aquí</a></p>
         <button id="enter-button">Iniciar</button>
   </form>
 </div>
