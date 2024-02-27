@@ -21,7 +21,6 @@ export const setRoutes = (newRoutesValue) => {
   }
   // optional Throw errors if routes doesn't define an /error route
   // assign ROUTES
-  //si la url no se encuentra en ROUTES enviame a notfound
 };
 // quien va a llamar a setRoutes(Home()); ?
 
@@ -49,7 +48,7 @@ const renderView = (pathname, props = {}) => {
 
 export const navigateTo = (pathname, props = {}) => {
   const URLvisited = pathname;
-  console.log(URLvisited);
+  // console.log(URLvisited);
   history.pushState({}, "", URLvisited);
   //el objeto state {objeto asociado al nuevo registro}
   // update window history with pushState
