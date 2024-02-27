@@ -45,7 +45,6 @@ export const Header = (name = "user") => {
   <nav>
     <ul class="nav-ul">
       <li><a id="home">Home</a></li>
-      <li><a id="individual">Chat individual</a></li>
       <li><a id="api" class="keyApi">API</a></li>
       <li><a id="stats">Estadisticas</a></li>
     </ul>
@@ -56,7 +55,7 @@ export const Header = (name = "user") => {
   </nav>
     `;
   header.querySelector("#home").addEventListener("click", () => navigateTo("/home", { }));
-  header.querySelector("#individual").addEventListener("click", () => navigateTo("/individual", { name: "sldjf"}));
+  //header.querySelector("#individual").addEventListener("click", () => navigateTo("/individual", { name: "sldjf"}));
   header.querySelector("#api").addEventListener("click", () => navigateTo("/api", { }));
   header.querySelector("#stats").addEventListener("click", () => navigateTo("/stats", { }));
   return header;

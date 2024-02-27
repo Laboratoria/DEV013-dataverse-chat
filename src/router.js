@@ -181,15 +181,4 @@ export const onURLChange = (pathname) => {
   const objectProps = queryStringToObject(searchURL);
   renderView(pathname, objectProps);
 };
-/*http://www.ejemplo.com:8080/pagina/ejemplo?clave=valor#seccion
 
-search: contiene parámetros de búsqueda para la solicitud. Se inicia con el símbolo de interrogación y tiene la forma clave=valor&clave2=valor2.
-
-hash: identifica una sección específica dentro del recurso. Se inicia con el símbolo de numeral (#) seguido de un identificador. En la URL de ejemplo, el hash es seccion
-
- */
-/*linkEl.addEventListener('click', () => navigateTo("/about", { name: "Xochitl" }))
-
-http://www.website.com?name=Noemi&color=green window.location.search: ?name=Noemi&color=green
-
- */

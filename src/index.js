@@ -5,7 +5,7 @@ import { IndividualChat } from "./views/IndividualChat.js";
 import { Api } from "./views/Api.js";
 import { Error } from "./views/Error.js";
 import { onURLChange, setRootEl, setRoutes } from "./router.js";
-import { Stats } from "./views/Stats.js";
+//import { Stats } from "./views/Stats.js";
 //import data from "./data/dataset.js";
 //import { computeStats, filterData, sortData } from './lib/dataFunctions.js';
 //import { SectionHomeS } from './components/SectionHome.js';
@@ -20,8 +20,8 @@ const routes = {
   "/individual": IndividualChat,
   "/api": Api,
   "/error": Error,
-  "/stats": Stats,
 };
+
 
 // data.forEach(element => {
 //     routes[(`/individual-${element.name}`).toLowerCase()] = IndividualChat;
@@ -38,3 +38,5 @@ document.addEventListener("DOMContentLoaded", (event) => {
 window.addEventListener("popstate", (event) => {
   onURLChange(event.target.location.pathname);
 });
+
+

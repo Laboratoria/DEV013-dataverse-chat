@@ -1,6 +1,9 @@
 import { navigateTo } from "../router.js";
+/*export const Cards = (data) => {
+  // const divContainerFace = document.createElement("div");
+  // divContainerFace.className = "containerFace";
+  // data.map ((item) => item)
 
-export const Cards = (data) => {
   const listUl = document.createElement("ul");
   data.forEach((element) => {
     const listLi = document.createElement("li");
@@ -117,4 +120,80 @@ export const Cards = (data) => {
     
   });
   return listUl;
+};*/
+
+export const Cards = (data) => {
+  const listUl = document.createElement("ul");
+  data.forEach((element) => {
+    const listLi = document.createElement("li");
+    listUl.appendChild(listLi);
+    listLi.setAttribute('itemscope', '');
+    listLi.setAttribute('itemtype', 'https://schema.org/Game');
+    listLi.className = "cardList";
+    const divCard = document.createElement("div");
+    divCard.className = "card";
+    divCard.classList.add(`card${element.personality}`)
+    divCard.innerHTML = `
+    <dl>
+    <div class="headerCard">
+    <dt>Genero</dt><dd itemprop="gender" class= ${element.gender === "Femenino" ? "genderFemale" : "genderMale"}></dd>
+    <dt>Signo</dt><dd itemprop="zodiacSign" class=${element.facts.zodiacSign}></dd>
+    </div>
+    <div class="bodyCard" data-img-one="${element.imageUrl}" data-img-one="${element.imageUrlFace}">
+    <img src= ${element.imageUrl} alt=${element.name}></dd>
+    </div>
+    <div class="footerCard">
+      <div class="information">
+        <dt>Especie</dt><dd itemprop="species">${element.species}</dd>
+        <dt>Nombre</dt><dd itemprop="name">${element.name}</dd>
+        <dt>Personalidad</dt><dd itemprop="personality">${element.personality.length > 5 ? element.personality.substring(0, 5) + ".." : element.personality}</dd>
+      </div>
+    <div class="date">
+    <img src="./images/Pastel de cumple.png" alt="cake"/>
+    <dt>Cumpleaños</dt><dd itemprop="birthDate">${element.facts.birthDate}</dd>
+    </div>
+    </div>
+    </dl>
+    `;
+    listLi.append(divCard);
+
+    const prueba = listLi.querySelectorAll(".bodyCard");
+    for (const iterator of prueba) {
+      iterator.addEventListener('mouseover', cambiarColor)
+      iterator.addEventListener('mouseout', cambiarColor)
+    }
+    function cambiarColor(e) {
+      if (e.type === "mouseover") {
+        e.currentTarget.innerHTML = `<img src=${element.imageUrlFace} alt=${element.name}>`
+      } else {
+        e.currentTarget.innerHTML = `<img src="${element.imageUrl}" alt=${element.name}>`
+      }
+    }
+
+    listLi.addEventListener("click", () => {
+      navigateTo(`/individual?id=${element.id}`);
+    });
+  });
+  return listUl;
 };
+
+//hacer if en card para mandar a api, antes de individual
+//hacer función para eliminar api key
+//cambiar por select y option
+//borde rojo al input cuando no hay texto
+//naveagación hacia api, cuando no se detecta la llave
+
+// listLi.addEventListener("click", () => {
+//   // navigateTo(`/individual`, {id: element.id});
+//   if(setApiKey(window.localStorage)){
+//     navigateTo(`/individual?id=${element.id}`);
+//   } else {
+//     navigateTo(`/api`);
+//   }
+// });
+// });
+
+// listLi.addEventListener("click", () => {
+//   // navigateTo(`/individual`, {id: element.id});
+//   navigateTo(`/individual?id=${element.id}`);});
+// });

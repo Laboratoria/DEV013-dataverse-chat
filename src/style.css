@@ -279,8 +279,10 @@ form {
   background: none;
   border: none;
   position:fixed;
+  bottom: -10px;
+  right: 350px;
   /*transform: translateX(2000%, 100%);/*X= HORIZONTAL, Y VERTICAL*/
-  transform: translate(2400%, 750%);
+  /* transform: translate(2400%, 750%); */
 }
 .container-ico {
   background: none;
@@ -414,65 +416,62 @@ aside {
   display: flex;
   background-size: cover;
 }
-/*.card:hover {
-  transform: scale(1.2);
-  opacity: 0.7;
+.card:hover {
+  transform: translateY(8px);
+  transition: 0.5s;
+  cursor: pointer;
 }
-.card:hover::before {
-  content: "ver mas";
-  &.Leo {
-    color: transparent;
-  }
-}*/
 .cardGruñon {/*puestas y agregadas con view*/
   background-image: url("./images/cardGruñon.png");
 }
-.cardGruñon:hover {
-  opacity: 0.8;
-  transform: scale(1.1);
-  cursor: pointer;
-}
 .cardGruñon:hover::before {
-  content:  url("./images/cardGruñon.png");
-  font-size: 16px;
+  content: "¿Quiéres chatear conmigo?";
   position: absolute;
-  font-weight: 800;
-  left: 155%;
-  top: 50%;
-  transform: translate(-50%, -50%);
+  color: black;
+  font-weight: 400;
+  font-size: 14px;
 }
 .cardGruñon:hover::after {
-  content: "¿Quiéres chatear conmigo? da clic" ;
-  font-size: 16px;
+  content: url("./images/hover-cards/card-gruñon.png");
   position: absolute;
-  color: blue;
-  font-weight: 800;
-  left: 155%;
-  top: 50%;
-  transform: translate(-50%, -50%);
+  transform: translateY(0px);
 }
+/*
+.cardGruñon:hover::before {
+  content:  url("./images/hover-cards/card-gruñon.png");
+  position: absolute;
+}
+.cardGruñon:hover::after {
+  content: url("./images/face/apolo.png");
+  display: block;
+  position: absolute;
+  transform: translate(30%, 20%);
+}
+.cardGruñon:hover::before::after {
+  content: "¿Quiéres chatear conmigo?";
+}*/
 .cardPerezoso {
   background-image: url("./images/cardPerezoso.png");
-  box-shadow: 0px 7px 10px rgba(black, 0.5);
 }
-.cardPerezoso:hover {
-  transform: translateY(20px);
-  & ::before {
-    opacity: 1;
-  }
+/* .cardPerezoso:hover {
+  transform: translateY(8px);
+  transition: 0.4s;
+  cursor: pointer;
+} */
+.cardPerezoso:hover::before {
+  content: url("./images/hover-cards/card-perezoso.png");
+  position: absolute;
+  transform: translateY(-10px);
+  z-index: 1;
 }
+
+/* .cardPerezoso:hover::after {/*content: var(--face-image, url(./images/face/bones.png));*
+  content: url("./images/face/bones.png");
+  transform: translate(-150px, 0px);
+} */
   .cardDeportista {
     background-image: url("./images/cardDeportista.png");
   }
-  /*.cardDeportista:hover {
-    opacity: 0.8  ;
-  }
-  .cardDeportista:hover::after {
-    content: "Platica conmigo";
-    position: relative;
-    color: #000;
-    margin-right: 100px;
-  }*/
   .cardAltanera {
     background-image: url("./images/cardAltanera.png");
   }
@@ -492,20 +491,6 @@ aside {
   align-items: center;
   height: 147px;
 }
-/*.bodyCard:hover {
-  position: relative;
-  right: 160px;
-  top: 20px;
-}
-.bodyCard:hover::before {
-  content: "Chatea conmigo...";
-  font-size: 18px;
-  color: blue;
-  font-weight: 600;
-  text-align: center;
-  transform: translate(210px, 10px);
-  cursor: pointer;
-}*/
   .headerCard {
     display: flex;
     justify-content: space-between;
@@ -621,14 +606,12 @@ aside {
     overflow: hidden;
     text-align: right;
   }
-
   /* Contenedor de todas las cards */
   .container {
     max-width: 790px;
     width: 790px;
     height: 100%;
   }
-
   /* Estilos del select */
   #page {/*esto se puede modificar*/
     font-size: 28px;
@@ -641,7 +624,6 @@ aside {
     border-radius: 5px;
     border: 1px solid #e0e0e0;
   }
-
   /* Estilos del searchbar */
   input[type="text"] {
     padding: 0.5rem;
@@ -653,13 +635,12 @@ aside {
     align-items: center;
     gap: 8px;
   }
-
   /* Estilos botones */
   .btn-clear,.btn-clear-search {
-    background-color: #8ac68a;
+    background-color: white;
     border-radius: 8px;
     border-style: none;
-    color: #FFFFFF;
+    color: black;
     cursor: pointer;
     font-size: 16px;
     padding: 10px 16px;
@@ -671,10 +652,14 @@ aside {
     padding: 0.4rem 0.5rem;
     border-radius: 5px;
   }
-  .btn-clear:hover, .btn-clear:focus,
-  .btn-clear-search:hover,.btn-clear-search:focus {/*hover estilo al pasar el cursor sobre el botón*/
-    background-color: #7ab37a;
-  }
+.btn-clear-search:hover{
+  /*box-shadow: 0 0 10px rgba(0,0,0,0.8);*/
+  box-shadow: inset 8px 10px 10px 1px rgba(0,0,0,0.5);
+}
+  /*.btn-clear:hover, .btn-clear:focus,
+  .btn-clear-search:hover,.btn-clear-search:focus {/*hover estilo al pasar el cursor sobre el botón*
+    box-shadow: 0px 7px 10px rgba(black, 0.5);
+  }*/
 
  /* //Estilos para la vista de estadisticas */
  .stats-main{
@@ -942,4 +927,11 @@ color: #8E8E93;
     flex-direction: column;
     gap: 0.5rem;
   }
+}
+
+
+.borderColor {
+  border-style: solid;
+  border-color: red;
+  border-width: 2px;
 }

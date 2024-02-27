@@ -151,6 +151,8 @@ export const SectionHome = () => {
   const content = section.querySelector("#content");
   content.appendChild(Cards(data));
   const order = section.querySelector('[data-testid="select-sort"]');
+  const options = section.getElementsByTagName("option");
+  //const option =section.querySelector("#sort");
   const filterGender = aside.querySelector(
     '[data-testid="select-filterGender"]'
   );
@@ -177,9 +179,10 @@ export const SectionHome = () => {
     content.appendChild(Cards(filteredData));
   });
 
-  order.addEventListener("change", (event) => {
+  order.addEventListener("change", (e) => {
     content.textContent = "";
-    filteredData = sortData(filteredData, "name", event.target.value);
+    filteredData = sortData(filteredData, "name", e.target.value);//option.options[option.selectedIndex].text
+    console.log("🚀 ~ order.addEventListener ~ filteredData:", options[order.selectedIndex])
     content.appendChild(Cards(filteredData));
   });
 
@@ -239,6 +242,7 @@ export const SectionHome = () => {
   iconChat.addEventListener("click", () => {
     navigateTo("/groupal", {});
   });
+
 
   main.append(aside, section, buttonDiv);
   return main;

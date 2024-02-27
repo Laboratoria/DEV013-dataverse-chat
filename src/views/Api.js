@@ -2,7 +2,7 @@
 // //import { Footer } from "../components/Footer.js";
 // //import { navigateTo } from "../router.js";
 import { Button } from "../components/Button.js";
-import { setApiKey } from "../lib/apiKey.js";
+import { setApiKey, removeApiKey } from "../lib/apiKey.js";
 //import { Header } from "../components/Header.js";
 export const Api = () => {
   const container = document.createElement("div");
@@ -16,7 +16,7 @@ export const Api = () => {
     <div class="container__ApiUser">
     <label for="userName">USUARIO </label>
     <div class="container__ApiUser__text">
-    <input type="text id="userName" class="userName" placeholder="Margarita">
+    <input type="text id="userName" class="userName" placeholder="Margarita" required>
     </div>
     </div>
     <div class="container__keyApi">
@@ -27,9 +27,9 @@ export const Api = () => {
     </div>
     <p class="textKeyApi">¿Qué es una llave API? <a href="https://aws.amazon.com/es/what-is/api-key/" target="_blank"> Información</a> ¿No cuentas con tu API? Puedes generarla <a href="https://platform.openai.com/api-keys" target="_blank">aquí</a><p>
     </div>
-    <button type="button" class="buttonApiSave show"> SAVE API KEY</button>
-    <button type="button" class="buttonApiDelete hide"> DELETE </button>
-  </from>
+    <input class="buttonApiSave show" type="submit" value="SAVE API KEY">
+    <input class="buttonApiDelete hide" type="submit" value="DELETE API KEY">
+  </form>
     `;
   const apiKeyInput = apiPage.querySelector("#api-key");
   const apiKeyPass = apiPage.querySelector(".api__key"); //checar, si la comento no aparece el texto
@@ -48,6 +48,43 @@ export const Api = () => {
 
   const buttonSave = apiPage.querySelector(".buttonApiSave");
   const buttonDelete = apiPage.querySelector(".buttonApiDelete");
+  const requiredInputName =  apiPage.querySelector(".userName");//valor obligatorio del input del nombre
+  buttonSave.addEventListener("click", () => {
+    if(requiredInputName.value === "" || apiKeyInput.value === ""){//SI EL VALOR DEL INPUT ES VACIO QUE NO SE ESCONDA EL BOTÓN DEL SAVE Y SE AGREGUE LA CLASE BORDERCOLOR QU PONE ROJO EL INPUT
+      requiredInputName.classList.add("borderColor");
+      apiKeyInput.classList.add("borderColor");
+      //alert("Campos obligatorios");
+    } 
+    else if(apiKeyInput.value > 18) {//SI EL INPUT ES MAYOR A 4 LETRAS
+      alert("adios");
+    }
+    buttonDelete.classList.remove("hide");
+    buttonDelete.classList.add("show");
+    buttonSave.classList.remove("show");
+    buttonSave.classList.add("hide");
+    setApiKey(apiKeyInput.value);
+  });
+  buttonDelete.addEventListener("click", () => {
+    buttonSave.classList.remove("hide");
+    buttonSave.classList.add("show");
+    buttonDelete.classList.remove("show");
+    buttonDelete.classList.add("hide");
+    removeApiKey();
+  });
+  container.append(Button("CERRAR"), apiPage);
+  // container.append(apiPage);
+  return container;
+};
+
+/* const apiKeyUser = apiPage.querySelector(".userName");
+  apiKeyUser.addEventListener("keydown", () => {console.log("hola");})
+  const save = Header(apiKeyUser.value);
+  console.log(save); */
+
+/*
+  const buttonSave = apiPage.querySelector(".buttonApiSave");
+  const buttonDelete = apiPage.querySelector(".buttonApiDelete");
+  // const requiredInputName =  apiPage.querySelector(".userName");
   buttonSave.addEventListener("click", () => {
     buttonDelete.classList.remove("hide");
     buttonDelete.classList.add("show");
@@ -60,14 +97,8 @@ export const Api = () => {
     buttonSave.classList.add("show");
     buttonDelete.classList.remove("show");
     buttonDelete.classList.add("hide");
-    //localStorage.removeItem(apiKeyInput.value);
+    removeApiKey();
   });
   container.append(Button("CERRAR"), apiPage);
-  // container.append(apiPage);
   return container;
-};
-
-/* const apiKeyUser = apiPage.querySelector(".userName");
-  apiKeyUser.addEventListener("keydown", () => {console.log("hola");})
-  const save = Header(apiKeyUser.value);
-  console.log(save); */
+  */

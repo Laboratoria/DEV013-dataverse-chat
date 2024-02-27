@@ -2,13 +2,17 @@ export const getApiKey = () => {
   //OBTENER LA LLAVE
   // const myStorage = window.localStorage;
   const getStorage = localStorage.getItem("llave");
-  console.log("🚀 ~ getApiKey ~ getStorage:", getStorage);
+  return getStorage;
 };
 
 export const setApiKey = (apiKey) => {
   //PARA GUARDAR LA API
   localStorage.setItem("llave", apiKey);
 };
+
+export const removeApiKey = () => {
+  localStorage.clear(window.localStorage);
+}
 
 /*
 localStorage.setItem("perro", "12355");

@@ -24,7 +24,6 @@ export const Home = () => {
   const container = document.createElement("div");
   const main = document.createElement("main");
   main.append(SectionHome());
-
   container.append(Header(), main, Footer());
 
   return container;

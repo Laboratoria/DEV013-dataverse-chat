@@ -1,7 +1,6 @@
 import { navigateTo } from "../router.js";
 
 export const GroupalChat = () => {
-  // const container = document.createElement("div");
   const main = document.createElement("main");
   main.innerHTML = `
   <div class="closeGroupal"><ion-icon name="close-circle-outline"></ion-icon></div>
@@ -20,7 +19,7 @@ export const GroupalChat = () => {
     <div class="containerGroupal__Users__header">
       <p>PARTICIPANTES</p>
     </div>
-    <img src="./images/face/bree.png" alt="faceBree">
+    <div><img src="./images/face/bree.png" alt="faceBree"></dv>
     <img src="./images/face/apolo.png" alt="faceApolo">
     <img src="./images/face/leo.png" alt="faceLeo">
     <img src="./images/face/sally.png" alt="faceSally">

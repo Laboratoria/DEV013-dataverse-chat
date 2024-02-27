@@ -10,7 +10,6 @@ export const IndividualChat = (element) => {
   // console.log("nombre", nameElement)
   const idFilter = data.filter((item) => item["id"] === element.id);
   console.log("Este es nuestro idFilter", idFilter);
-  console.log(element, "eleme");
   const container = document.createElement("div");
   const main = document.createElement("main");
   main.innerHTML = `
