@@ -250,26 +250,37 @@ li.card-container.aromatica {
   height: 80px;
 }
 
-#front-card .button-container {
-  /* background-color: black; */
-  display: flex;
-  justify-content: center;
+#front-card .buttons-container {
+    /* background-color: black; */
+    display: flex;
+    justify-content: center;
 }
 
-#front-card button {
-  background-color: #d7a180;
-  width: 137px;
-  height: 32px;
-  text-transform: uppercase;
-  font-weight: bold;
-  font-size: 20px;
-  color: white;
-  text-align: center;
-  border-radius: 10px;
-  border: none;
-  box-shadow: 2px 2px 5px grey;
+#front-card .individual-chat-button {
+    background-color: #D7A180;
+    width: 137px;
+    height: 32px;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 20px;
+    color: white;
+    text-align: center;
+    border-radius: 10px;
+    border: none;
+    box-shadow: 2px 2px 5px grey;
 }
 
+#front-card .buttons-container img {
+    /* background-color: white; */
+    width: 40px;
+    height: 40px;
+    margin: 4px 0;
+}
+
+ .homeButton, .groupButton, .individual-chat, .statics-button{
+    border: none;
+    appearance: none;
+    background-color: inherit;
 /* Footer styles */
 
 footer {

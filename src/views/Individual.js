@@ -1,6 +1,8 @@
-import { navigateTo } from "../router.js";
+import { GroupIconButton } from "../components/GroupIconButton.js";
+import { HomeIconButton } from "../components/HomeIconButton.js";
+//import { navigateTo } from "../router.js";
 
-export default function IndividualChat(props) {
+export default function IndividualChat() {
   const viewIndividualChat = document.createElement("div");
 
   viewIndividualChat.innerHTML += `
@@ -27,6 +29,7 @@ export default function IndividualChat(props) {
 <!--<button type="submit" id="send-button" class="send-button">Send</button>-->
     </div>
   `;
+  viewIndividualChat.append(HomeIconButton(), GroupIconButton());
 
   const groupButton = document.createElement("button");
   viewIndividualChat.appendChild(groupButton);

@@ -2,6 +2,7 @@ import { navigateTo } from "../router.js";
 
 export const Welcome = () => {
   const viewWelcome = document.createElement("section");
+
   viewWelcome.innerHTML = `
     <div id="welcome-upper">
       <section id="welcome-brand">
