@@ -8,29 +8,34 @@ export const IndividualChat = (item) => {
   // Llamando al DOM que sera para el detalle de la tarjeta
   const detailCard = document.createElement("main");
   const card = document.createElement("div");
+  card.setAttribute('class', 'card')
 
   card.innerHTML = `
   <div>
-  <div>
-  <img src="${item.imageUrl}" alt="${item.name}">
-  <h3> ${item.name} </h3>
-  <p class= "descriptionTotal" > ${item.facts.totalEpisodes} Ep. | ${item.facts.totalGender} | Sub. ${item.facts.totalSubtitle} </p>
-  <p class= "description"> ${item.description}</p>
-  </div>
-  <div>
-    <button class="button-return-home">
+    <div class="detail-card-top">
+      <img src="${item.imageUrl}" alt="${item.name}" class= "image-card">
+      <h3 class= "name-kdrama"> ${item.name} </h3>
+      <p class= "description-Total" > ${item.facts.totalEpisodes} Ep. | ${item.facts.totalGender} | Sub. ${item.facts.totalSubtitle} </p>
+      <div class="detail-card-bottom">
+        <p class= "description"> <span class= "title-description"> Descripción: </span> <br> ${item.description}</p>
+      </div>
+    </div>
+    
+    <div>
+      <button class="button-return-home">
       <img src="images/home.png" class="logo-home">
       Página principal
-    </button>
-  </div>
+      </button>
+    </div>
   </div>
   
   <div class="chat">
     <div class="chat-name">
-    <img src="${item.imageUrl}" alt="${item.name}">
-    <h3> ${item.name} </h3>
+      <img src="${item.imageUrl}" alt="${item.name}">
+      <h3> ${item.name} </h3>
     </div>
   </div>
+  
   <div class="input-chat"> 
     <input type="text" id="input-user" placeholder="Interactua con el chat aqui">
     <input type="submit" value="Enviar">

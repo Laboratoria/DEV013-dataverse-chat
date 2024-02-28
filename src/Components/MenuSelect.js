@@ -2,7 +2,7 @@ export const MenuSelect = () => {
   const selects = document.createElement("div");
   selects.setAttribute("id", "input");
   selects.innerHTML = `
-    <div class= menu>
+    <div class= "menu">
     <!--Seccion genero-->
     <div class="Genre-menu">
       <label for="Genre1">Genero: </label>
@@ -47,9 +47,9 @@ export const MenuSelect = () => {
       </div>
     </div>
     <!--Boton Limpiar filtros-->
-    <div class="Menu-clean">
-      <button name="button-clear" data-testid="button-clean">
-        <img class="logo-clean" src="images/filter.png" />
+    <div class="Menu-clear">
+      <button class="button-clear" data-testid="button-clear">
+        <img class="logo-clear" src="images/filter.png" />
         Limpiar filtros</button>
     </div>
   

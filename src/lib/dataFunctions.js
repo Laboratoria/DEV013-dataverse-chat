@@ -28,17 +28,17 @@ export const sortData = (data, sortBy, sortOrder) => {
 };
 // Funcion para mostrar estadistica de cantidad de k-dramas por capitulos 
 export const computeStats = (data) => {
-  const estadisticas = data.reduce((acumulador, item) => {
+  const stats = data.reduce((acumulador, item) => {
     // sacar el porcentaje
-    if (item.facts.cantidadEpisodios === 16) {
+    if (item.facts.totalEpisodes === 16) {
       acumulador['16 Episodios'] += 1;
-    } else if (item.facts.cantidadEpisodios === 20) {
+    } else if (item.facts.totalEpisodes === 20) {
       acumulador['20 Episodios'] += 1;
-    } else if (item.facts.cantidadEpisodios === 21) {
+    } else if (item.facts.totalEpisodes === 21) {
       acumulador['21 Episodios'] += 1;
-    } else if (item.facts.cantidadEpisodios === 24) {
+    } else if (item.facts.totalEpisodes === 24) {
       acumulador['24 Episodios'] += 1;
-    } else if (item.facts.cantidadEpisodios === 32) {
+    } else if (item.facts.totalEpisodes === 32) {
       acumulador['32 Episodios'] += 1;
     }
     // retorna el acumular mostrando el total en cada propiedad de episodios
@@ -50,5 +50,5 @@ export const computeStats = (data) => {
     '24 Episodios': 0,
     '32 Episodios': 0,
   });
-  return estadisticas;
+  return stats;
 };

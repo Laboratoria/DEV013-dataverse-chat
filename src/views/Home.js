@@ -7,13 +7,15 @@ import { Header } from './../Components/Header.js';
 import { ButtonGroupChat } from '../Components/ButtonGroupChat.js';
 import { MenuSelect } from './../Components/MenuSelect.js';
 import { Footer } from './../Components/Footer.js';
+import { WelcomeText } from './../Components/WelcomeText.js'
 
 
 export const Home = () => {
   const viewHome = document.createElement("section");
-  viewHome.setAttribute("class", "viewHome")
+  viewHome.setAttribute("class", "view")
 
   const main = document.createElement("main")
+  main.setAttribute("class", "main")
   //console.log(MenuSelect());
 
   viewHome.appendChild(Header());
@@ -21,6 +23,7 @@ export const Home = () => {
   viewHome.appendChild(main)
   viewHome.appendChild(Footer());
 
+  main.appendChild(WelcomeText());
   main.appendChild(TotalCards(totalData));
 
   const selectFilter = viewHome.querySelector("#Genre1")
@@ -36,7 +39,7 @@ export const Home = () => {
     main.innerHTML = ""
     main.appendChild(TotalCards(totalData));
 
-});
+  });
 
   // // ordenar de manera ascedente y descendente
   const selectOrder = viewHome.querySelector("#Order1");
@@ -57,22 +60,27 @@ export const Home = () => {
       // Ordenar por nombre de manera descendente
       const orderDesc = sortData(totalData, "name", "desc");
       totalData = [...orderDesc]
-      //console.log(totalData);
+      console.log(totalData);
       main.innerHTML = "";
       // main.appendChild(MenuSelect());
-      main.appendChild(Cards(totalData));
+      main.appendChild(TotalCards(totalData));
     }
   });
 
   // //para el boton estadisticas
   const statsButton = viewHome.querySelector("#stats1");
+  const modal = viewHome.querySelector(".content-modal");
+  //console.log(statsButton);
   statsButton.addEventListener('click', function (event) {
-    statsButton.style.display = "flex"; //se muestra la pantalla emergente
+    console.log(statsButton);
+    modal.style.display = "flex"; //se muestra la pantalla emergente
     // aqui alamacenamos la cantidad de kdramas, los resultados y el contenido de texto
     const totalKdramas = data.length;
+    console.log("totalkdramas", totalKdramas);
     const results = computeStats(data);
+    console.log("result:", results);
     const pageText = viewHome.querySelector("#page");
-    //console.log(pageText);
+    console.log("este es el page", pageText);
     if (event.currentTarget === statsButton) {
       //mostrar los porcentajes en el cuadro de dialogo
       pageText.innerHTML = "";
@@ -83,20 +91,22 @@ export const Home = () => {
       pageText.innerHTML += "El " + (results["32 Episodios"] / totalKdramas * 100).toFixed(2) + " % de k-dramas tiene 32 episodios" + "<br>";
       //pageText.log(resultados);
     }
+    console.log("este es el page", pageText);
   });
-
   // para cerrar la ventana emergente
-  const closeModal = viewHome.querySelector("#close");
+  const closeModal = viewHome.querySelector(".button-close");
   closeModal.addEventListener("click", () => {
-    closeModal.style.display = "none";
+    modal.style.display = "none";
   });
 
-  // // aqui limpiamos todos los filtros
-  // limpiarFiltros.addEventListener("click", function limpiar() {
-  //   rootElement.innerHTML = "";
-  //   rootElement.appendChild(renderItems(data));
-  // });
-  
+  // aqui limpiamos todos los filtros
+  const clearFilter = viewHome.querySelector(".button-clear");
+  console.log("boton", clearFilter);
+  clearFilter.addEventListener("click", function limpiar() {
+    main.innerHTML = "";
+    main.appendChild(TotalCards(data));
+  });
+
   // cardSelect.addEventListener("click", () =>{
   //   console.log("Este es el CardSelect", cardSelect);
   // })

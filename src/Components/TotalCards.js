@@ -3,6 +3,7 @@ import { navigateTo } from '../router.js';
 
 export const TotalCards = (data) => {
   const container = document.createElement('ul');
+  container.setAttribute('class', 'container-cards');
   // Iteraremos sobre cada objeto en el dataset
   data.forEach(item => {
     // Creamos un objeto contenedor para cada item (tarjeta)
@@ -16,7 +17,9 @@ export const TotalCards = (data) => {
     itemContainer.setAttribute('itemtype', 'kdramas');
     itemContainer.setAttribute('class', 'list');
     imageUrl.src = item.imageUrl;
+    imageUrl.setAttribute('class', 'image-card')
     nameKdrama.setAttribute('itemprop', 'name');
+    nameKdrama.setAttribute('class', 'name-kdrama')
     descriptionTotal.setAttribute('class', 'description-Total')
     descriptionTotal.setAttribute('itemprop', 'descriptionTotal');
 
@@ -25,13 +28,13 @@ export const TotalCards = (data) => {
     itemContainer.append(imageUrl, nameKdrama, descriptionTotal);
     container.appendChild(itemContainer);
 
-    console.log(itemContainer);
+    //console.log(itemContainer);
 
     itemContainer.addEventListener("click", () => {
       //con item traemos todo los valores 
       navigateTo("/individualchat", {...item})
     })
-    console.log("Este es el element", itemContainer);
+    //console.log("Este es el element", itemContainer);
   });
   console.log(container);
   return container;
