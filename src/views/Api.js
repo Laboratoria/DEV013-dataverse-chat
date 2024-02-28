@@ -55,7 +55,7 @@ export const Api = () => {
       apiKeyInput.classList.add("borderColor");
       //alert("Campos obligatorios");
     } 
-    else if(apiKeyInput.value > 18) {//SI EL INPUT ES MAYOR A 4 LETRAS
+    else if(apiKeyInput.value > 5) {//SI EL INPUT ES MAYOR A 4 LETRAS
       alert("adios");
     }
     buttonDelete.classList.remove("hide");

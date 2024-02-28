@@ -279,8 +279,8 @@ form {
   background: none;
   border: none;
   position:fixed;
-  bottom: -10px;
-  right: 350px;
+  bottom: 0px;
+  right: 40px;
   /*transform: translateX(2000%, 100%);/*X= HORIZONTAL, Y VERTICAL*/
   /* transform: translate(2400%, 750%); */
 }
@@ -651,9 +651,12 @@ aside {
   .btn-clear-search {
     padding: 0.4rem 0.5rem;
     border-radius: 5px;
+    border: 1px solid #517035 ;
+    background-color: #FBF6F6;
+    color: #10531E;
   }
 .btn-clear-search:hover{
-  /*box-shadow: 0 0 10px rgba(0,0,0,0.8);*/
+  /* box-shadow: 0 0 10px rgba(0,0,0,0.8); */
   box-shadow: inset 8px 10px 10px 1px rgba(0,0,0,0.5);
 }
   /*.btn-clear:hover, .btn-clear:focus,

@@ -146,7 +146,7 @@ export const SectionHome = () => {
     </div>
     `;
   buttonDiv.innerHTML = `
-    <button class="container-ico"> <ion-icon name="logo-wechat"></ion-icon> </button> `;
+    <button class="container-ico"> <img src="./images/logo-wechat_1.png" name="logo-wechat"></button> `;
 
   const content = section.querySelector("#content");
   content.appendChild(Cards(data));
