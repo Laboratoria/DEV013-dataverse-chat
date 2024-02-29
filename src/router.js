@@ -25,11 +25,16 @@ export const setRoutes = (newRoutesValue) => {
 }
 
 //esta es opcional segun el README
-// const queryStringToObject = (queryString) => {
-//   // convierte la cadena de consulta a URLSearchParams
-//   // convierte URLSearchParams en un objeto
-//   // devolver el objeto
-// }
+const queryStringToObject = (queryString) => {
+// convierte la cadena de consulta a URLSearchParams
+  const newURL = new URLSearchParams(queryString);
+  console.log("Aqui se ve la new url", newURL);
+// convierte URLSearchParams en un objeto
+  const objectURL = Object.fromEntries(newURL);
+// devolver el objeto
+  console.log("Aqui vemos el objecturl", objectURL);
+  return objectURL;
+}
 
 // props va a ser un objeto vacio 
 const renderView = (pathname, props = {}) => {
@@ -55,9 +60,9 @@ const renderView = (pathname, props = {}) => {
 }
 export const navigateTo = (pathname, props = {}) => {
   // actualiza el historial de la ventana (navegador) con pushState
-  //const URLvisited = window.location.hostname + pathname;
+  const URLvisited = window.location.origin + pathname;
   console.log(window.location.hostname);
-  history.pushState({}, '', pathname);
+  window.history.pushState({}, '', URLvisited);
 
   // renderiza la vista con el nombre de la ruta y los accesorios
   console.log(props);
@@ -68,6 +73,7 @@ export const onURLChange = (location, props) => {
   // analiza la ubicación de la ruta y los parámetros de búsqueda
   // convierte los parámetros de búsqueda en un objeto
   // renderiza la vista con la ruta y el objeto
+console.log(location);
 renderView(location, props);
 }
 
