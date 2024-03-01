@@ -8,6 +8,7 @@ export const TotalCards = (data) => {
   data.forEach(item => {
     // Creamos un objeto contenedor para cada item (tarjeta)
     const itemContainer = document.createElement('li');
+    itemContainer.className = "cards";
     const imageUrl = document.createElement('img');
     const nameKdrama = document.createElement('h3');
     const descriptionTotal = document.createElement('p');
@@ -36,6 +37,16 @@ export const TotalCards = (data) => {
     })
     //console.log("Este es el element", itemContainer);
   });
+ 
+  // para ubicar al search por su parametro id
+  //const cards = container.querySelectorAll(".cards");
+  //cards.forEach((item) => {
+    //item.addEventListener("click", () => {
+      //const cardId = item.getAttribute("id");
+      //navigateTo(`/individualchat`, { name: cardId});
+    //});
+  //});
   console.log(container);
   return container;
 };
+

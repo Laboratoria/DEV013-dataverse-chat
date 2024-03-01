@@ -73,8 +73,8 @@ export const onURLChange = (location, props) => {
   // analiza la ubicación de la ruta y los parámetros de búsqueda
   // convierte los parámetros de búsqueda en un objeto
   // renderiza la vista con la ruta y el objeto
-console.log(location);
-renderView(location, props);
+  console.log(location);
+  renderView(location, props);
 }
-
-
+// agregando popstate
+//window.onpopstate = onURLChange;

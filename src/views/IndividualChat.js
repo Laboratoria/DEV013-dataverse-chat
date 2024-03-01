@@ -13,9 +13,9 @@ export const IndividualChat = (item) => {
   card.innerHTML = `
   <div>
     <div class="detail-card-top">
-      <img src="${item.imageUrl}" alt="${item.name}" class= "image-card">
-      <h3 class= "name-kdrama"> ${item.name} </h3>
-      <p class= "description-Total" > ${item.facts.totalEpisodes} Ep. | ${item.facts.totalGender} | Sub. ${item.facts.totalSubtitle} </p>
+      <img src="${item.imageUrl}" alt="${item.name}" class= "image-kdrama-card">
+      <h3 class= "name-kdrama-card"> ${item.name} </h3>
+      <p class= "description-Total-card" > ${item.facts.totalEpisodes} Ep. | ${item.facts.totalGender} | Sub. ${item.facts.totalSubtitle} </p>
       <div class="detail-card-bottom">
         <p class= "description"> <span class= "title-description"> Descripción: </span> <br> ${item.description}</p>
       </div>
@@ -31,14 +31,17 @@ export const IndividualChat = (item) => {
   
   <div class="chat">
     <div class="chat-name">
-      <img src="${item.imageUrl}" alt="${item.name}">
-      <h3> ${item.name} </h3>
+      <img src="${item.imageUrl}" alt="${item.name}" class="image-kdrama-chat">
+      <div class="chat-detail">
+      <h3 class="name-kdrama-chat"> ${item.name} </h3>
+      <p class="chat-on">Conectado</p>
+      </div>
     </div>
-  </div>
-  
-  <div class="input-chat"> 
+
+    <div class="input-chat"> 
     <input type="text" id="input-user" placeholder="Interactua con el chat aqui">
     <input type="submit" value="Enviar">
+  </div>
   </div>
   `;
 
