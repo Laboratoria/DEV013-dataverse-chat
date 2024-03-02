@@ -3,9 +3,6 @@ deben seguir una estructura específica */
 
 /* global axios*/
 
-// const api_key = ""//vacio para dar error
-const api_key = "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";//llave laboratoria
-//const api_key = "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";//mi llave
 
 export const communicateWithOpenAI = async (systemMessages, userMessages) => {
   // const api_key = getApiKey()
