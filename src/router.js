@@ -97,12 +97,13 @@ export const setRoutes = (newRoutes) => {
 
 const queryStringToObject = (queryString) => {
   //Esta función tiene como objetivo pasar un string a objeto
+
   // console.log("Este es el queryString", queryString)
 
   const urlProps = new URLSearchParams(queryString);
   // let finalObject;
 
-  const finalObject = Object.fromEntries(urlProps);
+  const finalObject = Object.fromEntries(urlProps.entries());
   console.log("Este es el finalObject", finalObject);
 
   return finalObject;
@@ -163,6 +164,7 @@ export const navigateTo = (pathname, props = {}) => {
   // console.log(urlVisited);
   // const newPathname = pathname +
   const objectProps = queryStringToObject(props);
+  console.log("🚀 ~ navigateTo ~ objectProps:", objectProps);
 
   renderView(pathname, objectProps);
 };

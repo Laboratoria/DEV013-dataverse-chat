@@ -1,14 +1,15 @@
 /* Esta función debe recibir un parámetro que almacena los mensajes
 deben seguir una estructura específica */
+// import { getApiKey } from "./apiKey.js";
+import { navigateTo } from "../router.js";
+//import data from "./../data/dataset.js";
 
-/* global axios*/
-
-
+// const axios = require('axios');
 
 export const communicateWithOpenAI = async (systemMessages, userMessages) => {
   // const api_key = getApiKey()
   try {
-    const response = await axios ({
+    const response = await axios({
       method: "POST",
       url: "https://api.openai.com/v1/chat/completions",
       //En axios el "header" es "headers"
@@ -30,12 +31,9 @@ export const communicateWithOpenAI = async (systemMessages, userMessages) => {
         temperature: 0.7,
       }
     })
-    console.log(response.data.choices[0].message.content, "función open");
-    return response.data.choices[0].message.content;
+    return response;
   } catch (error) {
-    return "error"
-    //El navigateTo debe hacerse dentro de los chats con una condicional, no es responsabilidad del catch usar el navigateTo
-    // navigateTo('/error')
+    navigateTo('/error')
   }
 
 };
@@ -58,25 +56,27 @@ export const communicateWithOpenAI = async (systemMessages, userMessages) => {
 
 
 
-//get traer información(consultar la api)
-//post: crear información(crear una publicación, en la base de datos)
-//JSON si la api necesita alguna información tuya, 
-//la api se comunca con protocolo http, reglas de comunicación entre servidor y cliente
-//urlsearchparams usa get pasar información
-//get usa el chat individual
-//fetch es una herramienta para hacer consulta http de JS (consumir API)no importa si es mayuscula(GET)
-//mejor axios es libreria externa
-//url le esta diciendo a la api que va a usar la data de page 2
-// const apiURL = "https://api.openai.com/v1/chat/completions";
-//"Authorization: Bearer  \
-//"OpenAI-Organization: org-XOneVeSuuHzIh2SaHYxTp3qZ"
-// //let dataOpenAi = JSON.stringify({
-//   "model": "gpt-3.5-turbo",
-//   "messages": [{"role": "system", 
-//     "content": `Tu eres ${data[0]}`}],
-//   "temperature": 0.7
-// })/**//* global axios*/
-// console.log("🚀 ~ communicateWithOpenAI ~ dataOpenAi:", dataOpenAi)
+  //get traer información(consultar la api)
+  //post: crear información(crear una publicación, en la base de datos)
+  //JSON si la api necesita alguna información tuya, 
+  //la api se comunca con protocolo http, reglas de comunicación entre servidor y cliente
+  //urlsearchparams usa get pasar información
+  //get usa el chat individual
+  //fetch es una herramienta para hacer consulta http de JS (consumir API)no importa si es mayuscula(GET)
+  //mejor axios es libreria externa
+  //url le esta diciendo a la api que va a usar la data de page 2
+
+  // const apiURL = "https://api.openai.com/v1/chat/completions";
+  //"Authorization: Bearer  \
+  //"OpenAI-Organization: org-XOneVeSuuHzIh2SaHYxTp3qZ"
+
+  // //let dataOpenAi = JSON.stringify({
+  //   "model": "gpt-3.5-turbo",
+  //   "messages": [{"role": "system", 
+  //     "content": `Tu eres ${data[0]}`}],
+  //   "temperature": 0.7
+  // })
+  // console.log("🚀 ~ communicateWithOpenAI ~ dataOpenAi:", dataOpenAi)
 
 
 
