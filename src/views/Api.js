@@ -2,6 +2,7 @@
 // //import { Footer } from "../components/Footer.js";
 // //import { navigateTo } from "../router.js";
 import { Button } from "../components/Button.js";
+import { Footer } from "./../components/Footer.js"
 import { setApiKey, removeApiKey } from "../lib/apiKey.js";
 //import { Header } from "../components/Header.js";
 export const Api = () => {
@@ -71,7 +72,7 @@ export const Api = () => {
     buttonDelete.classList.add("hide");
     removeApiKey();
   });
-  container.append(Button("CERRAR"), apiPage);
+  container.append(Button("CERRAR"), apiPage, Footer());
   // container.append(apiPage);
   return container;
 };

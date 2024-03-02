@@ -1,6 +1,5 @@
 export const getApiKey = () => {
   //OBTENER LA LLAVE
-  // const myStorage = window.localStorage;
   const getStorage = localStorage.getItem("llave");
   return getStorage;
 };
