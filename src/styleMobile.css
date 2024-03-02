@@ -1,0 +1,136 @@
+/*@media (max-width: 600px) {/*para pantallas de máximo 600px*/
+  /* CSS rules for sizes smaller than 600px *
+  .buttonBack { /*BOTÓN HOME*
+    background-color: #4ca94c;
+    color: black;
+    box-shadow: -50px 0 rgba(0, 0, 0, 0.5);
+    font-weight: 600;
+    border-radius: 20px;
+    padding: 10px 30PX;
+    border: none;
+    cursor: pointer;
+    transition-duration: 0.5s;
+  }
+  .buttonBack:hover {
+    box-shadow: 0px 0 rgba(0, 0, 0, 0.5);
+  }
+
+  header {
+    padding: 10px 5%;
+  }
+  aside {
+    padding: 1.5rem;
+    display: none;
+  }
+  main {
+    flex-direction: column;
+  }
+  section {
+    width: 100%;
+  }
+  .buscador h2 {
+    display: none;
+  }
+  .buscador div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}*/
+
+@media (max-width: 600px) {/*para pantallas de máximo 600px*/
+  /* CSS rules for sizes smaller than 600px */
+  [name="close-circle-outline"] {
+    font-size: 28px;
+  }
+  .iconChat {/*contenedor*/
+    display: flex;
+    font-size: 60px;
+    background: none;
+    border: none;
+    position:fixed;
+    transform: translate(500%, 50%);/*X= HORIZONTAL, Y VERTICAL*/
+  }
+  .container-ico {
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  .containerGroupal {/*contenedor de los cuadros chat grupal*/
+    background-color: #d6d1b5;
+    margin-top: 5px;
+    margin-left: 5px;
+    width: 560px;
+    height: 600px;
+  }
+  .containerGroupal__Chat {/*contenedor chat grupal*/
+    float: left;
+    background-image: url(./images/chat-and-passport/chatBackground.png);
+    background-repeat: no-repeat;
+    background-size: 200%;
+    width: 380px;
+    height: 600px;
+  }
+  .containeGroupal__chat__header { /*contenedor del título del chat grupal*/
+    padding: 25px;
+    text-align: center;
+    justify-content: space-between;
+    background-color: #EEE9CA;
+    font-weight: 800;
+  }
+  .imgGroupal {
+    float: left;
+  }
+  .containerGroupal__chat__inputSend {
+    display: flex;
+    align-items: flex-end;
+  }
+  .inputGroupal {
+    font-size: 16px;
+    width: 100%;
+    background-color: #d6d1b5;
+    margin-top: 130%;
+    position:static;
+  }
+  .containerGroupal__Users {/*contenedor de participantes*/
+    background-color: #f4f1df;
+    border: #bebaa1 5px outset;
+    width: 170px;
+    height: 600px;
+    float: right;
+    & img {
+      width: 40px;
+      height: 40px;
+      margin-left: 25px;
+      border-radius: 5px;
+    }
+  }
+  .containerGroupal__Users__header {/*contenedor título participantes*/
+    background-color: #EEE9CA;
+    padding: 25px;
+    text-align: center;
+    font-weight: 800;
+  }
+ 
+  header {
+    padding: 10px 5%;
+  }
+  aside {
+    padding: 1.5rem;
+    display: none;
+  }
+  main {
+    flex-direction: column;
+  }
+  section {
+    width: 100%;
+  }
+  .buscador h2 {
+    display: none;
+  }
+  .buscador div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
