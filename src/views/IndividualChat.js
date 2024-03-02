@@ -85,7 +85,7 @@ export const IndividualChat = (element) => {
     const message = document.createElement("div")
     const openAiResponse = await communicateWithOpenAI(idFilter[0].description, userInputValue)
     console.log("OPEN RESPONSE", openAiResponse);
-    message.innerHTML = openAiResponse.data.choices[0].message.content
+    message.innerHTML = openAiResponse
     //Vamos a introducir los mensajes cuando la función communicate retorne
     messageWindows.append(message)
   })
