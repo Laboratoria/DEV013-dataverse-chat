@@ -4,6 +4,7 @@ deben seguir una estructura específica */
 /* global axios*/
 
 
+
 export const communicateWithOpenAI = async (systemMessages, userMessages) => {
   // const api_key = getApiKey()
   try {
