@@ -30,7 +30,10 @@
     "node": ">=16.x"
   },
   "jest": {
-    "testEnvironment": "jsdom"
+    "testEnvironment": "jsdom",
+    "moduleNameMapper": {
+      "^axios$": "axios/dist/node/axios.cjs"
+    }
   },
   "bootcamp": {
     "createdAt": "2024-01-24T14:12:42.297Z",
@@ -38,6 +41,8 @@
     "commit": "df14b61576f0321119b1906ba3544ab94fc2b1a1"
   },
   "dependencies": {
+    "axios": "^1.6.7",
+    "jquery": "^3.7.1",
     "openai": "^4.0.0"
   }
 }

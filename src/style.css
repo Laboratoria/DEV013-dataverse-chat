@@ -26,6 +26,7 @@
   font-family: "EncodeSansCondensedRegular", sans-serif;
 }
 /*PANTALLA DE INICIO*/
+
 .container__imageStart {/*contenedor principal de la portada*/
   text-align: center;
 }
@@ -87,6 +88,7 @@
   }
 }
 /*VISTA LLAVE API*/
+
 .headerApiKey {/*contenedor del titulo*//*falta checar bien */
   padding: 40px;
   position: relative;
@@ -111,7 +113,7 @@ form {
   width: 800px;
 }
 .userName {/*CONTENEDOR USUARIO INPUT*/
-  width: 300px;
+  width: 400px;
   padding: 10px 5px;
   border: none;
   border-radius: 12px;
@@ -128,13 +130,12 @@ form {
   align-items: center;
 }
 .api__key {/*CONTENEDOR LLAVE INPUT*/
-  font-size: 16px;
   border: none;
-  border-radius: 6px;
-  width: 550px;
+  border-radius: 12px;
+  width: 400px;
   padding: 10px 5px;
   margin-top: 5px;
-  margin-left: 30px;
+  margin-left: 10px;
   justify-content: center;
 }
 .textKeyApi {/*texto bajo la llave api*/
@@ -198,22 +199,20 @@ form {
   cursor: url(images/keyIcon.png), auto !important;
 }
 .buttonBack { /*BOTÓN HOME*/
-  background-color:rgb(0, 167, 167);
-  color: white;
-  font-weight: 600;
-  border-radius: 4px;
-  padding: 10px 30PX;
-  border: none;
+  display: flex;
+  left: -100px;
+  font-size: 40px;
+  color: rgb(78, 75, 75);
+  padding: 5px 30PX;
   transition-duration: 0.5s;
   cursor: url(images/homeIcon.png), auto;
 }
 .buttonBack:hover {
-    background-color:rgb(147, 228, 228);
-    color: rgb(250, 246, 246);
-    font-weight: 800;
-    transform: scale(1.2);
+    color: rgb(195, 56, 21);
+    font-weight: 400;
 }
 /*CHAT GRUPAL*/
+
 [name="close-circle-outline"] {
   font-size: 38px;
   cursor: pointer;
@@ -224,6 +223,7 @@ form {
   margin-left: 25px;
   width: 1400px;
   height: 700px;
+  display: flex;
 }
 .containerGroupal__Chat {/*contenedor chat grupal*/
   float: left;
@@ -232,6 +232,7 @@ form {
   background-size: 100%;
   width: 880px;
   height: 700px;
+  overflow: scroll;
 }
 .containeGroupal__chat__header { /*contenedor del título del chat grupal*/
   padding: 25px;
@@ -244,11 +245,12 @@ form {
   float: left;
 }
 .containerGroupal__chat__inputSend {
-  display: flex;
+  display: flex; 
   align-items: flex-end;
 }
 .inputGroupal {
   font-size: 16px;
+  position: fixed;
   width: 100%;
   background-color: #d6d1b5;
   margin-top: 67%;
@@ -280,7 +282,7 @@ form {
   border: none;
   position:fixed;
   bottom: 0px;
-  right: 40px;
+  right: 80px;
   /*transform: translateX(2000%, 100%);/*X= HORIZONTAL, Y VERTICAL*/
   /* transform: translate(2400%, 750%); */
 }
@@ -289,6 +291,10 @@ form {
   border: none;
   cursor: pointer;
 }
+[name="logo-wechat"] {
+  width: 90px;
+  height: 90px;
+}
 /*.imgChat {
   position: absolute;
   top: 60px;
@@ -296,6 +302,7 @@ form {
   height: 80px;
 }*/
 /* Estios del header */
+
 header {
   display: flex; /*PARA DESAPARECER EL TITULO*/
   justify-content: space-between;
@@ -339,9 +346,13 @@ header nav {
     width: 3rem;
   }
   /* Estilos del body */
-  body {
-    background-color: #f7f3e7;
+
+body {
+  background-color: #f7f3e7;
 }
+
+/*FOOTER*/ 
+
 footer {
   position:relative;
   width: 100%;
@@ -368,6 +379,9 @@ footer img {
   bottom: 10px;
   z-index: 2;
 }
+
+/*ASIDE*/
+
 aside {
   /*padding: 3em, 3em, 3em, 10%;*/
   padding-left: 10%;
@@ -375,12 +389,16 @@ aside {
   padding-bottom: 3em;
   padding-right: 3em;
 } 
+
+/*MAIN*/
+
   main {
     display: flex;
     margin-bottom: 100px;
   }
 
   /* Estilos del section */
+
   section {
     flex: 1;
     display: flex;
@@ -402,6 +420,7 @@ aside {
     margin: 0
   }
   /* Este estilo es para el titulo vecinos, el search bar y el select, ES EL CONTENEDOR DE TODOS*/
+
   .buscador {
     display: flex;
     justify-content: space-between;
@@ -409,6 +428,9 @@ aside {
     margin: 1rem 0;
     padding: 1rem;
   }
+
+  /*CARDS*/
+
 .card {/*creada desde view*/
   width: 184px;
   height: 279px;
@@ -423,47 +445,28 @@ aside {
 .cardGruñon {/*puestas y agregadas con view*/
   background-image: url("./images/cardGruñon.png");
 }
+.cardGruñon:hover {
+  background: url("./images/hover-cards/card-gruñon.png");
+  position: relative;
+  transform: translateX(0px);
+}
 .cardGruñon:hover::before {
   content: "¿Quiéres chatear conmigo?";
   position: absolute;
-  color: black;
-  font-weight: 400;
-  font-size: 14px;
+  color: blue;
+  font-weight: 800;
+  font-size: 16px;
+  transform: translate(10px, 180px);
 }
-.cardGruñon:hover::after {
-  content: url("./images/hover-cards/card-gruñon.png");
-  position: absolute;
-  transform: translateY(0px);
-}
-/*
-.cardGruñon:hover::before {
-  content:  url("./images/hover-cards/card-gruñon.png");
-  position: absolute;
-}
-.cardGruñon:hover::after {
-  content: url("./images/face/apolo.png");
-  display: block;
-  position: absolute;
-  transform: translate(30%, 20%);
-}
-.cardGruñon:hover::before::after {
-  content: "¿Quiéres chatear conmigo?";
-}*/
 .cardPerezoso {
   background-image: url("./images/cardPerezoso.png");
 }
-/* .cardPerezoso:hover {
-  transform: translateY(8px);
-  transition: 0.4s;
-  cursor: pointer;
-} */
 .cardPerezoso:hover::before {
   content: url("./images/hover-cards/card-perezoso.png");
   position: absolute;
   transform: translateY(-10px);
   z-index: 1;
 }
-
 /* .cardPerezoso:hover::after {/*content: var(--face-image, url(./images/face/bones.png));*
   content: url("./images/face/bones.png");
   transform: translate(-150px, 0px);
@@ -606,12 +609,15 @@ aside {
     text-align: right;
   }
   /* Contenedor de todas las cards */
+
   .container {
     max-width: 790px;
     width: 790px;
     height: 100%;
   }
+
   /* Estilos del select */
+
   #page {/*esto se puede modificar*/
     font-size: 28px;
   }
@@ -623,7 +629,9 @@ aside {
     border-radius: 5px;
     border: 1px solid #e0e0e0;
   }
+
   /* Estilos del searchbar */
+
   input[type="text"] {
     padding: 0.5rem;
     border-radius: 5px;
@@ -634,7 +642,9 @@ aside {
     align-items: center;
     gap: 8px;
   }
+
   /* Estilos botones */
+
   .btn-clear,.btn-clear-search {
     background-color: white;
     border-radius: 8px;
@@ -664,6 +674,7 @@ aside {
   }*/
 
  /* //Estilos para la vista de estadisticas */
+
  .stats-main{
   display: flex;
   flex-direction: column;
@@ -805,7 +816,9 @@ height: 2px;
 .passport-footer{
   padding: 1rem;
 }
-/* Estilos del chat */
+
+/* Estilos del chat individual*/
+
 .chat-container{
   display: flex;
   gap: 1rem;
@@ -878,7 +891,13 @@ padding: 0rem 0.5rem;
 font-size: 20px;
 color: #8E8E93;
 }
+/* .divInputChatIndividual {
+  padding: 10px 20px;
+  background-color: #FFFBE7;
+} */
+
 /*VISTA ERROR*/
+
 .container-error {
   align-items: center;
   justify-content: center;
@@ -904,36 +923,18 @@ color: #8E8E93;
 
 
 
-/* Media Querys */
-  
-@media (max-width: 600px) {/*para pantallas de máximo 600px*/
-  /* CSS rules for sizes smaller than 600px */
-  header {
-    padding: 10px 5%;
-  }
-  aside {
-    padding: 1.5rem;
-    display: none;
-  }
-  main {
-    flex-direction: column;
-  }
-  section {
-    width: 100%;
-  }
-  .buscador h2 {
-    display: none;
-  }
-  .buscador div {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-}
+
 
 
 .borderColor {
   border-style: solid;
   border-color: red;
   border-width: 2px;
+}
+
+.user-txt {
+  background-color: #ABAA8C;
+}
+.system-txt {
+  background-color: #8E8E93;
 }

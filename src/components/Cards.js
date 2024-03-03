@@ -1,4 +1,6 @@
 import { navigateTo } from "../router.js";
+import { getApiKey } from "../lib/apiKey.js";
+import { communicateWithOpenAI } from "../lib/openAIApi.js";
 /*export const Cards = (data) => {
   // const divContainerFace = document.createElement("div");
   // divContainerFace.className = "containerFace";
@@ -171,11 +173,31 @@ export const Cards = (data) => {
     }
 
     listLi.addEventListener("click", () => {
-      navigateTo(`/individual?id=${element.id}`);
+      if(getApiKey()){
+        navigateTo(`/individual?id=${element.id}`);
+      } 
+      else {
+        navigateTo("/api", {});
+      }
     });
   });
   return listUl;
 };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 //hacer if en card para mandar a api, antes de individual
 //hacer función para eliminar api key

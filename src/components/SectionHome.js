@@ -2,6 +2,7 @@ import { Cards } from "./Cards.js";
 import data from "../data/dataset.js";
 import { filterData, sortData } from "../lib/dataFunctions.js";
 import { navigateTo } from "../router.js";
+import { getApiKey } from "../lib/apiKey.js";
 
 export const SectionHome = () => {
   const main = document.createElement("main");
@@ -240,9 +241,12 @@ export const SectionHome = () => {
   });
 
   iconChat.addEventListener("click", () => {
-    navigateTo("/groupal", {});
+    if(getApiKey()) {
+      navigateTo("/groupal", {})
+    } else {
+      navigateTo("/api");
+    }
   });
-
 
   main.append(aside, section, buttonDiv);
   return main;
