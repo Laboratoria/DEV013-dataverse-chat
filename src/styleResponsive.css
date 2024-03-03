@@ -1,0 +1,44 @@
+/* Media Querys */
+
+  /*Vista Portada*/
+
+  /*Vista Error*/
+
+  /*Vista Home*/
+
+  /*Vista chat individual*/
+
+  /*Vista chat grupal*/
+
+  /*Vista API*/
+
+  /*Vista Estadisticas*/
+
+
+
+
+  
+@media (max-width: 600px) {/*para pantallas de máximo 600px*/
+    /* CSS rules for sizes smaller than 600px */
+    header {
+      padding: 10px 5%;
+    }
+    aside {
+      padding: 1.5rem;
+      display: none;
+    }
+    main {
+      flex-direction: column;
+    }
+    section {
+      width: 100%;
+    }
+    .buscador h2 {
+      display: none;
+    }
+    .buscador div {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+  }

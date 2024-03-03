@@ -2,11 +2,12 @@ import { Home } from "./views/Home.js";
 import { StartingScreen } from "./views/StartingScreen.js";
 import { GroupalChat } from "./views/GroupalChat.js";
 import { IndividualChat } from "./views/IndividualChat.js";
+import { Stats } from "./views/Stats.js";
 import { Api } from "./views/Api.js";
 import { Error } from "./views/Error.js";
 import { onURLChange, setRootEl, setRoutes } from "./router.js";
 // import {communicateWithOpenAI} from "./lib/openAIApi.js";
-import { getUsers, getOneUser } from "./lib/testApi.js";
+// import { getUsers, getOneUser } from "./lib/testApi.js";
 
 const routes = {
   "/": StartingScreen,
@@ -15,6 +16,7 @@ const routes = {
   "/individual": IndividualChat,
   "/api": Api,
   "/error": Error,
+  "/stats": Stats
 };
 
 
@@ -29,8 +31,8 @@ setRootEl(root);
 document.addEventListener("DOMContentLoaded", (event) => {
   onURLChange(event.target.location.pathname);
   // communicateWithOpenAI();
-  getUsers()
-  getOneUser()
+  // getUsers()
+  // getOneUser()
   // getUserError()
 });
 

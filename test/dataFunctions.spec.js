@@ -1,5 +1,5 @@
-import { computeStats, filterData, sortData } from '../src/dataFunctions.js';//IMPORTAR LAS FUNCIONES
-import { data as fakeData } from './data.js';//fakedata para trabar pocos elementos y nos los 24 en data.js
+import { computeStats, filterData, sortData } from '../src/lib/dataFunctions.js';//IMPORTAR LAS FUNCIONES
+import { data as fakeData } from './../test/fakeData.js';//fakedata para trabar pocos elementos y nos los 24 en data.js
 
 const testData = [fakeData[1], fakeData[3], fakeData[2], fakeData[0]];
 const expectDataAsc = [fakeData[0], fakeData[1], fakeData[3], fakeData[2]];
