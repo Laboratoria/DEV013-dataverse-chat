@@ -6,7 +6,7 @@ import { Api } from "./views/Api.js";
 import { Error } from "./views/Error.js";
 import { onURLChange, setRootEl, setRoutes } from "./router.js";
 // import {communicateWithOpenAI} from "./lib/openAIApi.js";
-import { getUsers, getOneUser } from "./lib/testApi.js";
+// import { getUsers, getOneUser } from "./lib/testApi.js";
 
 const routes = {
   "/": StartingScreen,
@@ -29,8 +29,8 @@ setRootEl(root);
 document.addEventListener("DOMContentLoaded", (event) => {
   onURLChange(event.target.location.pathname);
   // communicateWithOpenAI();
-  getUsers()
-  getOneUser()
+  // getUsers()
+  // getOneUser()
   // getUserError()
 });
 
