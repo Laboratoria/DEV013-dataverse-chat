@@ -25,7 +25,7 @@ export const setRoutes = (newRoutesValue) => {
 }
 
 //esta es opcional segun el README
-const queryStringToObject = (queryString) => {
+export const queryStringToObject = (queryString) => {
 // convierte la cadena de consulta a URLSearchParams
   const newURL = new URLSearchParams(queryString);
   console.log("Aqui se ve la new url", newURL);
@@ -61,7 +61,7 @@ const renderView = (pathname, props = {}) => {
 export const navigateTo = (pathname, props = {}) => {
   // actualiza el historial de la ventana (navegador) con pushState
   const URLvisited = window.location.origin + pathname;
-  console.log(window.location.hostname);
+  console.log('url', URLvisited);
   window.history.pushState({}, '', URLvisited);
 
   // renderiza la vista con el nombre de la ruta y los accesorios
@@ -69,12 +69,14 @@ export const navigateTo = (pathname, props = {}) => {
   renderView(pathname, props);
 }
 
-export const onURLChange = (location, props) => {
+export const onURLChange = (eventObject, props={}) => {
   // analiza la ubicación de la ruta y los parámetros de búsqueda
+  console.log(eventObject.currentTarget.location)
   // convierte los parámetros de búsqueda en un objeto
+  console.log('search query', eventObject.currentTarget.location.search);
+  props = queryStringToObject(window.location.search);
   // renderiza la vista con la ruta y el objeto
-  console.log(location);
-  renderView(location, props);
+  console.log('location', eventObject.currentTarget.location);
+  console.log('props', props);
+  renderView(eventObject.currentTarget.location.pathname, props);
 }
-// agregando popstate
-//window.onpopstate = onURLChange;
