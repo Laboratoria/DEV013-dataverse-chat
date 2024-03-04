@@ -32,8 +32,13 @@ window.addEventListener("DOMContentLoaded", (event) => {
   console.log(event, );
   setRootEl(viewContainer);
   //obtener la ruta de la ventana global por eso mejor usar window
-  onURLChange(window.location.pathname)
-
+  console.log ('window', window.location.pathname);
+  onURLChange(event);
 });
+
 // agregando popstate
-//window.addEventListener("popstate", onURLChange);
+//window.addEventListener("popstate", (event) => {
+  //console.log('Evetno target para popstate', event.target.location.pathname);
+  //onURLChange(event.target.location.pathname);
+//});
+window.onpopstate = onURLChange;

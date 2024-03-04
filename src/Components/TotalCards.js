@@ -38,15 +38,7 @@ export const TotalCards = (data) => {
     //console.log("Este es el element", itemContainer);
   });
  
-  // para ubicar al search por su parametro id
-  //const cards = container.querySelectorAll(".cards");
-  //cards.forEach((item) => {
-    //item.addEventListener("click", () => {
-      //const cardId = item.getAttribute("id");
-      //navigateTo(`/individualchat`, { name: cardId});
-    //});
-  //});
-  console.log(container);
+  console.log('container', container);
   return container;
 };
 
