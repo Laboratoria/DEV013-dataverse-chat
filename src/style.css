@@ -397,5 +397,18 @@
     align-items: right;
   }
 
+  .total-error{
+    text-align: center;
+    display: block;
+  }
+
+  .container-error{
+    background-color: white;
+    width: 800px;
+    height: 500px;
+    margin: 30px;
+    text-align: center;
+    border-radius: 30px;
+  }
 
   
