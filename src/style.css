@@ -787,7 +787,17 @@ height: 2px;
   background-color: #fff;
   border: #ECEDC1 solid 3px;
   border-radius: 16px;
+  height: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 16px;
 }
+
+.passport-img img{ /*LA SOMBRA DE LA IMAGEN DENTRO DEL PASAPORTE*/
+  filter: drop-shadow(4px -3px 2px rgb(216, 216, 216));
+}
+
 .passport-info{
   width: 60%;
   display: flex;
@@ -804,7 +814,25 @@ height: 2px;
 }
 .personal-info-container > div {
   border-bottom: 2px solid #ecedc1;
+  padding-bottom: 4px;
+  display: flex;
+  align-items: flex-end;
 }
+
+.personal-info-container > div > img{
+  width: 26px;
+  height: 26px;
+  margin-right: 8px;
+  margin-top: 4px;
+}
+
+.personal-info-container > div:nth-child(1) > img{
+  width: 32px;
+  height: 32px;
+}
+/*PASSPORT ZODIAC SIGNS*/
+
+
 .catchphrase-container {
   /* margin-left: 10px; */
   margin-right: 1rem;
@@ -812,6 +840,7 @@ height: 2px;
   background: #ecedc1;
   border-radius: 11px;
   border-bottom-left-radius: 0;
+  padding: 10px;
 }
 .passport-footer{
   padding: 1rem;
@@ -855,9 +884,82 @@ height: 2px;
   font-size: 14px;
 }
 .chat-body{
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
   flex: 1;
   padding: 2rem;
+  overflow: auto;
 }
+.user-txt-container{
+  display: flex;
+  justify-content: flex-end;
+}
+.user-txt {
+  background-color: #FFFBE7;
+  border: 1px solid #9BA9B0;
+  border-radius: 20px;
+  border-top-right-radius: 0px;
+  padding: 0.5rem 1rem;
+  position: relative;
+  max-width: 80%;
+}
+.system-txt-container{
+  display: flex;
+  justify-content: flex-start;
+}
+.system-txt-container img{
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  margin-right: 00.5rem;
+  border: 1px solid #9BA9B0;
+  background: white;
+  margin-top: -30px;
+}
+.system-txt {
+  background-color: #FFEEA0;
+  border: 1px solid #9BA9B0;
+  border-radius: 20px;
+  border-top-left-radius: 0px;
+  padding: 0.5rem 1rem;
+  max-width: 80%;
+}
+
+/*ESTILOS PARA LA SCROLLBAR*/
+.chat-body::-webkit-scrollbar {/*scrollbar BARRA DE SCROLL DENTRO DEL CHAT*/
+  width: 8px; 
+}
+
+.chat-body::-webkit-scrollbar-thumb {/*LINEA PARA SUBIR Y BAJAR*/
+  background-color: #c4b9a9;
+  border-radius: 6px;
+}
+
+.chat-body::-webkit-scrollbar-thumb:hover {/*EL HOVER DE LA BARRITA*/
+  background-color: #ebddc9;
+}
+
+/*ESTILOS PARA ESCRIBIENDO...*/
+.nameIsWrite div {
+  display: flex;
+  gap: 8px;
+  padding: 0.5rem;
+}
+
+@keyframes blink { 50% { fill: transparent }}
+.dot { 
+  animation: 1s blink infinite;
+  fill: grey;
+}
+.dot:nth-child(2) { animation-delay: 250ms }
+.dot:nth-child(3) { animation-delay: 500ms }
+
+.loader {
+  background-color: transparent;
+  color: grey;
+}
+
 .chat-footer{
   padding: 0.5rem;
 }
@@ -891,10 +993,6 @@ padding: 0rem 0.5rem;
 font-size: 20px;
 color: #8E8E93;
 }
-/* .divInputChatIndividual {
-  padding: 10px 20px;
-  background-color: #FFFBE7;
-} */
 
 /*VISTA ERROR*/
 
@@ -919,22 +1017,4 @@ color: #8E8E93;
   color: darkslategrey;
   font-size: 20px;
   cursor: pointer;
-}
-
-
-
-
-
-
-.borderColor {
-  border-style: solid;
-  border-color: red;
-  border-width: 2px;
-}
-
-.user-txt {
-  background-color: #ABAA8C;
-}
-.system-txt {
-  background-color: #8E8E93;
 }
