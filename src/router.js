@@ -1,3 +1,5 @@
+import dataset from "./data/dataset.js";
+
 //Esta variable almacena información sobre las rutas en tu SPA.
 let ROUTES = {};
 
@@ -64,21 +66,25 @@ export const navigateTo = (pathname, props = {}) => {
   const URLvisited = window.location.origin + pathname;
   console.log('url', URLvisited);
   window.history.pushState({}, '', URLvisited);
-
+  console.log('pathname', pathname);
   // renderiza la vista con el nombre de la ruta y los accesorios
   console.log(props);
-  renderView(pathname, props);
+  
+  // creando un URL object para extraer el pathname
+  const newURL = new URL(URLvisited);
+  console.log('new url', newURL.pathname);
+  renderView(newURL.pathname, props);
 }
 
-export const onURLChange = (eventObject, props={}) => {
+export const onURLChange = () => {
   // analiza la ubicación de la ruta y los parámetros de búsqueda
-  console.log(eventObject.currentTarget.location)
+  const pathname = window.location.pathname;
+  console.log('pathname onurlchange', pathname)
   // convierte los parámetros de búsqueda en un objeto
-  console.log('search query', eventObject.currentTarget.location.search);
-
-  props = queryStringToObject(window.location.search);
-  // renderiza la vista con la ruta y el objeto
-  console.log('location', eventObject.currentTarget.location);
-  console.log('props', props);
-  renderView(eventObject.currentTarget.location.pathname, props);
+  const searchObject = queryStringToObject(window.location.search);
+  console.log('search object', searchObject);
+  // encontramos el id para compararlo con el dataset para obtener la info (metodo find)
+  const newSearchObject = dataset.find((kDrama) => kDrama.id === searchObject.id);
+  console.log('newsearchobject', newSearchObject)
+  renderView(pathname, newSearchObject);
 }
