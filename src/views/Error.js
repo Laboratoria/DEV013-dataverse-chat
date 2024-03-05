@@ -1,4 +1,3 @@
-import { Header } from "../components/Header.js";
 import { Footer } from "../components/Footer.js";
 import { navigateTo } from "../router.js";
 
@@ -15,6 +14,6 @@ export const Error = () => {
   errorPage.querySelector(".back-to-home").addEventListener("click", () => {
     navigateTo("/home", {});
   });
-  container.append(Header(), errorPage, Footer());
+  container.append(errorPage, Footer());
   return container;
 };

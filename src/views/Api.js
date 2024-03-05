@@ -1,14 +1,22 @@
 // //import { ButtonHome } from "../components/Button.js";
 // //import { Footer } from "../components/Footer.js";
 // //import { navigateTo } from "../router.js";
-import { Button } from "../components/Button.js";
-import { setApiKey, removeApiKey } from "../lib/apiKey.js";
 //import { Header } from "../components/Header.js";
+import { Button } from "../components/Button.js";
+import {
+  setApiKey,
+  removeApiKey,
+  getApiKey,
+  setUserName,
+} from "../lib/apiKey.js";
+import { navigateTo } from "../router.js";
+
 export const Api = () => {
   const container = document.createElement("div");
   const apiPage = document.createElement("main");
   apiPage.innerHTML = `
-  <form>
+  <form name="register">
+  <div containerForm>
     <div class="header-title headerApiKey">
       <img src="./images/Logo.png" alt="Logo" />
       <h1>WikiNook</h1>
@@ -29,11 +37,12 @@ export const Api = () => {
     </div>
     <input class="buttonApiSave show" type="submit" value="SAVE API KEY">
     <input class="buttonApiDelete hide" type="submit" value="DELETE API KEY">
+    </div>
   </form>
     `;
   const apiKeyInput = apiPage.querySelector("#api-key");
   const apiKeyPass = apiPage.querySelector(".api__key"); //checar, si la comento no aparece el texto
-  const iconSHow = apiPage.querySelector(".bx");
+  const iconSHow = apiPage.querySelector(".bx"); //(ICONO DEL OJO EN LA CONTRASEÑA)
   iconSHow.addEventListener("click", () => {
     if (apiKeyPass.type === "password") {
       apiKeyPass.type = "text";
@@ -48,22 +57,44 @@ export const Api = () => {
 
   const buttonSave = apiPage.querySelector(".buttonApiSave");
   const buttonDelete = apiPage.querySelector(".buttonApiDelete");
-  const requiredInputName =  apiPage.querySelector(".userName");//valor obligatorio del input del nombre
-  buttonSave.addEventListener("click", () => {
-    if(requiredInputName.value === "" || apiKeyInput.value === ""){//SI EL VALOR DEL INPUT ES VACIO QUE NO SE ESCONDA EL BOTÓN DEL SAVE Y SE AGREGUE LA CLASE BORDERCOLOR QU PONE ROJO EL INPUT
-      requiredInputName.classList.add("borderColor");
-      apiKeyInput.classList.add("borderColor");
-      //alert("Campos obligatorios");
-    } 
-    else if(apiKeyInput.value > 5) {//SI EL INPUT ES MAYOR A 4 LETRAS
-      alert("adios");
+  const requiredInputName = apiPage.querySelector(".userName"); //valor obligatorio del input del nombre
+
+  // function userNameApi() {
+  //   return userNameValue;
+  // }
+
+  buttonSave.addEventListener("click", (event) => {
+    // debugger
+    // validar casos negativos
+    event.preventDefault();
+    if (requiredInputName.value === "" || apiKeyInput.value === "") {
+      alert("Coloca tu nombre y llave");
+      return;
     }
-    buttonDelete.classList.remove("hide");
-    buttonDelete.classList.add("show");
+    if (apiKeyInput.value.length < 30) {
+      alert("API key no valida");
+      return;
+    }
     buttonSave.classList.remove("show");
     buttonSave.classList.add("hide");
+    buttonDelete.classList.remove("hide");
+    buttonDelete.classList.add("show");
+    
+    const userNameValue = requiredInputName.value; //aqui esta guardado el name
+    console.log("USERNAME INPUT VALUE", userNameValue);
+    setUserName(userNameValue);
     setApiKey(apiKeyInput.value);
+    navigateTo("/home");
   });
+  console.log(getApiKey());
+  if (getApiKey()) {
+    console.log("hokabchjfbh");
+    buttonSave.classList.remove("show");
+    buttonSave.classList.add("hide");
+    buttonDelete.classList.remove("hide");
+    buttonDelete.classList.add("show");
+  }
+
   buttonDelete.addEventListener("click", () => {
     buttonSave.classList.remove("hide");
     buttonSave.classList.add("show");
@@ -71,7 +102,8 @@ export const Api = () => {
     buttonDelete.classList.add("hide");
     removeApiKey();
   });
-  container.append(Button("CERRAR"), apiPage);
+
+  container.append(Button(), apiPage);
   // container.append(apiPage);
   return container;
 };

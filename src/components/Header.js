@@ -32,10 +32,12 @@
 }
 */
 
+import { navigateTo } from "../router.js";
+import { getUserName } from "../lib/apiKey.js";
+// const name = getuserName()
 
-import { navigateTo } from '../router.js';
-
-export const Header = (name = "user") => {
+export const Header = () => {
+  const userName = getUserName();
   const header = document.createElement("header");
   header.innerHTML = `
   <div class="header-title">
@@ -45,22 +47,45 @@ export const Header = (name = "user") => {
   <nav>
     <ul class="nav-ul">
       <li><a id="home">Home</a></li>
-      <li><a id="api" class="keyApi">API</a></li>
       <li><a id="stats">Estadisticas</a></li>
+      <li><a id="about-us">Saber Más</a></li>
     </ul>
-    <div class="header-user">
+    <div>
+      <div class="header-user ${userName === null ? "hide" : "show"}"> 
       <img src="./images/User.png" alt="User" />
-          ${name}
+      <p id="userName">${userName}</p>
+      </div>
+      <div>
+      <button class="btn-header ${userName === null ? "show" : "hide"}" id="api"> API KEY </button>
+      </div>
     </div>
-  </nav>
-    `;
-  header.querySelector("#home").addEventListener("click", () => navigateTo("/home", { }));
+    </nav>`;
+  
+  const headerUser = header.querySelector(".header-user");
+  //const btnHeader = header.querySelector(".btn-header");
+
+  headerUser.addEventListener("click", () => navigateTo("/api"));
+
+  header
+    .querySelector("#home")
+    .addEventListener("click", () => navigateTo("/home", {}));
   //header.querySelector("#individual").addEventListener("click", () => navigateTo("/individual", { name: "sldjf"}));
-  header.querySelector("#api").addEventListener("click", () => navigateTo("/api", { }));
-  header.querySelector("#stats").addEventListener("click", () => navigateTo("/stats", { }));
+  header
+    .querySelector("#api")
+    .addEventListener("click", () => navigateTo("/api", {}));
+  header
+    .querySelector("#stats")
+    .addEventListener("click", () => navigateTo("/stats", {}));
+  header
+    .querySelector(".header-title")
+    .addEventListener("click", () => navigateTo("/home"));
+  header
+    .querySelector("#about-us")
+    .addEventListener("click", () => navigateTo("/error"));
   return header;
-}
+};
 
-
-
-
+// <div class="header-user">
+//   <img src="./images/User.png" alt="User" />
+//       ${name}
+// </div>

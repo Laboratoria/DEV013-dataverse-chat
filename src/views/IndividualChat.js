@@ -30,13 +30,16 @@ export const IndividualChat = (element) => {
                 </div>
                 <div class="personal-info-container">
                     <div>
-                        <p>${idFilter[0].facts.birthDate}</p>
-                    </div>
-                    <div>
-                        <p>${idFilter[0].species}</p>
-                    </div>
-                    <div>
+                        <img src="../images/chat-and-passport/passport-personality/${idFilter[0].personality}.png" alt="personality">
                         <p>${idFilter[0].personality}</p>
+                    </div>
+                    <div>
+                        <img src="../images/chat-and-passport/passport-zodiac/${idFilter[0].facts.zodiacSign}.png" alt="animal">
+                        <p>${idFilter[0].facts.zodiacSign}</p>
+                    </div>
+                    <div>
+                        <img src="../images/Pastel de cumple.png" alt="cake">
+                        <p>Cumpleaños ${idFilter[0].facts.birthDate}</p>
                     </div>
                 </div>
             </div>
@@ -50,11 +53,22 @@ export const IndividualChat = (element) => {
             <div class="chat">
                 <div class="chat-header">
                 <p class="character-name">${idFilter[0].name}</p>
-                <p class="last-seen">Visto por últ. vez 00:00</p>
+                <p class="last-seen">Visto por últ. vez ${new Date().toISOString().split('T')[1].split(':').slice(0,2).join(':')}</p>
                 </div>
-                <div class="chat-body"></div>
+                <div class="chat-body">
+                    
+                </div>
                 <div class="chat-footer">
-                <div class="nameIsWrite hide">${idFilter[0].name} esta escribiendo...</div>
+                <div class="nameIsWrite hide">
+                    <div>
+                        ${idFilter[0].name} esta escribiendo
+                        <svg height="20" width="40" class="loader">
+                            <circle class="dot" cx="10" cy="10" r="3" style="fill:grey;" />
+                            <circle class="dot" cx="20" cy="10" r="3" style="fill:grey;" />
+                            <circle class="dot" cx="30" cy="10" r="3" style="fill:grey;" />
+                        </svg>
+                    </div>
+                </div>
                     <div class="chat-placeholder">
                         <div><i id="pencil-icon"class="fa-solid fa-pencil"></i></div>
                         <input type="text" class="send-txt" placeholder="Escribe un mensaje...">
@@ -72,16 +86,18 @@ export const IndividualChat = (element) => {
   const sendButton = main.querySelector("#send-icon");
   const messageWindows = main.querySelector(".chat-body");
 
-  sendButton.addEventListener("click", async () => {
+  const sendMessageFunction = async () => {
     nameWrite.classList.remove("hide"); //para esconder el esta escribien
     nameWrite.classList.add("show");
-
     const userInputValue = userInput.value;
-    const questionUser = document.createElement("div");
-    questionUser.className = "user-txt";
-    questionUser.innerHTML = userInputValue;
+
+    const questionUser = document.createElement('div')
+    questionUser.className = "user-txt-container"
+    questionUser.innerHTML = `<div class="user-txt">${userInputValue}</div>`
+
     const message = document.createElement("div");
-    message.className = "system-txt";
+    message.className = "system-txt-container"
+    
     const openAiResponse = await communicateWithOpenAI(
       idFilter[0].description,
       userInputValue
@@ -89,7 +105,10 @@ export const IndividualChat = (element) => {
     if (openAiResponse === "error") {
       navigateTo("/error");
     } else {
-      message.innerHTML = openAiResponse;
+      message.innerHTML = `
+        <img src=${idFilter[0].imageUrlFace} alt=${idFilter[0].name}>
+        <div class="system-txt">${openAiResponse}</div>
+    `
     }
     //message.innerHTML = openAiResponse.data.choices[0].message.content;
     nameWrite.classList.add("hide");
@@ -97,9 +116,20 @@ export const IndividualChat = (element) => {
     //Vamos a introducir los mensajes cuando la función communicate retorne
     messageWindows.append(questionUser, message);
     userInput.value = "";
-  });
+  }
+
+  sendButton.addEventListener("click", sendMessageFunction);
+  userInput.addEventListener("keyup", (event) => {
+    if (event.key === "Enter" && userInput.value !== "") {
+      sendMessageFunction();
+    }
+  })
+
+
   return container;
 };
+
+
 
 // <img src="../images/chat-and-passport/bottom-flap.png" alt="bottom-flap">
 // data/choices[0]/message/content

@@ -226,6 +226,8 @@ form {
   display: flex;
 }
 .containerGroupal__Chat {/*contenedor chat grupal*/
+  display: flex;
+  flex-direction: column;
   float: left;
   background-image: url(./images/chat-and-passport/chatBackground.png);
   background-repeat: no-repeat;
@@ -246,15 +248,18 @@ form {
 }
 .containerGroupal__chat__inputSend {
   display: flex; 
-  align-items: flex-end;
+  position: absolute;
+  bottom: 0;
+
 }
 .inputGroupal {
   font-size: 16px;
   position: fixed;
   width: 100%;
   background-color: #d6d1b5;
-  margin-top: 67%;
-  position:static;
+  position:relative;
+  margin: 0;
+  bottom: 0;
 }
 .containerGroupal__Users {/*contenedor de participantes*/
   background-color: #f4f1df;
@@ -305,7 +310,7 @@ form {
 
 header {
   display: flex; /*PARA DESAPARECER EL TITULO*/
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
   padding: 20px 10%;
   border-bottom: 1px solid #e0e0e0;
@@ -313,13 +318,29 @@ header {
 header nav {
   display: flex;
   align-items: center;
-  gap: 2rem
+  gap: 2rem;
+  padding-left: 1.5rem;
+  flex: auto;
+  justify-content: space-between;
+}
+.btn-header{
+  background-color: #8ac68a;
+  border-radius: 8px;
+  border-style: none;
+  color: #FFFFFF;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 10px 16px;
+  text-align: center;
+  position: relative;
+  z-index: 1;
 }
 .nav-ul {
   display: flex;
   list-style: none;
   gap: 2rem;
   margin-top: 0.6rem;
+  /* flex: auto; */
 }
 .nav-ul li a {
   text-decoration: none;
@@ -332,15 +353,19 @@ header nav {
     display: flex;
     align-items: center;
     gap: 8px;
+    cursor: pointer;
   }
   .header-title img{
     width: 38px;
     height: 36px;
   }
   .header-user {
-    display: flex;
-    align-items: center;
+    /* display: flex; */
+    /* align-items: center; */
+    text-align: center;
     gap: 8px;/*ESPACIADO*/
+    /* position: relative;
+    z-index: 1; */
 }
 .header-user img {
     width: 3rem;
@@ -445,28 +470,39 @@ aside {
 .cardGruñon {/*puestas y agregadas con view*/
   background-image: url("./images/cardGruñon.png");
 }
-.cardGruñon:hover {
+/* .cardGruñon:hover {
   background: url("./images/hover-cards/card-gruñon.png");
   position: relative;
   transform: translateX(0px);
 }
 .cardGruñon:hover::before {
-  content: "¿Quiéres chatear conmigo?";
+  content: "Chatea conmigo";
+  text-decoration-line: underline;
   position: absolute;
-  color: blue;
-  font-weight: 800;
+  color: white  ;
+  font-weight: 1000;
   font-size: 16px;
-  transform: translate(10px, 180px);
-}
+  transform: translate(45px, 160px);
+} */
 .cardPerezoso {
   background-image: url("./images/cardPerezoso.png");
 }
-.cardPerezoso:hover::before {
-  content: url("./images/hover-cards/card-perezoso.png");
+/* .cardPerezoso:hover::before {
+  content: ;
+  background-image: url("./images/hover-cards/card-perezoso.png");
   position: absolute;
   transform: translateY(-10px);
   z-index: 1;
 }
+.cardPerezoso:hover::after {
+  content: "¿Quieres chatear conmigo?";
+  position: absolute;
+  transform: translateY(50px);
+  z-index: 1;
+} */
+/* .cardPerezoso:hover::after::before {
+  content: "TEST";
+} */
 /* .cardPerezoso:hover::after {/*content: var(--face-image, url(./images/face/bones.png));*
   content: url("./images/face/bones.png");
   transform: translate(-150px, 0px);
@@ -787,7 +823,17 @@ height: 2px;
   background-color: #fff;
   border: #ECEDC1 solid 3px;
   border-radius: 16px;
+  height: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 16px;
 }
+
+.passport-img img{ /*LA SOMBRA DE LA IMAGEN DENTRO DEL PASAPORTE*/
+  filter: drop-shadow(4px -3px 2px rgb(216, 216, 216));
+}
+
 .passport-info{
   width: 60%;
   display: flex;
@@ -804,7 +850,25 @@ height: 2px;
 }
 .personal-info-container > div {
   border-bottom: 2px solid #ecedc1;
+  padding-bottom: 4px;
+  display: flex;
+  align-items: flex-end;
 }
+
+.personal-info-container > div > img{
+  width: 26px;
+  height: 26px;
+  margin-right: 8px;
+  margin-top: 4px;
+}
+
+.personal-info-container > div:nth-child(1) > img{
+  width: 32px;
+  height: 32px;
+}
+/*PASSPORT ZODIAC SIGNS*/
+
+
 .catchphrase-container {
   /* margin-left: 10px; */
   margin-right: 1rem;
@@ -812,6 +876,7 @@ height: 2px;
   background: #ecedc1;
   border-radius: 11px;
   border-bottom-left-radius: 0;
+  padding: 10px;
 }
 .passport-footer{
   padding: 1rem;
@@ -855,9 +920,82 @@ height: 2px;
   font-size: 14px;
 }
 .chat-body{
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
   flex: 1;
   padding: 2rem;
+  overflow: auto;
 }
+.user-txt-container{
+  display: flex;
+  justify-content: flex-end;
+}
+.user-txt {
+  background-color: #FFFBE7;
+  border: 1px solid #9BA9B0;
+  border-radius: 20px;
+  border-top-right-radius: 0px;
+  padding: 0.5rem 1rem;
+  position: relative;
+  max-width: 80%;
+}
+.system-txt-container{
+  display: flex;
+  justify-content: flex-start;
+}
+.system-txt-container img{
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  margin-right: 00.5rem;
+  border: 1px solid #9BA9B0;
+  background: white;
+  margin-top: -30px;
+}
+.system-txt {
+  background-color: #FFEEA0;
+  border: 1px solid #9BA9B0;
+  border-radius: 20px;
+  border-top-left-radius: 0px;
+  padding: 0.5rem 1rem;
+  max-width: 80%;
+}
+
+/*ESTILOS PARA LA SCROLLBAR*/
+.chat-body::-webkit-scrollbar {/*scrollbar BARRA DE SCROLL DENTRO DEL CHAT*/
+  width: 8px; 
+}
+
+.chat-body::-webkit-scrollbar-thumb {/*LINEA PARA SUBIR Y BAJAR*/
+  background-color: #c4b9a9;
+  border-radius: 6px;
+}
+
+.chat-body::-webkit-scrollbar-thumb:hover {/*EL HOVER DE LA BARRITA*/
+  background-color: #ebddc9;
+}
+
+/*ESTILOS PARA ESCRIBIENDO...*/
+.nameIsWrite div {
+  display: flex;
+  gap: 8px;
+  padding: 0.5rem;
+}
+
+@keyframes blink { 50% { fill: transparent }}
+.dot { 
+  animation: 1s blink infinite;
+  fill: grey;
+}
+.dot:nth-child(2) { animation-delay: 250ms }
+.dot:nth-child(3) { animation-delay: 500ms }
+
+.loader {
+  background-color: transparent;
+  color: grey;
+}
+
 .chat-footer{
   padding: 0.5rem;
 }
@@ -891,10 +1029,6 @@ padding: 0rem 0.5rem;
 font-size: 20px;
 color: #8E8E93;
 }
-/* .divInputChatIndividual {
-  padding: 10px 20px;
-  background-color: #FFFBE7;
-} */
 
 /*VISTA ERROR*/
 
@@ -920,21 +1054,10 @@ color: #8E8E93;
   font-size: 20px;
   cursor: pointer;
 }
-
-
-
-
-
-
-.borderColor {
-  border-style: solid;
-  border-color: red;
-  border-width: 2px;
+.face {
+  width: 40px;
+  height: 40px;
 }
-
-.user-txt {
-  background-color: #ABAA8C;
-}
-.system-txt {
-  background-color: #8E8E93;
+.faceFor {
+  margin-top: 30px;
 }
