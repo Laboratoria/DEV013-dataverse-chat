@@ -32,8 +32,8 @@ export const TotalCards = (data) => {
     //console.log(itemContainer);
 
     itemContainer.addEventListener("click", () => {
-      //con item traemos todo los valores 
-      navigateTo("/individualchat", {...item})
+      //con item traemos todo los valores y el id de cada tarjeta 
+      navigateTo(`/individualchat?id=${item.id}`, {...item})
     })
     //console.log("Este es el element", itemContainer);
   });
