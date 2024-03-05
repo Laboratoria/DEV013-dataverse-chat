@@ -2,7 +2,7 @@ import { navigateTo } from '../router.js';
 
 export const Error = () => {
   const error = document.createElement('div');
-  error.className = 'header';
+  error.className = 'error';
   error.innerHTML = `
   <div>
     <div class= titulo> 
