@@ -1,14 +1,13 @@
 /* Esta función debe recibir un parámetro que almacena los mensajes
 deben seguir una estructura específica */
 
+import { getApiKey } from "./apiKey.js";
+
 /* global axios*/
 
-//const api_key = "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";
-const api_key = "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";//mi llave)
-
+const api_key = getApiKey();
 
 export const communicateWithOpenAI = async (systemMessages, userMessages) => {
-  // const api_key = getApiKey()
   try {
     const response = await axios ({
       method: "POST",
@@ -40,7 +39,6 @@ export const communicateWithOpenAI = async (systemMessages, userMessages) => {
     // navigateTo('/error')
   }
 };
-
 
 
 

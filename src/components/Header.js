@@ -1,6 +1,6 @@
 //import { navigateTo } from '../router.js';
 // import { Button } from './Button.js'
-// import { Api } from '../views/Api.js';
+import { Api } from '../views/Api.js';
 
 /*export const Header = () => {
     const header = document.createElement("header");
@@ -32,9 +32,8 @@
 }
 */
 
-
 import { navigateTo } from '../router.js';
-
+//import { Api } from "./../views/Api.js";
 export const Header = (name = "user") => {
   const header = document.createElement("header");
   header.innerHTML = `
@@ -45,15 +44,27 @@ export const Header = (name = "user") => {
   <nav>
     <ul class="nav-ul">
       <li><a id="home">Home</a></li>
-      <li><a id="api" class="keyApi">API</a></li>
+      <li><a id="api" class="keyApi show">API</a></li>
       <li><a id="stats">Estadisticas</a></li>
     </ul>
-    <div class="header-user">
+    <div class="header-user-image hide">
       <img src="./images/User.png" alt="User" />
           ${name}
     </div>
-  </nav>
-    `;
+    <div class="header-menu hide">
+    <button class="header-button-menu"><ion-icon name="menu-sharp"></ion-icon></button>
+  </div>
+  </nav> `;
+  console.log("api", Api());
+  // const keyApiUser = header.querySelector(".keyApi");
+  const userApi = header.querySelector(".header-user-image");
+  
+  userApi.addEventListener("click", () => {
+    navigateTo("/api")
+  })
+
+
+
   header.querySelector("#home").addEventListener("click", () => navigateTo("/home", { }));
   //header.querySelector("#individual").addEventListener("click", () => navigateTo("/individual", { name: "sldjf"}));
   header.querySelector("#api").addEventListener("click", () => navigateTo("/api", { }));

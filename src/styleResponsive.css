@@ -1,0 +1,152 @@
+/* Media Querys */
+
+  /*Vista Portada*/
+
+  /*Vista Error*/
+
+  /*Vista Home*/
+
+  /*Vista chat individual*/
+
+  /*Vista chat grupal*/
+
+  /*Vista API*/
+
+  /*Vista Estadisticas*/
+  
+@media (max-width: 480px) {/*para pantallas de máximo 600px*/
+    /*Vista Portada*/
+    .container__imageStart {/*contenedor principal de la portada*/
+      margin-top: 40%;
+    }
+    .imageStart {
+      margin-top: 20px;
+      width: 400px;
+    }
+    .start {
+      margin-top: 50%;
+      width: 150%;
+      height: 110px;
+    }
+    .container__imageStart__button {/*contenedor del botón inicio */
+      margin-right: 0;
+    }
+    /*Vista Error*/
+
+    /*Vista Home*/
+
+    /*Vista chat individual*/
+
+    /*Vista chat grupal*/
+    .containerGroupal {/*contenedor de los cuadros*/
+      position: relative;
+      width: 400px;
+      height: 680px;
+      margin-left: 40px;
+    }
+    .containerGroupal__Chat {/*contenedor chat grupal*/
+      position: absolute;
+      background-size: 100%;
+      width: 500px;
+      height: 350px;
+    }
+    .containerGroupal__Users {/*contenedor de participantes*/
+      margin-top: 90%;
+      width: 550px;
+      height: 320px;
+      & img {
+        width: 50px;
+        height: 50px;
+        margin-left: 15px;
+      }
+    }
+    .inputGroupal {/*input chat grupal*/
+      margin-top: 48%;
+    }
+    .inputGroupal {/*input chat grupal*/
+      font-size: 14px;
+      width: 80%;
+      margin-top: 48%;
+      
+    }
+    /*Vista API*/
+    .headerApiKey {/*contenedor del titulo*//*falta checar bien */
+      margin-right: 100%;
+      margin-top: 50px;
+      padding: 20px;
+      position: relative;
+      height: 80px;
+    }
+    form {
+      /*overflow: auto;*/
+      margin-right: auto;
+      margin-left: -30%; 
+      padding: 10px 10px;
+    }
+
+    /*Vista Estadisticas*/
+
+}
+
+
+/* @media (max-width: 769px) {
+  body {
+    background-color: aquamarine;
+  }
+  /*Vista Portada*
+  .container__imageStart {/*contenedor principal de la portada*
+    margin-top: 40%;
+    overflow: hidden;
+  }
+  .imageStart {
+    width: 400px;
+  }
+  .start {
+    margin-top: 50%;
+    width: 120%;
+    height: 110px;
+  }
+  /*Vista chat grupal*
+  .containerGroupal {/*contenedor de los cuadros*
+    position: relative;
+    width: 500px;
+    height: 675px;
+    margin-left: 40px;
+  }
+  .containerGroupal__Chat {/*contenedor chat grupal*
+    position: absolute;
+    background-size: 100%;
+    width: 550px;
+    height: 350px;
+  }
+  .containerGroupal__Users {/*contenedor de participantes*
+    margin-top: 71%;
+    width: 550px;
+    height: 320px;
+    & img {
+      width: 60px;
+      height: 60px;
+      margin-left: 15px;
+    }
+  }
+  .inputGroupal {/*input chat grupal*
+    margin-top: 40%;
+  }
+  /*Vista API*
+  .headerApiKey {/*contenedor del titulo*//*falta checar bien *
+    margin-right: 100%;
+    margin-top: 50px;
+    padding: 20px;
+    position: relative;
+    height: 80px;
+  }
+  form {
+    /*overflow: auto;*
+    margin-right: auto;
+    margin-left: -30%; 
+    padding: 10px 10px;
+  }
+
+  /*Vista Estadisticas*
+
+} */

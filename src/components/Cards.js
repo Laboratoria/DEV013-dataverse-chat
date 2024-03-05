@@ -1,4 +1,6 @@
 import { navigateTo } from "../router.js";
+import { getApiKey } from "../lib/apiKey.js";
+//import { communicateWithOpenAI } from "../lib/openAIApi.js";
 /*export const Cards = (data) => {
   // const divContainerFace = document.createElement("div");
   // divContainerFace.className = "containerFace";
@@ -136,26 +138,36 @@ export const Cards = (data) => {
     divCard.innerHTML = `
     <dl>
     <div class="headerCard">
-    <dt>Genero</dt><dd itemprop="gender" class= ${element.gender === "Femenino" ? "genderFemale" : "genderMale"}></dd>
-    <dt>Signo</dt><dd itemprop="zodiacSign" class=${element.facts.zodiacSign}></dd>
+    <dt>Genero</dt><dd class="gender show" itemprop="gender" class= ${element.gender === "Femenino" ? "genderFemale" : "genderMale"}></dd>
+    <dt>Signo</dt><dd class="sign show" itemprop="zodiacSign" class=${element.facts.zodiacSign}></dd>
     </div>
     <div class="bodyCard" data-img-one="${element.imageUrl}" data-img-one="${element.imageUrlFace}">
     <img src= ${element.imageUrl} alt=${element.name}></dd>
     </div>
     <div class="footerCard">
       <div class="information">
-        <dt>Especie</dt><dd itemprop="species">${element.species}</dd>
+        <dt>Especie</dt><dd itemprop="species" class="specie show">${element.species}</dd>
         <dt>Nombre</dt><dd itemprop="name">${element.name}</dd>
-        <dt>Personalidad</dt><dd itemprop="personality">${element.personality.length > 5 ? element.personality.substring(0, 5) + ".." : element.personality}</dd>
+        <dt>Personalidad</dt><dd class="personality show" itemprop="personality" >${element.personality.length > 5 ? element.personality.substring(0, 5) + ".." : element.personality}</dd>
       </div>
     <div class="date">
     <img src="./images/Pastel de cumple.png" alt="cake"/>
-    <dt>Cumpleaños</dt><dd itemprop="birthDate">${element.facts.birthDate}</dd>
+    <dt>Cumpleaños</dt><dd class="birthDay show" itemprop="birthDate">${element.facts.birthDate}</dd>
     </div>
     </div>
     </dl>
     `;
     listLi.append(divCard);
+
+    const birthDay = listLi.querySelector(".birthDay");
+    const specie = listLi.querySelector(".specie");
+    const sign = listLi.querySelector(".sign");
+    const gender = listLi.querySelector(".gender");
+    const personality = listLi.querySelector(".personality");
+    // const birthDay = listLi.querySelector(".birthDay");
+    // const birthDay = listLi.querySelector(".birthDay");
+    // const birthDay = listLi.querySelector(".birthDay");
+
 
     const prueba = listLi.querySelectorAll(".bodyCard");
     for (const iterator of prueba) {
@@ -165,17 +177,58 @@ export const Cards = (data) => {
     function cambiarColor(e) {
       if (e.type === "mouseover") {
         e.currentTarget.innerHTML = `<img src=${element.imageUrlFace} alt=${element.name}>`
+        birthDay.classList.remove("show");
+        birthDay.classList.add("hide");
+        specie.classList.remove("show");
+        specie.classList.add("hide");
+        personality.classList.remove("show");
+        personality.classList.add("hide");
+        gender.classList.remove("show");
+        gender.classList.add("hide");
+        sign.classList.remove("show");
+        sign.classList.add("hide");
+
       } else {
         e.currentTarget.innerHTML = `<img src="${element.imageUrl}" alt=${element.name}>`
+        birthDay.classList.remove("hide");
+        birthDay.classList.add("show");
+        specie.classList.remove("hide");
+        specie.classList.add("show");
+        personality.classList.remove("hide");
+        personality.classList.add("show");
+        gender.classList.remove("hide");
+        gender.classList.add("show");
+        sign.classList.remove("hide");
+        sign.classList.add("show");
       }
     }
 
     listLi.addEventListener("click", () => {
-      navigateTo(`/individual?id=${element.id}`);
+      if(getApiKey()){
+        navigateTo(`/individual?id=${element.id}`);
+      } 
+      else {
+        navigateTo("/api", {});
+      }
     });
   });
   return listUl;
 };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 //hacer if en card para mandar a api, antes de individual
 //hacer función para eliminar api key

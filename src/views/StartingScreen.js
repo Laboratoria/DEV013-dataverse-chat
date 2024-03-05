@@ -8,12 +8,12 @@ export const StartingScreen = () => {
   <img src="../images/Logo.png" alt="logo" class="logo"/>
   <h1 class="titleStart">WIKINOOK</h1>
   </div>
-  <img src="../images/Imagen-pantalla-bienvenida.png" alt="imagen-inicio"/>
+  <img class="imageStart" src="../images/Imagen-pantalla-bienvenida.png" alt="imagen-inicio"/>
   <div class="container__imageStart__button">
   <button class="btn-start">INICIO</button>
   </div>
   <div>
-      <svg viewBox="0 -20 700 110" width="100%" height="110" preserveAspectRatio="none"><!--Eje x 0-700, Eje y -20-110, w100% del contenedor  preserveAspectRatio que el contenido se estire sin matener su prorporción-->
+      <svg class="start" viewBox="0 -20 700 110" width="150%" height="125" preserveAspectRatio="none"><!--Eje x 0-700, Eje y -20-110, w100% del contenedor  preserveAspectRatio que el contenido se estire sin matener su prorporción-->
         <path d="M0,10 c80,-18 230,-12 350,7 c80,13 260,17 350,-5 v100 h-700z" fill="#d0ccbd"/>
       </svg>
   </div>

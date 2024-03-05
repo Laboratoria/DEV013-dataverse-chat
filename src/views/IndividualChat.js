@@ -1,7 +1,8 @@
 import { Footer } from "../components/Footer.js";
 import { Header } from "../components/Header.js";
+import { navigateTo } from "../router.js";
 import data from "./../data/dataset.js";
-import {communicateWithOpenAI} from "./../lib/openAIApi.js"
+import { communicateWithOpenAI } from "./../lib/openAIApi.js";
 /// /import { filterData } from "../lib/dataFunctions.js";
 //HAY QUE USAR EL ID
 export const IndividualChat = (element) => {
@@ -51,7 +52,12 @@ export const IndividualChat = (element) => {
                 <p class="character-name">${idFilter[0].name}</p>
                 <p class="last-seen">Visto por últ. vez 00:00</p>
                 </div>
-                <div class="chat-body"></div>
+                <div class="chat-body ">
+                <div class="header-title">
+                <img class="user hide" src="./images/user.png" alt="Logo" />
+              </div>
+              <div class="face hide"><img src=${idFilter[0].imageUrlFace} alt=${idFilter[0].name}></div>
+                </div>
                 <div class="chat-footer">
                 <div class="nameIsWrite hide">${idFilter[0].name} esta escribiendo...</div>
                     <div class="chat-placeholder">
@@ -68,29 +74,39 @@ export const IndividualChat = (element) => {
   container.append(Header(), main, Footer());
   const nameWrite = main.querySelector(".nameIsWrite");
   const userInput = main.querySelector(".send-txt");
-  console.log(typeof userInput);
-  const sendButton= main.querySelector("#send-icon");
+  const sendButton = main.querySelector("#send-icon");
   const messageWindows = main.querySelector(".chat-body");
+  const face = main.querySelector(".face");
+  const user = main.querySelector(".user");
 
   sendButton.addEventListener("click", async () => {
-    nameWrite.classList.remove("hide");//para esconder el esta escribien    
-    nameWrite.classList.add("show" );   
-
+    nameWrite.classList.remove("hide"); //para esconder el esta escribien
+    nameWrite.classList.add("show");
     const userInputValue = userInput.value;
     const questionUser = document.createElement("div");
-    questionUser.className = "user-txt"
+    questionUser.className = "user-txt";
     questionUser.innerHTML = userInputValue;
     const message = document.createElement("div");
     message.className = "system-txt";
     const openAiResponse = await communicateWithOpenAI(idFilter[0].description, userInputValue);
+    if (openAiResponse === "error") {
+      navigateTo("/error");
+    } else {
+      user.classList.remove("hide");
+      user.classList.add("show;");
+      face.classList.remove("hide");
+      face.classList.add("show;");
+      //   face.classList.remove("show");
+      //   face.classList.add("hide;")
+      message.innerHTML = openAiResponse;
+    }
     //message.innerHTML = openAiResponse.data.choices[0].message.content;
-    message.innerHTML = openAiResponse;
     nameWrite.classList.add("hide");
     nameWrite.classList.remove("show");
     //Vamos a introducir los mensajes cuando la función communicate retorne
-    messageWindows.append(questionUser, message)
+    messageWindows.append(questionUser, message);
     userInput.value = "";
-  })
+  });
   return container;
 };
 
