@@ -26,19 +26,12 @@ const viewContainer = document.getElementById('root');
 // Asignar las rutas
 setRoutes(routes);
 
-// Establecer el elemento raíz donde se representarán las vistas.
+// Establecemos el elemento raíz donde se representarán las vistas, cuando cambia la url
 window.addEventListener("DOMContentLoaded", (event) => {
-  console.log("#HOLI")
-  console.log(event, );
   setRootEl(viewContainer);
-  //obtener la ruta de la ventana global por eso mejor usar window
-  console.log ('window', window.location.pathname);
-  onURLChange(event);
+  //Obtenemos la ruta de la ventana global
+  console.log ('window', window.location.pathname + window.location.search);
+  onURLChange(window.location.pathname + window.location.search);
 });
 
-// agregando popstate
-//window.addEventListener("popstate", (event) => {
-  //console.log('Evetno target para popstate', event.target.location.pathname);
-  //onURLChange(event.target.location.pathname);
-//});
 window.onpopstate = onURLChange;
