@@ -95,7 +95,7 @@ export const setRoutes = (newRoutes) => {
   }
 };
 
-const queryStringToObject = (queryString) => {
+export const queryStringToObject = (queryString) => {
   //Esta función tiene como objetivo pasar un string a objeto
 
   // console.log("Este es el queryString", queryString)

@@ -1,6 +1,6 @@
 import { navigateTo } from "../router.js";
 import { getApiKey } from "../lib/apiKey.js";
-import { communicateWithOpenAI } from "../lib/openAIApi.js";
+//import { communicateWithOpenAI } from "../lib/openAIApi.js";
 /*export const Cards = (data) => {
   // const divContainerFace = document.createElement("div");
   // divContainerFace.className = "containerFace";
@@ -146,9 +146,9 @@ export const Cards = (data) => {
     </div>
     <div class="footerCard">
       <div class="information">
-        <dt>Especie</dt><dd itemprop="species">${element.species}</dd>
+        <dt>Especie</dt><dd itemprop="species" >${element.species}</dd>
         <dt>Nombre</dt><dd itemprop="name">${element.name}</dd>
-        <dt>Personalidad</dt><dd itemprop="personality">${element.personality.length > 5 ? element.personality.substring(0, 5) + ".." : element.personality}</dd>
+        <dt>Personalidad</dt><dd  itemprop="personality" >${element.personality.length > 5 ? element.personality.substring(0, 5) + ".." : element.personality}</dd>
       </div>
     <div class="date">
     <img src="./images/Pastel de cumple.png" alt="cake"/>
@@ -158,13 +158,13 @@ export const Cards = (data) => {
     </dl>
     `;
     listLi.append(divCard);
-
-    const prueba = listLi.querySelectorAll(".bodyCard");
-    for (const iterator of prueba) {
-      iterator.addEventListener('mouseover', cambiarColor)
-      iterator.addEventListener('mouseout', cambiarColor)
+   
+    const listFace = listLi.querySelectorAll(".bodyCard");
+    for (const iterator of listFace) {
+      iterator.addEventListener('mouseover', cardHover)
+      iterator.addEventListener('mouseout', cardHover)
     }
-    function cambiarColor(e) {
+    function cardHover(e) {
       if (e.type === "mouseover") {
         e.currentTarget.innerHTML = `<img src=${element.imageUrlFace} alt=${element.name}>`
       } else {
@@ -189,6 +189,36 @@ export const Cards = (data) => {
 
 
 
+
+
+
+
+
+
+
+
+
+
+//hacer if en card para mandar a api, antes de individual
+//hacer función para eliminar api key
+//cambiar por select y option
+//borde rojo al input cuando no hay texto
+//naveagación hacia api, cuando no se detecta la llave
+
+// listLi.addEventListener("click", () => {
+//   // navigateTo(`/individual`, {id: element.id});
+//   if(setApiKey(window.localStorage)){
+//     navigateTo(`/individual?id=${element.id}`);
+//   } else {
+//     navigateTo(`/api`);
+//   }
+// });
+// });
+
+// listLi.addEventListener("click", () => {
+//   // navigateTo(`/individual`, {id: element.id});
+//   navigateTo(`/individual?id=${element.id}`);});
+// });
 
 
 

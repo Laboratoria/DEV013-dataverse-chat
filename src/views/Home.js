@@ -19,6 +19,8 @@ export const Home = () => {
 import { Footer } from "../components/Footer.js";
 import { Header } from "../components/Header.js";
 import { SectionHome } from "../components/SectionHome.js";
+//import { getUserName } from "../lib/apiKey.js";
+
 
 export const Home = () => {
   const container = document.createElement("div");

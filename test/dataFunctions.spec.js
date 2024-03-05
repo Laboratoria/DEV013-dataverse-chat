@@ -33,8 +33,16 @@ describe("Filtrar la data por especie, por género y por personalidad", () => {
 });
 
 describe("Estadística númerica por género de los personajes", () => {
-  it("Debería darnos el porcentaje de personajes femeninos", () => {
-    const actual = computeStats(fakeData);
-    expect(actual.totalFemale).toBe("50.00");
+  it("Debería darnos la cantidad de personajes femeninos", () => {
+    const actual = computeStats(fakeData, "gender");
+    expect(actual.Femenino).toBe(2);
+  })
+  it("Debería darnos la cantidad de personajes con personalidad perezoso", () => {
+    const actual = computeStats(fakeData, "personality");
+    expect(actual.Perezoso).toBe(2);
+  })
+  it("Debería darnos la cantidad de personajes por especie 'ciervo'", () => {
+    const actual = computeStats(fakeData, "species");
+    expect(actual.Ciervo).toBe(1);
   })
 });

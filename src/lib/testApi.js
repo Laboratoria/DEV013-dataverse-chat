@@ -24,10 +24,8 @@ export const fakeCommunicateWithOpenAI = async (systemMessages, userMessages) =>
         headers: { Authorization: "Bearer " + api_key },
       },
     ]);
-    console.log(response.data, "response fake");
     return response.data.choices[0].message.content;
   } catch (error) {
-    console.log(error, "error fake");
     return "error";
   }
 };

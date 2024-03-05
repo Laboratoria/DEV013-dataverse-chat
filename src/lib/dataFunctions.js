@@ -22,6 +22,7 @@ export const computeStats = (data, groupBy) => {
     } else {
       acumulador[item[groupBy]]++;
     }
+    console.log(acumulador)
     return acumulador;
   }, {});
 
