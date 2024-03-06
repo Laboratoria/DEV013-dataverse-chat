@@ -2,8 +2,8 @@
 import { Footer } from "./../components/Footer.js";
 import { communicateWithOpenAI } from "../lib/openAIApi.js";
 import data from "./../data/dataset.js";
-//import { SecondaryHeader } from "../components/SecondaryHeader.js";
-import { navigateTo } from "../router.js";
+import { SecondaryHeader } from "../components/SecondaryHeader.js";
+//import { navigateTo } from "../router.js";
 
 export const GroupalChat = () => {
   const divMain = document.createElement("div");
