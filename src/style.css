@@ -378,7 +378,16 @@ header nav {
 }
 .header-user img {
     width: 3rem;
+  }
+
+  /*HEADER SECUNDARIO*/
+.secundary-header{
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 10%;
+  border-bottom: 1px solid #e0e0e0;
 }
+
   /* Estilos del body */
 body {
   background-color: #f7f3e7;
@@ -419,40 +428,49 @@ aside {
   padding-right: 3em;
 } 
 /*MAIN*/
-main {
-  display: flex;
-  margin-bottom: 100px;
-}
-/* Estilos del section */
-section {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-hr {
-  border: 1px solid #e0e0e0;
-  margin: 1rem 0;
-}
-ul {
-  list-style: none;
-}
-ul .cardList {
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin: 0
-}
-/* Este estilo es para el titulo vecinos, el search bar y el select, ES EL CONTENEDOR DE TODOS*/
-.buscador {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: 1rem 0;
-  padding: 1rem;
-}
-/*CARDS*/
+
+  main {
+    display: flex;
+    min-height: calc(100vh - 260px);
+  }
+  .main-error{
+    min-height: calc(100vh - 150px);
+  }
+
+  /* Estilos del section */
+
+  section {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  hr {
+    border: 1px solid #e0e0e0;
+    margin: 1rem 0;
+  }
+  ul {
+    list-style: none;
+  }
+  ul .cardList {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0
+  }
+  /* Este estilo es para el titulo vecinos, el search bar y el select, ES EL CONTENEDOR DE TODOS*/
+
+  .buscador {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1rem 0;
+    padding: 1rem;
+  }
+
+  /*CARDS*/
+
 .card {/*creada desde view*/
   width: 184px;
   height: 279px;
@@ -775,8 +793,7 @@ input[type="text"] {
   gap: 1rem;
   /* background-color: rosybrown; */
   width: 100%;
-  height: calc(100vh);
-  max-height: 700px;
+ 
   flex-wrap: wrap;
 }
 .passport-container{
@@ -786,7 +803,6 @@ input[type="text"] {
   min-width: 400px;
   max-width: 500px;
   width: 35%;
-  height: 90%;
   position: relative;
 }
 .passport{
@@ -794,8 +810,10 @@ input[type="text"] {
   margin: 2rem 2rem;
   background-color: transparent;
   position: relative;
-}
-.passport-icon{
+  height: 550px;
+ }
+
+ .passport-icon{
   z-index: 1;
   background-size: cover;
   width: 40px;
@@ -922,14 +940,14 @@ height: 2px;
   min-width: 400px;
   max-width: 700px;
   width: 45%;
-  height: 90%;
-}
+ }
 .chat-background{
   width: 100%;
   margin: 1rem 2rem;
   background-color: #CDB289;
   display: flex;
   border-radius: 8px;
+  height: 600px;
 }
 .chat{
   background-image: url("./images/chat-and-passport/chatBackground.png");

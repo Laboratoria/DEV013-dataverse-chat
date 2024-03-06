@@ -142,7 +142,9 @@ export const Cards = (data) => {
     <dt>Signo</dt><dd itemprop="zodiacSign" class=${element.facts.zodiacSign}></dd>
     </div>
     <div class="bodyCard" data-img-one="${element.imageUrl}" data-img-one="${element.imageUrlFace}">
-    <img src= ${element.imageUrl} alt=${element.name}></dd>
+      <img class="imgHoverOut" src= ${element.imageUrl} alt=${element.name}>
+      <img class="imgHoverIn" hidden src= ${element.imageUrlFace} alt=${element.name}>
+    </dd>
     </div>
     <div class="footerCard">
       <div class="information">
@@ -157,18 +159,24 @@ export const Cards = (data) => {
     </div>
     </dl>
     `;
+
+    divCard.querySelector('.bodyCard').addEventListener('mouseover', cardHover)
+    divCard.querySelector('.bodyCard').addEventListener('mouseout', cardHover)
     listLi.append(divCard);
    
-    const listFace = listLi.querySelectorAll(".bodyCard");
-    for (const iterator of listFace) {
-      iterator.addEventListener('mouseover', cardHover)
-      iterator.addEventListener('mouseout', cardHover)
-    }
+    // const listFace = listLi.querySelectorAll(".bodyCard");
+    // for (const iterator of listFace) {
+    //   iterator.addEventListener('mouseover', cardHover)
+    //   iterator.addEventListener('mouseout', cardHover)
+    // }
+
     function cardHover(e) {
       if (e.type === "mouseover") {
-        e.currentTarget.innerHTML = `<img src=${element.imageUrlFace} alt=${element.name}>`
+        divCard.querySelector('.imgHoverOut').style.display = 'none'
+        divCard.querySelector('.imgHoverIn').style.display = 'block'
       } else {
-        e.currentTarget.innerHTML = `<img src="${element.imageUrl}" alt=${element.name}>`
+        divCard.querySelector('.imgHoverOut').style.display = 'block'
+        divCard.querySelector('.imgHoverIn').style.display = 'none'
       }
     }
 
@@ -180,7 +188,10 @@ export const Cards = (data) => {
         navigateTo("/api", {});
       }
     });
+    
   });
+
+
   return listUl;
 };
 

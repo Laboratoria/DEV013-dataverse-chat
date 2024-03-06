@@ -2,7 +2,8 @@
 // //import { Footer } from "../components/Footer.js";
 // //import { navigateTo } from "../router.js";
 //import { Header } from "../components/Header.js";
-import { Button } from "../components/Button.js";
+// import { Button } from "../components/Button.js";
+import { SecondaryHeader } from "../components/SecondaryHeader.js";
 import {
   setApiKey,
   removeApiKey,
@@ -16,11 +17,6 @@ export const Api = () => {
   const apiPage = document.createElement("main");
   apiPage.innerHTML = `
   <form name="register">
-  <div containerForm>
-    <div class="header-title headerApiKey">
-      <img src="./images/Logo.png" alt="Logo" />
-      <h1>WikiNook</h1>
-    </div>
     <div class="container__ApiUser">
     <label for="userName">USUARIO </label>
     <div class="container__ApiUser__text">
@@ -103,7 +99,7 @@ export const Api = () => {
     removeApiKey();
   });
 
-  container.append(Button(), apiPage);
+  container.append(SecondaryHeader(), apiPage);
   // container.append(apiPage);
   return container;
 };

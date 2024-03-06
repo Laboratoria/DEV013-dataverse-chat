@@ -1,5 +1,6 @@
 import { Footer } from "../components/Footer.js";
-import { Header } from "../components/Header.js";
+// import { Header } from "../components/Header.js";
+import { SecondaryHeader } from "../components/SecondaryHeader.js";
 import { navigateTo } from "../router.js";
 import data from "./../data/dataset.js";
 import { communicateWithOpenAI } from "./../lib/openAIApi.js";
@@ -79,7 +80,7 @@ export const IndividualChat = (element) => {
     </div>
   </div>`;
 
-  container.append(Header(), main, Footer());
+  container.append(SecondaryHeader(), main, Footer());
   const nameWrite = main.querySelector(".nameIsWrite");
   const userInput = main.querySelector(".send-txt");
   const sendButton = main.querySelector("#send-icon");

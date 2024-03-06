@@ -1,8 +1,9 @@
-import {Button} from "./../components/Button.js";
+// import {Button} from "./../components/Button.js";
 import { Footer } from "./../components/Footer.js";
 import { communicateWithOpenAI } from "../lib/openAIApi.js";
 import data from "./../data/dataset.js";
-//import { navigateTo } from "../router.js";
+//import { SecondaryHeader } from "../components/SecondaryHeader.js";
+import { navigateTo } from "../router.js";
 
 export const GroupalChat = () => {
   const divMain = document.createElement("div");
@@ -38,8 +39,19 @@ export const GroupalChat = () => {
       <p>PARTICIPANTES </p>
     </div> ${divImageFaces.innerHTML}</div>
   </div> `;
+  //
+  //const imageFaceContainer = main.querySelector(".elementFace");
+  // const listUlOfFaces = document.createElement("ul")
+  // data.forEach((element) => {
+  //   const listLiOfFaces = document.createElement("li");
+  //   listLiOfFaces.innerHTML = `<img src="${element.imageUrlFace}" alt="${element.name}"></img>`
+  //   listUlOfFaces.appendChild(listLiOfFaces);
+  // });
+  // console.log(listUlOfFaces, "listOf faces");
 
-  divMain.append(Button(), main, Footer());
+  //divFace.appendChild(listUlOfFaces);
+
+  divMain.append(SecondaryHeader(), main, Footer());
   //container.appendChild(main)
   const nameWrite = main.querySelector(".nameIsWriteGroupal");
   const sendButton = main.querySelector(".bxs-send");

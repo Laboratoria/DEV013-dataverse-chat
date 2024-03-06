@@ -13,149 +13,64 @@
   /*Vista API*/
 
   /*Vista Estadisticas*/
+
+
+
+
   
-  @media (min-width: 400px) and (max-width: 600px){/*@media (max-width: 480px) {/*para pantallas de máximo 600px*/
-    /*Vista Portada*/
-    .container__imageStart {/*contenedor principal de la portada*/
-      margin-top: 40%;
-    }
-    .imageStart {
-      margin-top: 20px;
-      width: 400px;
-    }
-    .start {
-      margin-top: 50%;
-      width: 150%;
-      height: 110px;
-    }
-    .container__imageStart__button {/*contenedor del botón inicio */
-      margin-right: 0;
-    }
-    /*Vista Error*/
-
-    /*Vista Home*/
-
-    /*Vista chat individual*/
-
-    /*Vista chat grupal*/
-    .containerGroupal {/*contenedor de los cuadros*/
-      position: relative;
-      width: 400px;
-      height: 680px;
-      margin-left: 40px;
-    }
-    .containerGroupal__Chat {/*contenedor chat grupal*/
-      position: absolute;
-      background-size: 100%;
-      width: 500px;
-      height: 350px;
-    }
-    .containerGroupal__chat__inputSend {
-      bottom: 0;
-    }
-    .containerGroupal__Users {/*contenedor de participantes*/
-      margin-top: 90%;
-      width: 550px;
-      height: 320px;
-      & img {
-        width: 50px;
-        height: 50px;
-        margin-left: 15px;
-      }
-    }
-   .page {/*contenedor del título del chat grupal*/
-        margin-left: -40px;
-        margin-right: 50px;
-    }
-    /* .inputGroupal {/*input chat grupal*
-      margin-top: -50%;
-    } */
-    .bxs-send {
-      transform: translate(0px,150px);
-    }
-    .inputGroupal {/*input chat grupal*/
-      font-size: 14px;
-      width: 360px;
-      margin-top: 49%;   
-    }
-    /*Vista API*/
-    .headerApiKey {/*contenedor del titulo*//*falta checar bien */
-      margin-right: 100%;
-      margin-top: 50px;
-      padding: 20px;
-      position: relative;
-      height: 80px;
-    }
-    form {
-      /*overflow: auto;*/
-      margin-right: auto;
-      margin-left: -30%; 
-      padding: 10px 10px;
-    }
-
-    /*Vista Estadisticas*/
-
-}
-
-
-/* @media (max-width: 769px) {
-  body {
-    background-color: aquamarine;
+@media (max-width: 900px) {/*para pantallas de máximo 600px*/
+    /* CSS rules for sizes smaller than 600px */
+  .asideFilter{
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: column;
   }
-  /*Vista Portada*
-  .container__imageStart {/*contenedor principal de la portada*
-    margin-top: 40%;
-    overflow: hidden;
+  .asideFilter ul{
+    display:flex;
+    flex-wrap: wrap;
+    gap: 1rem;
   }
-  .imageStart {
-    width: 400px;
+  .asideFilter > div:nth-child(7){
+    display: flex;
+    justify-content: center;
   }
-  .start {
-    margin-top: 50%;
-    width: 120%;
-    height: 110px;
+  .asideFilter label h2{
+    margin-bottom: 0.8rem;
   }
-  /*Vista chat grupal*
-  .containerGroupal {/*contenedor de los cuadros*
-    position: relative;
-    width: 500px;
-    height: 675px;
-    margin-left: 40px;
+  section {
+    width: 100%;
   }
-  .containerGroupal__Chat {/*contenedor chat grupal*
-    position: absolute;
-    background-size: 100%;
-    width: 550px;
-    height: 350px;
+  .buscador{
+    justify-content: center;
   }
-  .containerGroupal__Users {/*contenedor de participantes*
-    margin-top: 71%;
-    width: 550px;
-    height: 320px;
-    & img {
-      width: 60px;
-      height: 60px;
-      margin-left: 15px;
-    }
+  .buscador input, .buscador select{
+    width: 70%;
   }
-  .inputGroupal {/*input chat grupal*
-    margin-top: 40%;
+  .buscador h2{
+    display: none;
   }
-  /*Vista API*
-  .headerApiKey {/*contenedor del titulo*//*falta checar bien *
-    margin-right: 100%;
-    margin-top: 50px;
-    padding: 20px;
-    position: relative;
-    height: 80px;
+  .buscador div {
+    flex-direction: column;
+    width: 100%;
   }
-  form {
-    /*overflow: auto;*
-    margin-right: auto;
-    margin-left: -30%; 
-    padding: 10px 10px;
+  #content ul{
+    justify-content: center;
   }
-
-  /*Vista Estadisticas*
-
-} */
+  header {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+  }
+  header nav{
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  main{
+    flex-direction: column;
+  }
+  .btn-clear-search {
+    display: none;
+  }
+  }
