@@ -33,6 +33,8 @@ export const communicateWithOpenAI = async (systemMessages, userMessages) => {
     })
     console.log(response, "función open");
     return response.data.choices[0].message.content;
+    //return response;
+
   } catch (error) {
     return "error"
     //El navigateTo debe hacerse dentro de los chats con una condicional, no es responsabilidad del catch usar el navigateTo
@@ -136,8 +138,4 @@ async function promises {
 //   .catch(error => console.error(error)
 // )
 
-
-// let promises2 = new Promise((resolved) => {
-//   setTimeout(() => resolved('promise and setTimeout'), 4000);
-// })
 

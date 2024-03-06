@@ -3,8 +3,14 @@
 // //import { navigateTo } from "../router.js";
 //import { Header } from "../components/Header.js";
 import { Button } from "../components/Button.js";
-import { setApiKey, removeApiKey } from "../lib/apiKey.js";
+import {
+  setApiKey,
+  removeApiKey,
+  getApiKey,
+  setUserName,
+} from "../lib/apiKey.js";
 import { navigateTo } from "../router.js";
+
 export const Api = () => {
   const container = document.createElement("div");
   const apiPage = document.createElement("main");
@@ -36,7 +42,7 @@ export const Api = () => {
     `;
   const apiKeyInput = apiPage.querySelector("#api-key");
   const apiKeyPass = apiPage.querySelector(".api__key"); //checar, si la comento no aparece el texto
-  const iconSHow = apiPage.querySelector(".bx");//(ICONO DEL OJO EN LA CONTRASEÑA)
+  const iconSHow = apiPage.querySelector(".bx"); //(ICONO DEL OJO EN LA CONTRASEÑA)
   iconSHow.addEventListener("click", () => {
     if (apiKeyPass.type === "password") {
       apiKeyPass.type = "text";
@@ -51,29 +57,44 @@ export const Api = () => {
 
   const buttonSave = apiPage.querySelector(".buttonApiSave");
   const buttonDelete = apiPage.querySelector(".buttonApiDelete");
-  const requiredInputName = apiPage.querySelector(".userName");//valor obligatorio del input del nombre
+  const requiredInputName = apiPage.querySelector(".userName"); //valor obligatorio del input del nombre
+
+  // function userNameApi() {
+  //   return userNameValue;
+  // }
+
   buttonSave.addEventListener("click", (event) => {
-    //let nameObt = requiredInputName.value;//aqui esta guardado el name
+    // debugger
+    // validar casos negativos
+    event.preventDefault();
     if (requiredInputName.value === "" || apiKeyInput.value === "") {
       alert("Coloca tu nombre y llave");
-      event.preventDefault();
-    } else if (requiredInputName.value.length > 18) {
-      if (apiKeyInput.value.length > 6) { //menor<mayor
-        event.preventDefault()//evitar recargar la página por el form
-        alert("bien");
-        buttonSave.classList.remove("show");
-        buttonSave.classList.add("hide")
-        buttonDelete.classList.remove("hide");
-        buttonDelete.classList.add("show");
-        navigateTo("/home");
-      }
+      return;
     }
-    // buttonDelete.classList.remove("hide");
-    // buttonDelete.classList.add("show");
-    // buttonSave.classList.remove("show");
-    // buttonSave.classList.add("hide");
+    if (apiKeyInput.value.length < 30) {
+      alert("API key no valida");
+      return;
+    }
+    buttonSave.classList.remove("show");
+    buttonSave.classList.add("hide");
+    buttonDelete.classList.remove("hide");
+    buttonDelete.classList.add("show");
+    
+    const userNameValue = requiredInputName.value; //aqui esta guardado el name
+    console.log("USERNAME INPUT VALUE", userNameValue);
+    setUserName(userNameValue);
     setApiKey(apiKeyInput.value);
+    navigateTo("/home");
   });
+  console.log(getApiKey());
+  if (getApiKey()) {
+    console.log("hokabchjfbh");
+    buttonSave.classList.remove("show");
+    buttonSave.classList.add("hide");
+    buttonDelete.classList.remove("hide");
+    buttonDelete.classList.add("show");
+  }
+
   buttonDelete.addEventListener("click", () => {
     buttonSave.classList.remove("hide");
     buttonSave.classList.add("show");
@@ -81,6 +102,7 @@ export const Api = () => {
     buttonDelete.classList.add("hide");
     removeApiKey();
   });
+
   container.append(Button(), apiPage);
   // container.append(apiPage);
   return container;

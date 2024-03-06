@@ -46,7 +46,7 @@ export const SectionHome = () => {
               <label for="specieChicken">Gallo</label> 
             </li>
             <li>
-              <input type="radio" name="optionTwo" id="specieMouse" value="Ratón">
+              <input type="radio" name="optionTwo" id="specieMouse" value="Raton">
               <label for="specieMouse">Ratón</label> 
             </li>
             <li>
@@ -92,7 +92,7 @@ export const SectionHome = () => {
               <label for="personalityJock">Deportista</label> 
             </li>
             <li>
-              <input type="radio" name="optionThree" id="personalityCranky" value="Gruñón">
+              <input type="radio" name="optionThree" id="personalityCranky" value="Gruñon">
               <label for="personalityCranky">Gruñón</label> 
             </li>
             <li>

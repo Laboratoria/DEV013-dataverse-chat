@@ -14,6 +14,21 @@ export const removeApiKey = () => {
   localStorage.clear(window.localStorage);
 }
 
+
+
+export const getUserName = () => {
+  //OBTENER LA LLAVE
+  // const myStorage = window.localStorage;
+  const getStorage = localStorage.getItem("usuario");
+  return getStorage;
+};
+
+export const setUserName = (username) => {
+  //PARA GUARDAR LA API
+  localStorage.setItem("usuario", username);
+};
+
+
 /*
 localStorage.setItem("perro", "12355");
 var cat = localStorage.getItem("API-KEY");

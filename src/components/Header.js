@@ -1,6 +1,6 @@
 //import { navigateTo } from '../router.js';
 // import { Button } from './Button.js'
-import { Api } from '../views/Api.js';
+//import { Api } from '../views/Api.js';
 
 /*export const Header = () => {
     const header = document.createElement("header");
@@ -32,9 +32,12 @@ import { Api } from '../views/Api.js';
 }
 */
 
-import { navigateTo } from '../router.js';
-//import { Api } from "./../views/Api.js";
-export const Header = (name = "user") => {
+import { navigateTo } from "../router.js";
+import { getUserName } from "../lib/apiKey.js";
+// const name = getuserName()
+
+export const Header = () => {
+  const userName = getUserName();
   const header = document.createElement("header");
   header.innerHTML = `
   <div class="header-title">
@@ -44,34 +47,45 @@ export const Header = (name = "user") => {
   <nav>
     <ul class="nav-ul">
       <li><a id="home">Home</a></li>
-      <li><a id="api" class="keyApi show">API</a></li>
       <li><a id="stats">Estadisticas</a></li>
+      <li><a id="about-us">Saber Más</a></li>
     </ul>
-    <div class="header-user-image hide">
+    <div>
+      <div class="header-user ${userName === null ? "hide" : "show"}"> 
       <img src="./images/User.png" alt="User" />
-          ${name}
+      <p id="userName">${userName}</p>
+      </div>
+      <div>
+      <button class="btn-header ${userName === null ? "show" : "hide"}" id="api"> API KEY </button>
+      </div>
     </div>
-    <div class="header-menu hide">
-    <button class="header-button-menu"><ion-icon name="menu-sharp"></ion-icon></button>
-  </div>
-  </nav> `;
-  console.log("api", Api());
-  // const keyApiUser = header.querySelector(".keyApi");
-  const userApi = header.querySelector(".header-user-image");
+    </nav>`;
   
-  userApi.addEventListener("click", () => {
-    navigateTo("/api")
-  })
+  const headerUser = header.querySelector(".header-user");
+  //const btnHeader = header.querySelector(".btn-header");
 
+  headerUser.addEventListener("click", () => navigateTo("/api"));
 
-
-  header.querySelector("#home").addEventListener("click", () => navigateTo("/home", { }));
+  header
+    .querySelector("#home")
+    .addEventListener("click", () => navigateTo("/home", {}));
   //header.querySelector("#individual").addEventListener("click", () => navigateTo("/individual", { name: "sldjf"}));
-  header.querySelector("#api").addEventListener("click", () => navigateTo("/api", { }));
-  header.querySelector("#stats").addEventListener("click", () => navigateTo("/stats", { }));
+  header
+    .querySelector("#api")
+    .addEventListener("click", () => navigateTo("/api", {}));
+  header
+    .querySelector("#stats")
+    .addEventListener("click", () => navigateTo("/stats", {}));
+  header
+    .querySelector(".header-title")
+    .addEventListener("click", () => navigateTo("/home"));
+  header
+    .querySelector("#about-us")
+    .addEventListener("click", () => navigateTo("/error"));
   return header;
-}
+};
 
-
-
-
+// <div class="header-user">
+//   <img src="./images/User.png" alt="User" />
+//       ${name}
+// </div>

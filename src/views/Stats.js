@@ -1,6 +1,7 @@
 //import { Footer } from "../components/Footer.js";
 import { Header } from "../components/Header.js";
 import { computeStats } from "../lib/dataFunctions.js";
+import { Footer } from "../components/Footer.js"
 import data from "../data/dataset.js";
 /*global google*/
 
@@ -30,7 +31,7 @@ export const Stats = () => {
   renderChartPersonality(main);
   renderChartSpecies(main);
 
-  container.append(Header(), main);
+  container.append(Header(), main, Footer());
 
   return container;
 };

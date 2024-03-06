@@ -25,5 +25,5 @@ export const Button = () => {
   container.querySelector(".buttonBack").addEventListener("click", () => {
     navigateTo("/home", {});
   });
-  return container;
+  return container; 
 };

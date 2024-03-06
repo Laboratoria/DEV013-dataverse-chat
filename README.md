@@ -2,18 +2,55 @@
 
 ## Índice
 
-* [1. Preámbulo](#1-preámbulo)
-* [2. Resumen del proyecto](#2-resumen-del-proyecto)
-* [3. Consideraciones generales](#3-consideraciones-generales)
-* [4. Funcionalidades](#4-funcionalidades)
-* [5. Consideraciones técnicas](#5-consideraciones-técnicas)
-* [6. Hitos](#6-hitos)
-* [7. Criterios de aceptación mínimos del proyecto](#7-criterios-de-aceptación-mínimos-del-proyecto)
-* [8. Objetivos de aprendizaje](#8-objetivos-de-aprendizaje)
-* [9. Pistas, tips y lecturas complementarias](#9-pistas-tips-y-lecturas-complementarias)
-* [10. Consideraciones para pedir tu Project Feedback](#10-consideraciones-para-pedir-tu-project-feedback)
+* [1. Introducción](#1-Introducción)
+* [2. Descripción](#2-Descripción)
+* [3. Funcionalidades](#4-funcionalidades)
+* [4. Historia de usuario](#5-Historia-de-usuario)
 
 ***
+
+## 1. Introducción
+
+¡Bienvenido a WikiNook 2.0 🏡!
+Este proyecto es una aplicación web dedicada a los amantes del videojuego Animal Crossing, específicamente diseñada para explorar y conocer más sobre los adorables vecinos del juego. Con un diseño inspirado en la estética de Animal Crossing, WikiNook ofrece una experiencia interactiva para descubrir información detallada sobre cada vecino, clasificándolos según su especie, personalidad y género.
+
+## 2. Descripción
+
+Dataverse-chat es un la continuación del proyecto dataverse, es una implementación con IA, de manera que podrás intereactuar de manera individula y grupal con tus personajes favoritos.
+
+## 3. Funcionalidades
+
+* Exploración por Filtros: Filtra a los vecinos por personalidad, especie y género, esta sección cuenta con un botón de limpiado de dichos filtros y devuelve los datos a su estado inicial.
+* Orden Alfabético: Explora la lista de vecinos de manera ascendente o descendente por orden alfabético a través de un selector.
+* Barra de Búsqueda: Encuentra rápidamente a tu vecino favorito por su nombre, cuenta con un botón que limpia la búsqueda realizada.
+* Estadísticas: Muestra porcentualmente en un modal la cantidad de vecinos del género femenino y del género masculino existentes en la plataforma. 
+
+## 4. Historia de usuario
+
+Se realizo un documento con las funcionalidades del proyecto, pedidas desde el punto de vista de un usuario, simulando una situación en la que podría ser usada. Aquí mostramos el enlace del documento realizada para el usuario que nos permite conocer los pasos en los que se desarrollo el proyecto.
+[Enlace del documento](https://docs.google.com/document/d/1K8NoQyA83kZ_FGCIBDcJ6XyT0XXSpx40iVrrJk-1XwY/edit)
+
+## 6. Diseño y Desarrollo del Prototipo
+El proceso de diseño y desarrollo del prototipo de WikiNook fue llevado a cabo con atención meticulosa, centrándonos en la experiencia del usuario y la estética inspirada en Animal Crossing. Utilizamos la plataforma de diseño colaborativo Figma para crear prototipos de media y alta fidelidad que sirvieron como guía visual y funcional antes de la implementación final.
+
+### Prototipo fidelidad media 
+
+Se diseñaron dos prototipos uno de media fidelidad que nos muestras las funcionalidades esperamos tuviera el proyecto.
+
+<img src="prototipoMediaFidelidad.png" alt="Prototipo media fidelidad" width="500" height="350">
+
+### Prototipo fidelidad alta
+Encuanto al prototipo de alta fidelidad es la culminación del proyecto, en cuanto a interacción con el usuario, así como los acabados que debe tener la página y las tarjetas mostradas.
+
+### Implementación
+* Transición a Desarrollo.
+* Adaptación a Tecnologías Seleccionadas. </br>
+¡Tú también puedes echarle un vistazo a nuestro prototipo! clic aquí [Link al prototipo](https://www.figma.com/proto/lw0HfZvfVOoTsurPPYlpeL/Prototipo%2FDataverse?page-id=0%3A1&type=design&node-id=168-26302&viewport=928%2C-200%2C0.59&t=zLZEgt3rNaGcR8uG-1&scaling=contain&starting-point-node-id=36%3A103&mode=design)
+
+
+
+
+
 
 ## 1. Preámbulo
 

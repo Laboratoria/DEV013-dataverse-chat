@@ -14,7 +14,7 @@
 
   /*Vista Estadisticas*/
   
-@media (max-width: 480px) {/*para pantallas de máximo 600px*/
+  @media (min-width: 400px) and (max-width: 600px){/*@media (max-width: 480px) {/*para pantallas de máximo 600px*/
     /*Vista Portada*/
     .container__imageStart {/*contenedor principal de la portada*/
       margin-top: 40%;
@@ -50,6 +50,9 @@
       width: 500px;
       height: 350px;
     }
+    .containerGroupal__chat__inputSend {
+      bottom: 0;
+    }
     .containerGroupal__Users {/*contenedor de participantes*/
       margin-top: 90%;
       width: 550px;
@@ -60,14 +63,20 @@
         margin-left: 15px;
       }
     }
-    .inputGroupal {/*input chat grupal*/
-      margin-top: 48%;
+   .page {/*contenedor del título del chat grupal*/
+        margin-left: -40px;
+        margin-right: 50px;
+    }
+    /* .inputGroupal {/*input chat grupal*
+      margin-top: -50%;
+    } */
+    .bxs-send {
+      transform: translate(0px,150px);
     }
     .inputGroupal {/*input chat grupal*/
       font-size: 14px;
-      width: 80%;
-      margin-top: 48%;
-      
+      width: 360px;
+      margin-top: 49%;   
     }
     /*Vista API*/
     .headerApiKey {/*contenedor del titulo*//*falta checar bien */
