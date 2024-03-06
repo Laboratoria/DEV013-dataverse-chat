@@ -1,7 +1,8 @@
-import {Button} from "./../components/Button.js";
+// import {Button} from "./../components/Button.js";
 import { Footer } from "./../components/Footer.js";
 import { communicateWithOpenAI } from "../lib/openAIApi.js";
 import data from "./../data/dataset.js";
+import { SecondaryHeader } from "../components/SecondaryHeader.js";
 import { navigateTo } from "../router.js";
 
 export const GroupalChat = () => {
@@ -45,7 +46,7 @@ export const GroupalChat = () => {
 
   //divFace.appendChild(listUlOfFaces);
 
-  divMain.append(Button(), main, Footer());
+  divMain.append(SecondaryHeader(), main, Footer());
   //container.appendChild(main)
   const nameWrite = main.querySelector(".nameIsWrite");
   const sendButton = main.querySelector(".bxs-send");

@@ -4,6 +4,7 @@ import { navigateTo } from "../router.js";
 export const Error = () => {
   const container = document.createElement("div");
   const errorPage = document.createElement("main");
+  errorPage.classList.add("main-error")
   errorPage.innerHTML = `
   <div class="container-error">
     <img  src="../images/error/error.png" alt="img-error"/>
