@@ -18,27 +18,59 @@
 
 
   
-@media (max-width: 600px) {/*para pantallas de máximo 600px*/
+@media (max-width: 900px) {/*para pantallas de máximo 600px*/
     /* CSS rules for sizes smaller than 600px */
-    header {
-      padding: 10px 5%;
-    }
-    aside {
-      padding: 1.5rem;
-      display: none;
-    }
-    main {
-      flex-direction: column;
-    }
-    section {
-      width: 100%;
-    }
-    .buscador h2 {
-      display: none;
-    }
-    .buscador div {
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-    }
+  .asideFilter{
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .asideFilter ul{
+    display:flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  .asideFilter > div:nth-child(7){
+    display: flex;
+    justify-content: center;
+  }
+  .asideFilter label h2{
+    margin-bottom: 0.8rem;
+  }
+  section {
+    width: 100%;
+  }
+  .buscador{
+    justify-content: center;
+  }
+  .buscador input, .buscador select{
+    width: 70%;
+  }
+  .buscador h2{
+    display: none;
+  }
+  .buscador div {
+    flex-direction: column;
+    width: 100%;
+  }
+  #content ul{
+    justify-content: center;
+  }
+  header {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+  }
+  header nav{
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  main{
+    flex-direction: column;
+  }
+  .btn-clear-search {
+    display: none;
+  }
   }

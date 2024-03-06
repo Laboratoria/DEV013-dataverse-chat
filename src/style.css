@@ -370,6 +370,15 @@ header nav {
 .header-user img {
     width: 3rem;
   }
+
+  /*HEADER SECUNDARIO*/
+.secundary-header{
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 10%;
+  border-bottom: 1px solid #e0e0e0;
+}
+
   /* Estilos del body */
 
 body {
@@ -419,7 +428,10 @@ aside {
 
   main {
     display: flex;
-    margin-bottom: 100px;
+    min-height: calc(100vh - 260px);
+  }
+  .main-error{
+    min-height: calc(100vh - 150px);
   }
 
   /* Estilos del section */
@@ -739,8 +751,7 @@ aside {
   gap: 1rem;
   /* background-color: rosybrown; */
   width: 100%;
-  height: calc(100vh);
-  max-height: 700px;
+ 
   flex-wrap: wrap;
  }
  .passport-container{
@@ -750,7 +761,6 @@ aside {
   min-width: 400px;
   max-width: 500px;
   width: 35%;
-  height: 90%;
   position: relative;
  }
  .passport{
@@ -758,6 +768,7 @@ aside {
   margin: 2rem 2rem;
   background-color: transparent;
   position: relative;
+  height: 550px;
  }
 
  .passport-icon{
@@ -891,7 +902,6 @@ height: 2px;
   min-width: 400px;
   max-width: 700px;
   width: 45%;
-  height: 90%;
  }
 .chat-background{
   width: 100%;
@@ -899,6 +909,7 @@ height: 2px;
   background-color: #CDB289;
   display: flex;
   border-radius: 8px;
+  height: 600px;
 }
 .chat{
   background-image: url("./images/chat-and-passport/chatBackground.png");
@@ -1054,6 +1065,11 @@ color: #8E8E93;
   font-size: 20px;
   cursor: pointer;
 }
+
+
+
+
+
 .face {
   width: 40px;
   height: 40px;
