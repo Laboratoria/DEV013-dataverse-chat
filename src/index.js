@@ -3,8 +3,7 @@ import { Home } from './views/Home.js';
 import { Error } from './views/Error.js';
 import { IndividualChat } from './views/IndividualChat.js';
 import { GroupChat } from './views/GroupChat.js';
-import { ApiKey } from './views/ApiKey.js';
-import { setRootEl, setRoutes, navigateTo, onURLChange } from './router.js'
+import { setRootEl, setRoutes, onURLChange } from './router.js'
 /*
 TODO:
 1.- Definir rutas en router.
@@ -19,7 +18,6 @@ const routes = {
   "/error": Error,
   "/individualchat": IndividualChat,
   "/groupchat": GroupChat,
-  "/apikey": ApiKey,
 }
 
 const viewContainer = document.getElementById('root');

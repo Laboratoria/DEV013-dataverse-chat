@@ -13,12 +13,6 @@ listGroupChat.setAttribute('class', 'list-group-chat');
 groupChat.setAttribute('class', 'group-chat');
 
 groupChat.innerHTML = ` 
-  <div class="chat">
-    <div class="chat-name">
-    <img src="${item.imageUrl}" alt="${item.name}">
-    <h3> ${item.name} </h3>
-    </div>
-  </div>
   <div class="input-chat"> 
     <input type="text" id="input-user" placeholder="Interactua con el chat aqui">
     <input type="submit" value="Enviar">
@@ -40,3 +34,11 @@ groupChat.innerHTML = `
 
   return viewGroupChat;
 }
+
+// lo borre para hacer pruebas
+/* <div class="chat">
+    <div class="chat-name">
+    <img src="${item.imageUrl}" alt="${item.name}">
+    <h3> ${item.name} </h3>
+    </div>
+  </div> */

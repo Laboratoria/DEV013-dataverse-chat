@@ -60,6 +60,13 @@ const renderView = (pathname, props = {}) => {
   // renderiza la vista correcta pasando el valor de los accesorios
   // agrega el elemento de vista al elemento raíz del DOM
 }
+
+/**
+ * 
+ * @param {*} pathname 
+ * @param {*} props 
+ */
+
 export const navigateTo = (pathname, props = {}) => {
   // actualiza el historial de la ventana (navegador) con pushState
   console.log("origin", window.location.origin);

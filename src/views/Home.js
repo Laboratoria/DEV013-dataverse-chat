@@ -4,10 +4,10 @@ import { filterData, sortData, computeStats } from '../lib/dataFunctions.js';
 let totalData = [...data]
 
 import { Header } from './../Components/Header.js';
-import { ButtonGroupChat } from '../Components/ButtonGroupChat.js';
 import { MenuSelect } from './../Components/MenuSelect.js';
 import { Footer } from './../Components/Footer.js';
 import { WelcomeText } from './../Components/WelcomeText.js'
+import { ModalApi } from './../Components/ModalApi.js'
 
 
 export const Home = () => {
@@ -22,9 +22,26 @@ export const Home = () => {
   viewHome.appendChild(MenuSelect());
   viewHome.appendChild(main)
   viewHome.appendChild(Footer());
+  viewHome.appendChild(ModalApi());
 
   main.appendChild(WelcomeText());
   main.appendChild(TotalCards(totalData));
+
+
+  const buttonAppiKey = viewHome.querySelector(".button-appi-key")
+  console.log(buttonAppiKey);
+  const modalKey = viewHome.querySelector(".modal-key");
+  console.log(modalKey);
+  buttonAppiKey.addEventListener("click", () =>{
+    modalKey.style.display = "flex";
+  })
+
+  // const closeModalKey = viewHome.querySelector(".cancel");
+  // closeModalKey.addEventListener("click", () => {
+  //   console.log(closeModalKey);
+  //   modal.style.display = "none";
+  // });
+
 
   const selectFilter = viewHome.querySelector("#Genre1")
   selectFilter.addEventListener("change", (event) => {
@@ -110,6 +127,7 @@ export const Home = () => {
   // cardSelect.addEventListener("click", () =>{
   //   console.log("Este es el CardSelect", cardSelect);
   // })
+
 
   return viewHome;
 
