@@ -11,7 +11,7 @@ export const ButtonReturnHome = () => {
     </button>
     `;
     // para volver a la pagina principal
-    const returnHome = buttonsContainer.querySelector(".button-return-home");
+    const returnHome = buttonReturnHome.querySelector(".button-return-home");
     returnHome.addEventListener("click", () => {
       navigateTo("/", {})
     })
