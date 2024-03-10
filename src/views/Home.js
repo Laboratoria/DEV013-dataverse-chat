@@ -1,61 +1,103 @@
-import data from '../data/dataset.js';
-import { TotalCards } from '../Components/TotalCards.js';
-import { filterData, sortData, computeStats } from '../lib/dataFunctions.js';
-let totalData = [...data]
+import data from "../data/dataset.js";
+import { TotalCards } from "../Components/TotalCards.js";
+import { filterData, sortData, computeStats } from "../lib/dataFunctions.js";
+import { navigateTo } from "../router.js";
+let totalData = [...data];
 
-import { Header } from './../Components/Header.js';
-import { MenuSelect } from './../Components/MenuSelect.js';
-import { Footer } from './../Components/Footer.js';
-import { WelcomeText } from './../Components/WelcomeText.js'
-import { ModalApi } from './../Components/ModalApi.js'
-
+import { MenuSelect } from "./../Components/MenuSelect.js";
+import { Footer } from "./../Components/Footer.js";
+import { WelcomeText } from "./../Components/WelcomeText.js";
+import { ModalApi } from "./../Components/ModalApi.js";
+import { setApiKey, getApiKey } from "../lib/apiKey.js";
+import { Header } from "../Components/Header.js";
 
 export const Home = () => {
   const viewHome = document.createElement("section");
-  viewHome.setAttribute("class", "view")
+  viewHome.setAttribute("class", "view");
 
-  const main = document.createElement("main")
-  main.setAttribute("class", "main")
+  const main = document.createElement("main");
+  main.setAttribute("class", "main");
   //console.log(MenuSelect());
-
-  viewHome.appendChild(Header());
-  viewHome.appendChild(MenuSelect());
-  viewHome.appendChild(main)
-  viewHome.appendChild(Footer());
-  viewHome.appendChild(ModalApi());
-
   main.appendChild(WelcomeText());
   main.appendChild(TotalCards(totalData));
 
+  viewHome.appendChild(Header());
+  viewHome.appendChild(MenuSelect());
+  viewHome.appendChild(main);
+  viewHome.appendChild(Footer());
 
-  const buttonAppiKey = viewHome.querySelector(".button-appi-key")
-  console.log(buttonAppiKey);
-  const modalKey = viewHome.querySelector(".modal-key");
-  console.log(modalKey);
-  buttonAppiKey.addEventListener("click", () =>{
-    modalKey.style.display = "flex";
-  })
+  // este es para que el boton de apiKey muestre el modal
+  const buttonApiKey = viewHome.querySelector(".button-appi-key");
+  buttonApiKey.addEventListener("click", () => {
+    // si el valor de local storage es null o undefined muestra el modal
+    if (!getApiKey()) {
+      main.appendChild(ModalApi());
 
-  // const closeModalKey = viewHome.querySelector(".cancel");
-  // closeModalKey.addEventListener("click", () => {
-  //   console.log(closeModalKey);
-  //   modal.style.display = "none";
-  // });
+      const formApiKey = viewHome.querySelector(".modal-key");
+      const closeModal = viewHome.querySelector(".cancel-modal-footer-key");
 
+      closeModal.addEventListener("click", () => {
+        // remove es para cerrar el modal-key
+        formApiKey.remove();
+      });
 
-  const selectFilter = viewHome.querySelector("#Genre1")
+      formApiKey.addEventListener("submit", (event) => {
+        //para que no recargue la pagina
+        event.preventDefault();
+
+        const inputValue = viewHome.querySelector(".container-input").value;
+        setApiKey(inputValue);
+        formApiKey.remove();
+      });
+    } else {
+      // si ya hay un valor muestra ese alert
+      alert("Ya ingresaste tu API key");
+    }
+  });
+
+  //este es para el boton de chat grupal
+  const buttonGroupChat = viewHome.querySelector(".button-group-chat");
+  buttonGroupChat.addEventListener("click", () => {
+    // si el valor de local storage es null o undefined muestra el modal
+    if (!getApiKey()) {
+      main.appendChild(ModalApi());
+      
+      const formApiKey = viewHome.querySelector(".modal-key");
+      const closeModal = viewHome.querySelector(".cancel-modal-footer-key");
+
+      closeModal.addEventListener("click", () => {
+        // remove es para cerrar el modal-key
+        formApiKey.remove();
+      });
+
+      formApiKey.addEventListener("submit", (event) => {
+        //para que no recargue la pagina
+        event.preventDefault();
+
+        const inputValue = viewHome.querySelector(".container-input").value;
+        setApiKey(inputValue);
+        navigateTo("/groupchat")
+
+      });
+    } else {
+      // si ya hay un valor muestra ese alert
+      navigateTo("/groupchat")
+    }
+  });
+
+  // filtrar por Genero
+  const selectFilter = viewHome.querySelector("#Genre1");
   selectFilter.addEventListener("change", (event) => {
     // creamos la variable selectGenre que contiene el valor de los generos
     const selectGenre = event.target.value;
     //console.log(selectGenre);
     //llamo a la funcion de filtrar data
     const filterGenre = filterData(data, "totalGender", selectGenre);
-    // aqui se almacena los generos filtrados en totalData 
+    // aqui se almacena los generos filtrados en totalData
     totalData = [...filterGenre];
     //console.log(totalData);
-    main.innerHTML = ""
+    main.innerHTML = "";
     main.appendChild(TotalCards(totalData));
-
   });
 
   // // ordenar de manera ascedente y descendente
@@ -69,14 +111,14 @@ export const Home = () => {
     if (order === "asc") {
       // Ordenar por nombre de manera ascendente
       const orderAsc = sortData(totalData, "name", "asc");
-      totalData = [...orderAsc]
+      totalData = [...orderAsc];
       //console.log(totalData);
       main.innerHTML = "";
       main.appendChild(TotalCards(totalData));
     } else {
       // Ordenar por nombre de manera descendente
       const orderDesc = sortData(totalData, "name", "desc");
-      totalData = [...orderDesc]
+      totalData = [...orderDesc];
       console.log(totalData);
       main.innerHTML = "";
       // main.appendChild(MenuSelect());
@@ -88,7 +130,7 @@ export const Home = () => {
   const statsButton = viewHome.querySelector("#stats1");
   const modal = viewHome.querySelector(".content-modal");
   //console.log(statsButton);
-  statsButton.addEventListener('click', function (event) {
+  statsButton.addEventListener("click", function (event) {
     console.log(statsButton);
     modal.style.display = "flex"; //se muestra la pantalla emergente
     // aqui alamacenamos la cantidad de kdramas, los resultados y el contenido de texto
@@ -101,11 +143,31 @@ export const Home = () => {
     if (event.currentTarget === statsButton) {
       //mostrar los porcentajes en el cuadro de dialogo
       pageText.innerHTML = "";
-      pageText.innerHTML += "El " + (results["16 Episodios"] / totalKdramas * 100).toFixed(2) + "% de k-dramas tiene 16 episodios" + "<br>";
-      pageText.innerHTML += "El " + (results["20 Episodios"] / totalKdramas * 100).toFixed(2) + "% de k-dramas tiene 20 episodios" + "<br>";
-      pageText.innerHTML += "El " + (results["21 Episodios"] / totalKdramas * 100).toFixed(2) + " % de k-dramas tiene 21 episodios" + "<br>";
-      pageText.innerHTML += "El " + (results["24 Episodios"] / totalKdramas * 100).toFixed(2) + " % de k-dramas tiene 24 episodios" + "<br>";
-      pageText.innerHTML += "El " + (results["32 Episodios"] / totalKdramas * 100).toFixed(2) + " % de k-dramas tiene 32 episodios" + "<br>";
+      pageText.innerHTML +=
+        "El " +
+        ((results["16 Episodios"] / totalKdramas) * 100).toFixed(2) +
+        "% de k-dramas tiene 16 episodios" +
+        "<br>";
+      pageText.innerHTML +=
+        "El " +
+        ((results["20 Episodios"] / totalKdramas) * 100).toFixed(2) +
+        "% de k-dramas tiene 20 episodios" +
+        "<br>";
+      pageText.innerHTML +=
+        "El " +
+        ((results["21 Episodios"] / totalKdramas) * 100).toFixed(2) +
+        " % de k-dramas tiene 21 episodios" +
+        "<br>";
+      pageText.innerHTML +=
+        "El " +
+        ((results["24 Episodios"] / totalKdramas) * 100).toFixed(2) +
+        " % de k-dramas tiene 24 episodios" +
+        "<br>";
+      pageText.innerHTML +=
+        "El " +
+        ((results["32 Episodios"] / totalKdramas) * 100).toFixed(2) +
+        " % de k-dramas tiene 32 episodios" +
+        "<br>";
       //pageText.log(resultados);
     }
     console.log("este es el page", pageText);
@@ -128,7 +190,5 @@ export const Home = () => {
   //   console.log("Este es el CardSelect", cardSelect);
   // })
 
-
   return viewHome;
-
 };

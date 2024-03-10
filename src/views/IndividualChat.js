@@ -40,7 +40,7 @@ export const IndividualChat = (item) => {
 
     <div class="input-chat"> 
     <input type="text" id="input-user" placeholder="Interactua con el chat aqui">
-    <input type="submit" value="Enviar">
+    <input type="submit" value="Enviar" id= "button-submit">
   </div>
   </div>
   `;
@@ -61,6 +61,13 @@ export const IndividualChat = (item) => {
     navigateTo("/", {})
   })
   // console.log(viewDetailCard); 
+  // creando un alert para enviar en el chat
+  const alertSubmit = card.querySelector("#button-submit");
+  console.log("alert", alertSubmit);
+  alertSubmit.addEventListener("click", () => {
+    alert("Hola");
+  });
+
   return viewDetailCard;
   
   
