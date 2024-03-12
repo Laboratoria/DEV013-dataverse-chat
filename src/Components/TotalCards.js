@@ -50,9 +50,12 @@ export const TotalCards = (data) => {
           event.preventDefault();
 
           const inputValue = container.querySelector(".container-input");
-          console.log("input Value :",inputValue);
-          setApiKey(inputValue.value);
-          console.log("setApikey",setApiKey(inputValue));
+          const apiKeyValue = inputValue.value;
+          console.log("input Value :", inputValue);
+          setApiKey(apiKeyValue);
+          const res = getApiKey();
+          console.log("respuesta apikey", res);
+          console.log("setApikey", setApiKey(apiKeyValue));
           navigateTo(`/individualchat?id=${item.id}`, { ...item });
         });
       } else {
