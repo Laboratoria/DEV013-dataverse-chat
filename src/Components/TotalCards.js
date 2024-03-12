@@ -52,7 +52,7 @@ export const TotalCards = (data) => {
           const inputValue = container.querySelector(".container-input");
           console.log("input Value :",inputValue);
           setApiKey(inputValue.value);
-          console.log("setApikey",setApiKey(inputValue));
+          console.log("setApikey",setApiKey(inputValue.value));
           navigateTo(`/individualchat?id=${item.id}`, { ...item });
         });
       } else {

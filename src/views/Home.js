@@ -29,8 +29,12 @@ export const Home = () => {
   // este es para que el boton de apiKey muestre el modal
   const buttonApiKey = viewHome.querySelector(".button-appi-key");
   buttonApiKey.addEventListener("click", () => {
+    if (getApiKey()){
+      // si ya hay un valor muestra ese alert
+      alert("Ya ingresaste tu API key");
+    }
     // si el valor de local storage es null o undefined muestra el modal
-    if (!getApiKey()) {
+    else  {
       main.appendChild(ModalApi());
 
       const formApiKey = viewHome.querySelector(".modal-key");
@@ -49,10 +53,7 @@ export const Home = () => {
         setApiKey(inputValue);
         formApiKey.remove();
       });
-    } else {
-      // si ya hay un valor muestra ese alert
-      alert("Ya ingresaste tu API key");
-    }
+    } 
   });
 
   //este es para el boton de chat grupal

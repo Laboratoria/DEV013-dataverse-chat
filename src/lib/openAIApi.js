@@ -1,6 +1,5 @@
 // import OpenAI from "openai";
 import { getApiKey } from "./apiKey.js";
-
 // const openai = new OpenAI();
 const recieveApi = getApiKey();
 
