@@ -606,6 +606,27 @@ select,
   border-radius: 15px;
 }
 
+.box-response-user {
+  width: 45%;
+  height: 50px;
+  background-color: rgba(76, 76, 109, 1);
+  color: rgba(255, 255, 255, 1);
+  border-radius: 15px 15px 0 15px;
+  margin-left: 58%;
+  margin-right: 1%;
+  margin-top: 40px;
+}
+
+.box-response-chat {
+  width: 45%;
+  height: 50px;
+  background-color: rgba(184, 223, 216, 1);
+  border-radius: 15px 15px 15px 0;
+  margin-left: 1%;
+  margin-right: 58%;
+  margin-top: 40px;
+}
+
 #input-user {
   border: none;
   width: 800px;
