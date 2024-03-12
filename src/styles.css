@@ -1,0 +1,16 @@
+:root {
+
+    --blue: #107AC6;
+    --soft-blue: #48AEF0;
+    --pastel-blue: #94B8D1;
+    --sky-blue: #B6DFF9;
+    --grey: #D2E9F9;
+    --soft-grey: #F9F8F8;
+    --dark-grey: #2C2C2C;
+    --white: #FFFFFF;
+    --black: #000000;
+}
+* {
+    margin: 0;
+    background-color: var(--sky-blue);
+}
