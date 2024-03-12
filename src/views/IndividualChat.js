@@ -38,7 +38,7 @@ export const IndividualChat = (item) => {
         <p class="chat-on">Conectado</p>
       </div>
     </div>
-    <div>
+    <div class="box-response-total" >
       <div class="box-response-user">
       </div>
       <div class="box-response-chat">
@@ -72,7 +72,7 @@ export const IndividualChat = (item) => {
   const buttonSubmit = viewDetailCard.querySelector("#button-submit");
   const responseUser = card.querySelector(".box-response-user");
   const responseChat = card.querySelector(".box-response-chat");
-
+  const responseTotal = card.querySelector(".box-response-total");
 
   // para cuando envie el mensaje y el chat responda
   buttonSubmit.addEventListener("click", () => {
@@ -80,31 +80,19 @@ export const IndividualChat = (item) => {
     console.log("item name", item.name)
     communicateWithOpenAI(userInput.value, item.name)
     // esta promesa me muestra la respuesta del consumo de mi API
-    //opcion 1
-    //.then ((res) => {
-      //return res.json();
-    //})
-    //opcion 2
-    .then ((res) => res.json())
-      //console.log('Respuesta then', res.json())
-    .then ((data) => {
-      console.log("consumiendo la API", data.choices[0].message.content);
-      responseChat.innerHTML=`
-      <div>
-        <p>${data.choices[0].message.content}</p>
-      </div>
-        `;
+    // .json me devuelve un objeto
+    .then((res) => res.json())
+    // consumir la promesa
+    .then((data) => {
+      console.log(data.choices[0].message.content);
+      responseUser.innerHTML= `${userInput.value}`
+      responseChat.innerHTML= `${data.choices[0].message.content}`
       
-      // para enviar el mensaje del usuario 
-      responseUser.innerHTML = `
-       <div>
-        <p>${userInput.value}</p>
-      </div>
-      `;
+      responseTotal.append(responseUser,responseChat);
       // Limpiando el input
       userInput.value = "";
-    })
+      return responseTotal
+      })
   })
-
   return viewDetailCard;
 };
