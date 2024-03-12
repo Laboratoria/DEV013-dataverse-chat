@@ -33,5 +33,5 @@ groupChat.innerHTML = `
   containerChat.append(listGroupChat, groupChat);
   viewGroupChat.append(Header(), containerChat);
   return viewGroupChat;
-}
+};
 

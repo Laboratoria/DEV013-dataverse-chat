@@ -1,8 +1,9 @@
 import { Header } from "../Components/Header.js";
 import { navigateTo } from '../router.js';
+import { communicateWithOpenAI } from "../lib/openAIApi.js";
 
 export const IndividualChat = (item) => {
-  console.log("Valor de item", item);
+  //console.log("Valor de item", item);
   // esto contiene la vista completa de la tarjeta seleccionada
   const viewDetailCard = document.createElement('section');
   // Llamando al DOM que sera para el detalle de la tarjeta
@@ -33,15 +34,20 @@ export const IndividualChat = (item) => {
     <div class="chat-name">
       <img src="${item.imageUrl}" alt="${item.name}" class="image-kdrama-chat">
       <div class="chat-detail">
-      <h3 class="name-kdrama-chat"> ${item.name} </h3>
-      <p class="chat-on">Conectado</p>
+        <h3 class="name-kdrama-chat"> ${item.name} </h3>
+        <p class="chat-on">Conectado</p>
       </div>
     </div>
-
+    <div>
+      <div class="box-response-user">
+      </div>
+      <div class="box-response-chat">
+      </div>
+    </div>
     <div class="input-chat"> 
-    <input type="text" id="input-user" placeholder="Interactua con el chat aqui">
-    <input type="submit" value="Enviar" id= "button-submit">
-  </div>
+      <input type="text" id="input-user" placeholder="Interactua con el chat aqui">
+      <input type="submit" value="Enviar" id="button-submit">
+    </div>
   </div>
   `;
 
@@ -60,15 +66,45 @@ export const IndividualChat = (item) => {
   buttonReturnHome.addEventListener("click", () => {
     navigateTo("/", {})
   })
+
   // console.log(viewDetailCard); 
-  // creando un alert para enviar en el chat
-  const alertSubmit = card.querySelector("#button-submit");
-  console.log("alert", alertSubmit);
-  alertSubmit.addEventListener("click", () => {
-    alert("Hola");
-  });
+  const userInput = card.querySelector("#input-user");
+  const buttonSubmit = viewDetailCard.querySelector("#button-submit");
+  const responseUser = card.querySelector(".box-response-user");
+  const responseChat = card.querySelector(".box-response-chat");
+
+
+  // para cuando envie el mensaje y el chat responda
+  buttonSubmit.addEventListener("click", () => {
+    console.log("boton submit")
+    console.log("item name", item.name)
+    communicateWithOpenAI(userInput.value, item.name)
+    // esta promesa me muestra la respuesta del consumo de mi API
+    //opcion 1
+    //.then ((res) => {
+      //return res.json();
+    //})
+    //opcion 2
+    .then ((res) => res.json())
+      //console.log('Respuesta then', res.json())
+    .then ((data) => {
+      console.log("consumiendo la API", data.choices[0].message.content);
+      responseChat.innerHTML=`
+      <div>
+        <p>${data.choices[0].message.content}</p>
+      </div>
+        `;
+      
+      // para enviar el mensaje del usuario 
+      responseUser.innerHTML = `
+       <div>
+        <p>${userInput.value}</p>
+      </div>
+      `;
+      // Limpiando el input
+      userInput.value = "";
+    })
+  })
 
   return viewDetailCard;
-  
-  
 };
