@@ -1,10 +1,10 @@
 // import OpenAI from "openai";
 import { getApiKey } from "./apiKey.js";
 // const openai = new OpenAI();
-const recieveApi = getApiKey();
-console.log("apikey recibida", recieveApi);
 
 export const communicateWithOpenAI = async (userInput, kDrama) => {
+  const recieveApi = getApiKey();
+  console.log("apikey recibida", recieveApi);
   //console.log("Funcion api ", kDrama, input);
   const url = "https://api.openai.com/v1/chat/completions";
   //Aquí es donde debes implementar la petición con fetch 

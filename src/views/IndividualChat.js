@@ -39,10 +39,7 @@ export const IndividualChat = (item) => {
       </div>
     </div>
     <div class="box-response-total" >
-      <div class="box-response-user">
-      </div>
-      <div class="box-response-chat">
-      </div>
+      
     </div>
     <div class="input-chat"> 
       <input type="text" id="input-user" placeholder="Interactua con el chat aqui">
@@ -85,13 +82,21 @@ export const IndividualChat = (item) => {
     // consumir la promesa
     .then((data) => {
       console.log(data.choices[0].message.content);
-      responseUser.innerHTML= `${userInput.value}`
-      responseChat.innerHTML= `${data.choices[0].message.content}`
-      
-      responseTotal.append(responseUser,responseChat);
+      //responseUser.innerHTML= `${userInput.value}`
+      //responseChat.innerHTML= `${data.choices[0].message.content}`
+      responseTotal.innerHTML += `
+        <div class="box-response-user">
+          ${userInput.value}
+        </div>
+        <div class="box-response-chat">
+          ${data.choices[0].message.content}
+        </div>
+      `;
+
+      //responseTotal.append(responseUser,responseChat);
       // Limpiando el input
       userInput.value = "";
-      return responseTotal
+      return responseTotal;
       })
   })
   return viewDetailCard;
