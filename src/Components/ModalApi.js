@@ -14,6 +14,6 @@ export const ModalApi = () => {
     <div class="modal-footer-key">
       <a class="generate-api" href="https://platform.openai.com/api-keys" target="_blank" > Si no cuentas con una API Key generalo aquí</a>
     </div>
-  </div>`
+  </div>`;
   return modalKey;
 };

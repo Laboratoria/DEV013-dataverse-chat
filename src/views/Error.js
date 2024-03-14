@@ -1,8 +1,8 @@
-import { navigateTo } from '../router.js';
+import { navigateTo } from "../router.js";
 
 export const Error = () => {
-  const error = document.createElement('div');
-  error.className = 'error';
+  const error = document.createElement("div");
+  error.className = "error";
   error.innerHTML = `
   <div class="error-container">
     <div class= titulo> 
@@ -17,11 +17,11 @@ export const Error = () => {
       </button>
     </div>
   `;
-  //para el boton que retorna al inicio 
+  //para el boton que retorna al inicio
   const buttonReturnHome = error.querySelector(".button-return-home");
   buttonReturnHome.addEventListener("click", () => {
-    navigateTo("/", {})
-  })
+    navigateTo("/", {});
+  });
 
   return error;
-}
+};
