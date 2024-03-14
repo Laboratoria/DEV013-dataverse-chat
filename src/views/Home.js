@@ -169,7 +169,7 @@ export const Home = () => {
         " % de k-dramas tiene 32 episodios" +
         "<br>";
     }
-    console.log("este es el page", pageText);
+    //console.log("este es el page", pageText);
   });
   // para cerrar la ventana emergente
   const closeModal = viewHome.querySelector(".button-close");
@@ -179,7 +179,7 @@ export const Home = () => {
 
   // aqui limpiamos todos los filtros
   const clearFilter = viewHome.querySelector(".button-clear");
-  console.log("boton", clearFilter);
+  //console.log("boton", clearFilter);
   clearFilter.addEventListener("click", function limpiar() {
     main.innerHTML = "";
     main.appendChild(TotalCards(data));
