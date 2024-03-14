@@ -17,3 +17,23 @@ TODO:
 2.- Pasar "root element" a router.
 3.- Invocar el router para renderizar la vista correcta.
 */
+
+import { Home } from "./views/Home";
+import { Error } from "./views/Error";
+import { ChatIndividual } from "./views/ChatIndividual";
+import { ChatGrupal } from "./views/ChatGrupal";
+import { setRoutesEl, setRoutes, onURLChange } from "./router";
+
+const routes = {
+  "/home": Home,
+  "/error": Error,
+  "/chatIndividual": ChatIndividual,
+  "/chatGrupal": ChatGrupal,
+};
+
+setRoutes(routes);
+
+window.addEventListener("DOMContentLoaded", () => {
+  setRoutesEl(root);
+  onURLChange();
+});
