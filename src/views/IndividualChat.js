@@ -1,15 +1,15 @@
 import { Header } from "../Components/Header.js";
-import { navigateTo } from '../router.js';
+import { navigateTo } from "../router.js";
 import { communicateWithOpenAI } from "../lib/openAIApi.js";
 
 export const IndividualChat = (item) => {
   //console.log("Valor de item", item);
   // esto contiene la vista completa de la tarjeta seleccionada
-  const viewDetailCard = document.createElement('section');
+  const viewDetailCard = document.createElement("section");
   // Llamando al DOM que sera para el detalle de la tarjeta
   const detailCard = document.createElement("main");
   const card = document.createElement("div");
-  card.setAttribute('class', 'card')
+  card.setAttribute("class", "card");
 
   card.innerHTML = `
   <div>
@@ -49,42 +49,37 @@ export const IndividualChat = (item) => {
   `;
 
   // Agregando clases a las etiquetas
-  viewDetailCard.setAttribute("class","viewDetailCard");
+  viewDetailCard.setAttribute("class", "viewDetailCard");
   detailCard.setAttribute("class", "detailCard");
   card.setAttribute("class", "card");
- 
+
   //realizamos el contenedor
   viewDetailCard.appendChild(Header());
   viewDetailCard.appendChild(detailCard);
   detailCard.appendChild(card);
-  
-  // para el boton volver al inicio 
+
+  // para el boton volver al inicio
   const buttonReturnHome = viewDetailCard.querySelector(".button-return-home");
   buttonReturnHome.addEventListener("click", () => {
-    navigateTo("/", {})
-  })
+    navigateTo("/", {});
+  });
 
-  // console.log(viewDetailCard); 
   const userInput = card.querySelector("#input-user");
   const buttonSubmit = viewDetailCard.querySelector("#button-submit");
-  const responseUser = card.querySelector(".box-response-user");
-  const responseChat = card.querySelector(".box-response-chat");
   const responseTotal = card.querySelector(".box-response-total");
 
   // para cuando envie el mensaje y el chat responda
   buttonSubmit.addEventListener("click", () => {
-    console.log("boton submit")
-    console.log("item name", item.name)
+    //console.log("boton submit")
+    //console.log("item name", item.name)
     communicateWithOpenAI(userInput.value, item.name)
-    // esta promesa me muestra la respuesta del consumo de mi API
-    // .json me devuelve un objeto
-    .then((res) => res.json())
-    // consumir la promesa
-    .then((data) => {
-      console.log(data.choices[0].message.content);
-      //responseUser.innerHTML= `${userInput.value}`
-      //responseChat.innerHTML= `${data.choices[0].message.content}`
-      responseTotal.innerHTML += `
+      // esta promesa me muestra la respuesta del consumo de mi API
+      // .json me devuelve un objeto
+      .then((res) => res.json())
+      // consumir la promesa
+      .then((data) => {
+        //console.log(data.choices[0].message.content);
+        responseTotal.innerHTML += `
         <div class="box-response-user">
           ${userInput.value}
         </div>
@@ -92,12 +87,10 @@ export const IndividualChat = (item) => {
           ${data.choices[0].message.content}
         </div>
       `;
-
-      //responseTotal.append(responseUser,responseChat);
-      // Limpiando el input
-      userInput.value = "";
-      return responseTotal;
-      })
-  })
+        // Limpiando el input
+        userInput.value = "";
+        return responseTotal;
+      });
+  });
   return viewDetailCard;
 };

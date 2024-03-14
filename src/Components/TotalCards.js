@@ -1,9 +1,9 @@
-// import data from '../data/dataset.js';
 import { ModalApi } from "./../Components/ModalApi.js";
 import { navigateTo } from "../router.js";
 import { setApiKey, getApiKey } from "../lib/apiKey.js";
 
 export const TotalCards = (data) => {
+  //console.log("total cards data", data)
   const container = document.createElement("ul");
   container.setAttribute("class", "container-cards");
   // Iteraremos sobre cada objeto en el dataset
@@ -50,9 +50,9 @@ export const TotalCards = (data) => {
           event.preventDefault();
 
           const inputValue = container.querySelector(".container-input");
-          console.log("input Value :",inputValue);
+          //console.log("input Value :",inputValue);
           setApiKey(inputValue.value);
-          console.log("setApikey",setApiKey(inputValue.value));
+          //console.log("setApikey",setApiKey(inputValue.value));
           navigateTo(`/individualchat?id=${item.id}`, { ...item });
         });
       } else {
@@ -62,6 +62,6 @@ export const TotalCards = (data) => {
     });
   });
 
-  console.log("container", container);
+  //console.log("container", container);
   return container;
 };

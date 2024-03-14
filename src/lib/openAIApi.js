@@ -1,13 +1,11 @@
-// import OpenAI from "openai";
 import { getApiKey } from "./apiKey.js";
-// const openai = new OpenAI();
 
 export const communicateWithOpenAI = async (userInput, kDrama) => {
   const recieveApi = getApiKey();
-  console.log("apikey recibida", recieveApi);
+  //console.log("apikey recibida", recieveApi);
   //console.log("Funcion api ", kDrama, input);
   const url = "https://api.openai.com/v1/chat/completions";
-  //Aquí es donde debes implementar la petición con fetch 
+  //Aquí es donde debes implementar la petición con fetch
   const response = await fetch(url, {
     method: "POST",
     headers: {
@@ -19,7 +17,7 @@ export const communicateWithOpenAI = async (userInput, kDrama) => {
       messages: [
         {
           role: "system",
-          content: `Tu eres este kdrama  ${kDrama}, responde de manera corta o breve`,
+          content: `Tu eres este kdrama  ${kDrama.name}, responde de manera corta o breve`,
         },
         {
           role: "user",
@@ -28,9 +26,7 @@ export const communicateWithOpenAI = async (userInput, kDrama) => {
       ],
     }),
   });
-  
+
   // retorno del texto generado y enviando una respuesta al usuario
   return response;
 };
-
-

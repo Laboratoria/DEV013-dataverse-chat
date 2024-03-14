@@ -2,6 +2,7 @@ import data from "../data/dataset.js";
 import { TotalCards } from "../Components/TotalCards.js";
 import { filterData, sortData, computeStats } from "../lib/dataFunctions.js";
 import { navigateTo } from "../router.js";
+// aqui alojamos los valores de data
 let totalData = [...data];
 
 import { MenuSelect } from "./../Components/MenuSelect.js";
@@ -29,12 +30,12 @@ export const Home = () => {
   // este es para que el boton de apiKey muestre el modal
   const buttonApiKey = viewHome.querySelector(".button-appi-key");
   buttonApiKey.addEventListener("click", () => {
-    if (getApiKey()){
+    if (getApiKey()) {
       // si ya hay un valor muestra ese alert
       alert("Ya ingresaste tu API key");
     }
     // si el valor de local storage es null o undefined muestra el modal
-    else  {
+    else {
       main.appendChild(ModalApi());
 
       const formApiKey = viewHome.querySelector(".modal-key");
@@ -53,16 +54,16 @@ export const Home = () => {
         setApiKey(inputValue);
         formApiKey.remove();
       });
-    } 
+    }
   });
 
-  //este es para el boton de chat grupal
+  // este es para el boton de chat grupal
   const buttonGroupChat = viewHome.querySelector(".button-group-chat");
   buttonGroupChat.addEventListener("click", () => {
     // si el valor de local storage es null o undefined muestra el modal
     if (!getApiKey()) {
       main.appendChild(ModalApi());
-      
+
       const formApiKey = viewHome.querySelector(".modal-key");
       const closeModal = viewHome.querySelector(".cancel-modal-footer-key");
 
@@ -77,12 +78,11 @@ export const Home = () => {
 
         const inputValue = viewHome.querySelector(".container-input").value;
         setApiKey(inputValue);
-        navigateTo("/groupchat")
-
+        navigateTo("/groupchat");
       });
     } else {
       // si ya hay un valor muestra ese alert
-      navigateTo("/groupchat")
+      navigateTo("/groupchat");
     }
   });
 
@@ -101,7 +101,7 @@ export const Home = () => {
     main.appendChild(TotalCards(totalData));
   });
 
-  // // ordenar de manera ascedente y descendente
+  // ordenar de manera ascedente y descendente
   const selectOrder = viewHome.querySelector("#Order1");
   selectOrder.addEventListener("change", (event) => {
     // creamos la variable ordenSeleccionado que contiene el valor al hacer click (A-Z) (Z-A)
@@ -120,9 +120,8 @@ export const Home = () => {
       // Ordenar por nombre de manera descendente
       const orderDesc = sortData(totalData, "name", "desc");
       totalData = [...orderDesc];
-      console.log(totalData);
+      //console.log(totalData);
       main.innerHTML = "";
-      // main.appendChild(MenuSelect());
       main.appendChild(TotalCards(totalData));
     }
   });
@@ -132,15 +131,15 @@ export const Home = () => {
   const modal = viewHome.querySelector(".content-modal");
   //console.log(statsButton);
   statsButton.addEventListener("click", function (event) {
-    console.log(statsButton);
+    //console.log(statsButton);
     modal.style.display = "flex"; //se muestra la pantalla emergente
     // aqui alamacenamos la cantidad de kdramas, los resultados y el contenido de texto
     const totalKdramas = data.length;
-    console.log("totalkdramas", totalKdramas);
+    //console.log("totalkdramas", totalKdramas);
     const results = computeStats(data);
-    console.log("result:", results);
+    //console.log("result:", results);
     const pageText = viewHome.querySelector("#page");
-    console.log("este es el page", pageText);
+    //console.log("este es el page", pageText);
     if (event.currentTarget === statsButton) {
       //mostrar los porcentajes en el cuadro de dialogo
       pageText.innerHTML = "";
@@ -169,7 +168,6 @@ export const Home = () => {
         ((results["32 Episodios"] / totalKdramas) * 100).toFixed(2) +
         " % de k-dramas tiene 32 episodios" +
         "<br>";
-      //pageText.log(resultados);
     }
     console.log("este es el page", pageText);
   });
@@ -186,10 +184,5 @@ export const Home = () => {
     main.innerHTML = "";
     main.appendChild(TotalCards(data));
   });
-
-  // cardSelect.addEventListener("click", () =>{
-  //   console.log("Este es el CardSelect", cardSelect);
-  // })
-
   return viewHome;
 };
