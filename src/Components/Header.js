@@ -7,7 +7,7 @@ export const Header = () => {
     <h1 class= "title-kdrama">K-DRAMA <span class= "title-verse">VERSE</span></h1>
   </div>
   
-  <div "container-righ">  
+  <div id="container-right">  
     <button class="button-group-chat">
     <img src="images/group.png" class="logo-group-chat">
     Chat Grupal
