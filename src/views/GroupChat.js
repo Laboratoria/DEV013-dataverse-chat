@@ -1,13 +1,12 @@
 import { Header } from "./../Components/Header.js";
-import { navigateTo } from "../router.js";
 import { ListGroupChat } from "../Components/ListGroupChat.js";
 import { ButtonReturnHome } from "../Components/ButtonReturnHome.js";
 import { communicateWithOpenAI } from "../lib/openAIApi.js";
 import data from "../data/dataset.js";
 // aqui alojamos una copia de los valores de la data
-let newData = [...data];
+const newData = [...data];
 
-export const GroupChat = (data) => {
+export const GroupChat = () => {
   //console.log('data', newData);
   // esto contiene la vista completa de la vista
   const viewGroupChat = document.createElement("section");

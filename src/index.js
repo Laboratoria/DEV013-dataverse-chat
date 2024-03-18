@@ -17,7 +17,7 @@ const viewContainer = document.getElementById("root");
 setRoutes(routes);
 
 // Establecemos el elemento raíz donde se representarán las vistas, cuando cambia la url
-window.addEventListener("DOMContentLoaded", (event) => {
+window.addEventListener("DOMContentLoaded", () => {
   setRootEl(viewContainer);
   //Obtenemos la ruta de la ventana global
   //console.log ('window', window.location.pathname + window.location.search);

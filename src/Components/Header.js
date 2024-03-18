@@ -1,4 +1,4 @@
-export const Header = (data) => {
+export const Header = () => {
   const header = document.createElement("header");
   header.setAttribute("class", "header");
   header.innerHTML = ` 
