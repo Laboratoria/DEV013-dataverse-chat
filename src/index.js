@@ -22,8 +22,9 @@ import { Home } from "./views/Home";
 import { Error } from "./views/Error";
 import { ChatIndividual } from "./views/ChatIndividual";
 import { ChatGrupal } from "./views/ChatGrupal";
-import { setRoutesEl, setRoutes, onURLChange } from "./router";
+import { setRootEl, setRoutes, onURLChange } from "./router";
 
+//Define las rutas
 const routes = {
   "/home": Home,
   "/error": Error,
@@ -31,9 +32,14 @@ const routes = {
   "/chatGrupal": ChatGrupal,
 };
 
-setRoutes(routes);
+//Carga de todo
+window.addEventListener("DOMContentLoaded", (e) => {
+  const root = document.getElementById("root")
+  setRootEl(root);
+  setRoutes(routes);
+  onURLChange(e.currentTarget.location.pathname);
+});
 
-window.addEventListener("DOMContentLoaded", () => {
-  setRoutesEl(root);
-  onURLChange();
+window.addEventListener("popstate", (e) => {
+  onURLChange(e.currentTarget.location.pathname);
 });
