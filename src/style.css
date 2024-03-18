@@ -15,21 +15,28 @@
   grid-gap: 0.1%;
   border-radius: 0 0 50px 50px;
 }
+
 #container-left, #container-right{
   display: flex;
   align-items: center;
 }
 
+#container-left {
+  margin-left: 20px;
+}
+
+#container-right {
+  margin-right: 20px;
+  margin-top: 15px;
+}
+
 .logo-header {
   width: 100px;
   height: 10 0px;
-  margin-left: 40px;
-  margin-right: 10px;
 }
 
 
 .title-kdrama {
-  /* font-size: 28px; */
   font-family: "Bungee", sans-serif;
   color: rgba(76, 76, 109, 1);
   padding-top: 20px;
@@ -41,11 +48,9 @@
 .title-verse {
   display: block;
   overflow: hidden;
-  margin-left: 5px;
 }
 
-.button-group-chat,
-.button-appi-key {
+.button-group-chat, .button-appi-key {
   font-size: 21px;
   font-family: "Roboto", sans-serif;
   border-radius: 15px;
@@ -86,16 +91,19 @@ body {
 .menu {
   margin-top: 1.5rem;
   flex: 1;
+  flex-direction: row;
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: center;
 }
 
 .Genre-menu,
 .Order-menu,
-.stats-menu {
+.stats-menu,
+.Menu-clear {
   display: flex;
-  float: right;
+  float: none;
+  margin: 5px 0;
   grid-gap: 10px;
 }
 
@@ -103,7 +111,6 @@ label {
   font-size: 20px;
   font-family: "Roboto", sans-serif;
   color: rgba(255, 225, 148, 1);
-  margin-left: 40px;
   margin-top: 5px;
 }
 
