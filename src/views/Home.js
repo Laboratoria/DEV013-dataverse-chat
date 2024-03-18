@@ -137,7 +137,7 @@ export const Home = () => {
     const totalKdramas = data.length;
     //console.log("totalkdramas", totalKdramas);
     const results = computeStats(data);
-    //console.log("result:", results);
+    console.log("result:", results);
     const pageText = viewHome.querySelector("#page");
     //console.log("este es el page", pageText);
     if (event.currentTarget === statsButton) {
