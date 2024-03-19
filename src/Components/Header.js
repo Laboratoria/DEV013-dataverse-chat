@@ -13,9 +13,7 @@ export const Header = () => {
     Chat Grupal
     </button>
     
-    <button class="button-appi-key">
-    Api Key
-    </button>
+    <button class="button-appi-key">Api Key</button>
   </div>
   `;
   return header;
