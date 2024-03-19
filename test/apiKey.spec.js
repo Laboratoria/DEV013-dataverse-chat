@@ -29,7 +29,7 @@ describe("setApiKey", () => {
     // utilizamos la función setApiKey para establecer esa clave de API
     setApiKey(apiKey);
     //eslint-disable-next-line no-console
-    console.log(setApiKey(apiKey))
+    //console.log(setApiKey(apiKey))
     //expect se utiliza para afirmar que el resultado de llamar a 
     //localStorage.getItem('apiKey') debe ser igual a la clave de API 
     //que hemos establecido anteriormente.

@@ -4,7 +4,7 @@ export const ModalApi = () => {
   modalKey.innerHTML = `
   <div class="modal-body-key">
     <div class="modal-header-key">
-      <h3 id="title-modal"> Ingresa la API Key </h3>
+      <h3 id="title-modal">Ingresa la API Key</h3>
     </div>  
     <div class="modal-main-key">
       <input class="container-input"></input>

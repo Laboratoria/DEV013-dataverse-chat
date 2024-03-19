@@ -1,6 +1,6 @@
 import { getApiKey } from "./apiKey.js";
 
-export const communicateWithOpenAI = async (userInput, kDrama) => {
+export const communicateWithOpenAI = async (kDrama, userInput) => {
   const recieveApi = getApiKey();
   //console.log("apikey recibida", recieveApi);
   //console.log("Funcion api ", kDrama, input);
@@ -17,7 +17,7 @@ export const communicateWithOpenAI = async (userInput, kDrama) => {
       messages: [
         {
           role: "system",
-          content: `Tu eres este kdrama  ${kDrama.name}, responde de manera corta o breve`,
+          content: `Tu eres ${kDrama}, responde de manera corta o breve`,
         },
         {
           role: "user",

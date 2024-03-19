@@ -81,7 +81,7 @@ describe("Estadisticas", () => {
   it("retorna la estadistica de fakeData", () => {
     const resultado = computeStats(dataStats);
     //eslint-disable-next-line no-console
-    console.log(resultado);
+    //console.log(resultado);
     expect(resultado).toEqual(estadisticas);
   });
 });
