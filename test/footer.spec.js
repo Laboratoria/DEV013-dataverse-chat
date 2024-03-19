@@ -3,7 +3,7 @@ import { Footer } from "../src/Components/Footer.js";
 describe("Footer component", () => {
   it("El Componente footer existe", () => {
     const footer = Footer();
-    // aqui afirmamos que footer es verdadero 
+    // aqui afirmamos que footer es verdadero (si esta en la pagina)
     // asegurarnos de que exista y no sea false, null, undefined
     expect(footer).toBeTruthy();
   });
