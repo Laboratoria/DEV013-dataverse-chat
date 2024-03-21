@@ -5,7 +5,7 @@
   overflow-x: hidden;
 }
 
-/* Estilos para el Header */
+/* Estilos para el Header -------------------------------------------------------------*/
 .header {
   display: flex;
   justify-content: space-between;
@@ -34,7 +34,6 @@
   width: 100px;
   height: 10 0px;
 }
-
 
 .title-kdrama {
   font-family: "Bungee", sans-serif;
@@ -85,9 +84,10 @@
 body {
   background: rgba(76, 76, 109, 1);
   margin: 0 auto;
+  overflow: hidden;
 }
 
-/* Para la parte del menu del filtrado, ordenado, estadisticas y limpiar*/
+/* Para la parte del menu del filtrado, ordenado, estadisticas y limpiar---------------------------*/
 .menu {
   margin-top: 1.5rem;
   flex: 1;
@@ -103,12 +103,13 @@ body {
 .Menu-clear {
   display: flex;
   float: none;
-  margin: 5px 0;
-  grid-gap: 10px;
+  margin: 1rem 0;
+  margin-left: 1rem;
+  grid-gap: 1rem;
 }
 
 label {
-  font-size: 20px;
+  font-size: 1.25em;
   font-family: "Roboto", sans-serif;
   color: rgba(255, 225, 148, 1);
   margin-top: 5px;
@@ -117,7 +118,7 @@ label {
 select,
 #stats1,
 [data-testid="button-clear"] {
-  font-size: 20px;
+  font-size: 1.25em;
   font-family: "Roboto", sans-serif;
   background-color: rgba(184, 223, 216, 1);
   border-radius: 10px;
@@ -130,15 +131,16 @@ select,
   float: right;
   width: 160px;
   height: 40px;
+  border: none;
 }
-
-.button-clear,
-.accept {
+/* .accept */
+.button-clear {
   background: rgba(255, 225, 148, 1);
   margin-left: 40px;
   border-radius: 10px;
   width: 200px;
   height: 40px;
+  border: none;
 }
 
 .logo-clear {
@@ -156,11 +158,11 @@ select,
 
 #texto-stats {
   text-align: center;
-  font-size: 20px;
+  font-size: 1.25em;
   margin-top: 40px;
 }
 
-/* estilos de la pantalla emergente */
+/* estilos de la pantalla emergente estadisticas */
 .content-modal {
   display: none;
   position: fixed;
@@ -171,7 +173,7 @@ select,
   align-items: center;
   justify-content: center;
 }
-
+/* 
 .modal-key {
   position: fixed;
   top: 0;
@@ -180,7 +182,7 @@ select,
   height: 100%;
   align-items: center;
   justify-content: center;
-}
+} */
 
 .modal-body {
   position: relative;
@@ -197,12 +199,12 @@ select,
 .modal-header {
   padding: 3px;
   border-bottom: 2px;
+  align-items: center;
 }
 
 .logo-kdrama {
   width: 50px;
   height: 50px;
-  align-content: center;
 }
 
 .modal-main {
@@ -211,7 +213,7 @@ select,
   justify-content: center;
 }
 
-/* boton cerrar */
+/* boton cerrar de pantalla emergente de estadistica */
 .modal-footer {
   padding: 25px;
   display: flex;
@@ -221,14 +223,15 @@ select,
   overflow-y: hidden;
 }
 
-.button-close,
-.cancel-modal-footer-key {
+/* .cancel-modal-footer-key */
+
+.button-close {
   background-color: rgba(76, 76, 109, 1);
   color: rgba(255, 225, 148, 1);
   border-radius: 5px;
   border-style: none;
   cursor: pointer;
-  font-size: 15px;
+  font-size: 1em;
   padding: 8px 18px;
   text-align: center;
   display: flex;
@@ -236,44 +239,70 @@ select,
   align-items: center;
 }
 
-.modal-header {
+/* estilos de la pantalla emergente Api Key */
+
+.content-modal-key {
+  display: grid;
   align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  font-family: "Roboto", sans-serif;
 }
-
-.modal-main-key {
-  display: flex;
-  /* align-items: center;
-  justify-content: center; */
-}
-
-#title-modal {
-  font-size: 25px;
-  color: rgba(76, 76, 109, 1);
-  align-items: center;
-}
-
 .modal-body-key {
+  display: grid;
   background-color: rgba(184, 223, 216, 1);
-  width: 400px;
-  height: 400px;
+  width: 450px;
+  height: 350px;
   border-radius: 20px;
   border-color: transparent;
+  align-items: center;
+  justify-content: center;
 }
-
-.accept,
-.cancel-modal-footer-key,
+.modal-header {
+  margin: 0 auto;
+}
+#title-modal {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  font-size: 25px;
+  color: rgba(76, 76, 109, 1);
+}
 .container-input {
-  width: 220px;
-  height: 40px;
-  border-radius: 12px;
-  border-color: transparent;
-  font-size: 20px;
+  width: 20rem;
+  height: 2.5rem;
+  border-radius: 10px;
+  border: none;
+}
+.modal-footer-key {
+  display: grid;
+}
+.accept {
+  background: rgba(255, 225, 148, 1);
+  border-radius: 10px;
+  width: 20rem;
+  height: 2.5rem;
+  margin-bottom: 0.5rem;
+  border: none;
+}
+.cancel-modal-footer-key {
+  background-color: rgba(76, 76, 109, 1);
+  color: rgba(232, 246, 239, 1);
+  border-radius: 10px;
+  width: 20rem;
+  height: 2.5rem;
+  margin-bottom: 0.5rem;
+  border: none;
+}
+.generate-api {
+  color: rgba(76, 76, 109, 1);
+  border-bottom: 2rem;
 }
 
-/* .cancel-modal-footer-key{
-
-} */
-
+/*---------Vista Home----------------------------------------------------------------------*/
 .main {
   margin: center;
   padding: 30px;
@@ -301,26 +330,31 @@ select,
   }
 }
 
-/*para las tarjetas (items)*/
+
+.viewDetailCard {
+  overflow: hidden;
+}
+
+/*para las tarjetas (items)----*/
 .image-card {
   width: 100%;
   height: 200px;
   margin: 0px;
-  border-radius: 5% 5% 0% 0%;
+  border-radius: 5% 5% 0 0;
 }
 
 .description-Total {
+  margin-left: 15px;
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  color: rgba(76, 76, 109, 1);
+}
+
+.name-kdrama {
+  margin: 0.4rem;
   margin-left: 15px;
   font-family: "Roboto", sans-serif;
   font-size: 1.2rem;
-  color: rgba(76, 76, 109, 1);
-}
-
-.name-kdrama {
-  margin: 0.4rem;
-  margin-left: 15px;
-  font-family: "Roboto", sans-serif;
-  font-size: 1.5rem;
   color: rgba(30, 30, 30, 1);
 }
 
@@ -335,10 +369,10 @@ select,
 
 .list {
   background: rgba(184, 223, 216, 1);
-  width: 400px;
-  height: 280px;
+  width: 25.6rem;
+  height: 17.5rem;
   border-radius: 5%;
-  padding: 5px;
+  padding: 0.5rem;
 }
 
 .footer {
@@ -347,7 +381,7 @@ select,
   justify-content: center;
   padding: 1.5rem;
   color: rgba(184, 223, 216, 1);
-  font-size: 20px;
+  font-size: 1.25rem;
   font-family: "Roboto", sans-serif;
   font-weight: bold;
   border-width: 2px;
@@ -355,117 +389,42 @@ select,
   border-color: white transparent transparent transparent;
 }
 
-/* Para los estilos de la tarjeta en el chat individual */
-.card,
-.container-chat {
-  display: flex;
-}
+/* ------------------Vista chat individual-----------------.--.----- */
+/* la tarjeta del Kdrama */
 
-/*para las tarjetas (items)*/
-.image-card {
-  width: 100%;
-  height: 200px;
-  margin: 0px;
-  border-radius: 5% 5% 0% 0%;
-}
-
-.description-Total {
-  margin-left: 15px;
-  font-family: "Roboto", sans-serif;
-  font-size: 1.15rem;
-  color: rgba(76, 76, 109, 1);
-}
-
-.name-kdrama {
-  margin: 0.4rem;
-  margin-left: 15px;
-  font-family: "Roboto", sans-serif;
-  font-size: 1.35rem;
-  color: rgba(30, 30, 30, 1);
-}
-
-.container-cards {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 30px;
-  padding: 0 0 40px 0;
-  /*Los items tienen el mismo espacio a su alrededor*/
-  justify-content: space-around;
-}
-
-.list {
-  background: rgba(184, 223, 216, 1);
-  width: 400px;
-  height: 280px;
-  border-radius: 5%;
-  padding: 5px;
-}
-
-.footer {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 1.5rem;
-  color: rgba(184, 223, 216, 1);
-  font-size: 20px;
-  font-family: "Roboto", sans-serif;
-  font-weight: bold;
-  border-width: 2px;
-  border-style: solid;
-  border-color: white transparent transparent transparent;
-}
-
-/* Para los estilos de la tarjeta en el chat individual */
 .card {
   display: flex;
+  height: 80%;
+}
+
+.detail-card-total{
+  width: 25%;
+  height: 80%;
+  margin: 0.5% 3.5% ;
 }
 
 .detail-card-top {
   background: rgba(184, 223, 216, 1);
-  width: 400px;
-  height: 515px;
-  margin-left: 30px;
-  margin-top: 15px;
-  border-radius: 15px;
-  padding: 2px;
+  margin: 1%;
+  width: 95%;
+  height: 10%;
+  border-radius: 3.5%;
   overflow-y: hidden;
   padding: 5px;
   text-align: justify;
   font-family: "Roboto", sans-serif;
 }
 
-.detail-card-bottom {
-  margin-top: 10px;
-}
-
 .image-kdrama-card {
-  width: 400px;
-  height: 150px;
-  margin: 0px;
+  width: 100%;
+  height: 5%;
   background-size: cover;
   border-radius: 15px 15px 0 0;
 }
 
-/* Para los estilos de el chat individual  */
-.chat,
-.group-chat {
-  width: 65%;
-  background-color: rgba(232, 246, 239, 1);
-  margin-left: 25px;
-  margin-top: 15px;
-  border-radius: 20px;
-}
-
-.chat-name,
-.chat-group-content {
-  height: 70px;
-  display: flex;
-  background-color: rgba(184, 223, 216, 1);
-}
-
 .name-kdrama-card {
   margin: 0.4rem;
-  margin-left: 12px;
+  margin-left: 1%;
   font-family: "Roboto", sans-serif;
   font-size: 1.2rem;
   color: rgba(30, 30, 30, 1);
@@ -473,7 +432,7 @@ select,
 }
 
 .description-Total-card {
-  margin: 10px;
+  margin: 1%;
   font-family: "Roboto", sans-serif;
   font-size: 1.01rem;
   color: rgba(76, 76, 109, 1);
@@ -487,22 +446,28 @@ select,
 }
 
 .description {
-  margin: 10px;
+  margin: 1%;
   font-family: "Roboto", sans-serif;
   font-size: 1.01rem;
   color: rgba(76, 76, 109, 1);
 }
 
-/* Para los estilos del boton pagina principal del chat individual */
+
+/* boton pagina principal del chat individual */
+.detail-card-bottom {
+  text-align: justify;
+  width: 100%;
+  height: 10%;
+}
+
 .button-return-home{
   background: rgba(232, 246, 239, 1);
-  width: 410px;
-  height: 45px;
-  border-radius: 12px;
+  width: 97%;
+  border-radius: 10px;
   border: none;
   font-size: 18px;
-  margin-left: 25px;
-  margin-top: 10px;
+  margin: 1%;
+  padding: 5px;
   text-align: center;
 }
 
@@ -513,34 +478,48 @@ select,
   margin-top: 5px;
 }
 
-/* Para los estilos de el chat individual */
+/* Para los estilos de el chat con IA  */
 .chat {
-  width: 65%;
+  width: 60%;
   background-color: rgba(232, 246, 239, 1);
-  margin-left: 25px;
-  margin-top: 15px;
+  margin: 0.7% 2.5% 0.7% 1%;
   border-radius: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.chat-name,
+.chat-group-content {
+  width: 100%;
+  height: 13%;
+  display: flex;
+  flex-direction: row;
+  background-color: rgba(184, 223, 216, 1);
+  overflow: hidden;
 }
 
 .image-kdrama-chat {
   width: 50px;
   height: 50px;
   border-radius: 50px;
-  margin-left: 20px;
-  margin-top: 10px;
+  margin: 1.5%;
 }
 
-/* .chat-detail {
-  margin-left: 15px;
-  margin-top: 15px;
+.chat-detail {
   position: relative;
-} */
+  padding: 1% ;
+}
 
 .name-kdrama-chat {
   font-family: "Roboto", sans-serif;
   font-size: 1.2rem;
   color: rgba(30, 30, 30, 1);
   font-weight: bold;
+  margin-top: 2.5%;
+  width: 100%;
 }
 
 .chat-on {
@@ -549,78 +528,55 @@ select,
   color: rgba(76, 76, 109, 1);
 }
 
-.input-chat {
-  width: 98%;
-  height: 8%;
-  margin-left: 7px;
-  margin-top: 455px;
-  background-color: rgba(255, 255, 255, 1);
-  border-radius: 15px;
+.box-response-total{
+  background-color: rgba(232, 246, 239, 1);
+  width: 90%;
+  /* height: 65%; */
+  overflow-y: scroll;
+  scrollbar-width: none;
+  padding: 20px;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: space-around;
+  gap: 5px;
 }
 
-#input-user {
-  border: none;
-  margin-left: 10px;
-  font-size: 10px;
-}
-
-.send-chat {
-  border: none;
-  align-items: right;
-}
-
-.error {
-  text-align: center;
-  display: block;
-}
-
-.container-error {
-  background-color: white;
-  width: 800px;
-  height: 500px;
-  margin: 30px;
-  border-radius: 30px;
-}
-
-.button-return-home2 {
-  background-color: rgba(255, 225, 148, 1);
-}
-
-.input-chat {
-  display: flex;
-  width: 98%;
-  height: 8%;
-  margin-left: 7px;
-  margin-top: 455px;
-  background-color: rgba(255, 255, 255, 1);
-  border-radius: 15px;
-}
-
-.box-response-user {
+.box-response-user,
+.box-response-chat {
   width: 45%;
   height: 50px;
   background-color: rgba(76, 76, 109, 1);
   color: rgba(255, 255, 255, 1);
   border-radius: 15px 15px 0 15px;
-  margin-left: 58%;
-  margin-right: 1%;
-  margin-top: 40px;
+  margin-left: 55%;
+  padding: 10px;
+  text-align: right;
+  font-family: "JetBrains Mono", monospace;
 }
 
-.box-response-chat {
-  width: 45%;
-  height: 50px;
+.box-response-chat{
   background-color: rgba(184, 223, 216, 1);
   border-radius: 15px 15px 15px 0;
   margin-left: 1%;
-  margin-right: 58%;
-  margin-top: 40px;
+  margin-top: 20px;
+  color: black;
+  text-align: left;
+}
+
+.input-chat {
+  display: flex;
+  width: 95%;
+  height: 10%;
+  margin-left: 7px;
+  margin-bottom: 20px;
+  background-color: rgba(255, 255, 255, 1);
+  border-radius: 15px;
 }
 
 #input-user {
   border: none;
-  width: 800px;
-  margin-left: 20px;
+  width: 90%;
+  margin-left: 1em;
   font-size: 18px;
 }
 
@@ -629,38 +585,51 @@ input[type="submit" i] {
   background-color: transparent;
   font-family: "Roboto", sans-serif;
   font-size: 20px;
-  /*font-weight: bold;*/
+  font-weight: bold;
   margin-left: 10px;
   align-items: right;
 }
 
-/* Para la vista chat grupal */
+/* Para la vista chat grupal ------------------------------------- */
+.container-chat {
+  display: flex;
+  height: 80%;
+}
+
+
+.list-group-chat{
+  display: flex;
+  height: 80%; 
+}
+
 .ul-group {
   background: rgba(184, 223, 216, 1);
-  width: 400px;
+  width: 95%;
   height: 515px;
-  margin-left: 30px;
-  margin-top: 15px;
   border-radius: 15px;
-  padding: 0px;
   padding: 5px;
-  text-align: justify;
   font-family: "Roboto", sans-serif;
 }
+
+.group-chat{
+  width: 60%;
+    background-color: rgba(232, 246, 239, 1);
+    margin: 0.7% 2.5% 0.7% 1%;
+    border-radius: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
 
 .list-group {
   display: flex;
   padding: 0px;
 }
 
-.image-kdrama-chat {
-  margin-top: 15px;
-}
-
-.name-kdrama-chat {
-  margin-left: 10px;
-  margin-top: 20px;
-}
 
 .text-group-chat {
   margin-left: 25px;
@@ -670,12 +639,14 @@ input[type="submit" i] {
   font-size: 25px;
 }
 
-/* Para la vista error */
+
+/* Para la vista error ------------------------------------------------------------ */
 .error-container {
+  display: grid;
   margin: 0 auto;
   text-align: center;
+  justify-content: center;
 }
-
 .titulo {
   width: 600px;
   height: 500px;
@@ -685,21 +656,18 @@ input[type="submit" i] {
   background-color: rgba(255, 255, 255, 1);
   border-radius: 25px;
 }
-
 .logo-error {
   width: 300px;
   height: 300px;
   margin-left: 25px;
   margin-top: 45px;
 }
-
 .error-title {
   font-family: "Roboto", sans-serif;
   font-size: 30px;
   margin-top: 15px;
   font-weight: bold;
 }
-
 .button-return-home.error {
   background-color: rgba(255, 225, 148, 1);
   width: 600px;

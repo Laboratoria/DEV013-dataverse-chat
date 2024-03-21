@@ -39,12 +39,12 @@ describe("OpenAI", () => {
       .then((res) => res.json())
       .then((data) => {
         // console.log("CAPTURE DATA",captureData)
-        //console.log("DATA", data);
+        console.log("DATA", data);
         //console.log("CAPTURE DATA", captureData);
 
         //Se espera que los datos obtenidos sean iguales a response
         expect(data).toEqual(response);
-        //console.log("response", response);
+        console.log("response", response);
       });
     return captureData;
   });
