@@ -2,6 +2,7 @@ export const ModalApi = () => {
   const modalKey = document.createElement("form");
   modalKey.setAttribute("class", "modal-key");
   modalKey.innerHTML = `
+  <div class="fondo-oscuro"></div> <!-- Nuevo elemento para el fondo oscuro -->
   <div class="content-modal-key" id="modal">
     <div class="modal-body-key">
       <div class="modal-header-key">

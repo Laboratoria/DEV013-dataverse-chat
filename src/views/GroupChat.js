@@ -14,38 +14,41 @@ export const GroupChat = () => {
   // esto contiene la vista completa de la vista
   const viewGroupChat = document.createElement("section");
   // llamando al DOM para el detalle de los kdramas
-  const containerChat = document.createElement("main");
+  const detailCard = document.createElement("main");
+  const card = document.createElement("div");
   const listGroupChat = document.createElement("section");
   const groupChat = document.createElement("section");
   // agregando clases a los elementos DOM
   viewGroupChat.setAttribute("class", "view-group-chat");
-  containerChat.setAttribute("class", "container-chat");
-  listGroupChat.setAttribute("class", "list-group-chat");
-  groupChat.setAttribute("class", "group-chat");
+  detailCard.setAttribute("class", "detailCard");
+  card.setAttribute("class", "card");
+  listGroupChat.setAttribute("class", "detail");
+  groupChat.setAttribute("class", "chat");
 
   groupChat.innerHTML = `
-<div> 
   <div class="chat-group-content">
     <p class="text-group-chat">Chat Grupal</p>
   </div>
-
-  <div class="box-response-total" >
-      
-  </div>
-    
+  
+  <section class="chat-box">  
+    <section class="box-response-total">
+    </section>
+  </section>
+  
   <div class="input-chat group"> 
     <input type="text" id="input-user" placeholder="Interactua con el chat aqui">
     <input type="submit" value="Enviar" id="button-submit">
   </div>
-</div>
   `;
 
   listGroupChat.append(ListGroupChat(), ButtonReturnHome());
-  containerChat.append(listGroupChat, groupChat);
-  viewGroupChat.append(Header(), containerChat);
+  card.append(listGroupChat, groupChat);
+  detailCard.append(card)
+  viewGroupChat.append(Header(), detailCard);
 
   const userInput = groupChat.querySelector("#input-user");
   const buttonSubmit = groupChat.querySelector("#button-submit");
+  const chatBox = groupChat.querySelector(".chat.box")
   const responseTotal = groupChat.querySelector(".box-response-total");
 
    // este es para que el boton de apiKey muestre el modal
@@ -107,6 +110,7 @@ export const GroupChat = () => {
     });
     // Limpiando el input
     userInput.value = "";
+    chatBox.scrollTop = chatBox.scrollHeight;
     return responseTotal;
   });
   return viewGroupChat;

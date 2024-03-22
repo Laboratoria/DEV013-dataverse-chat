@@ -18,7 +18,7 @@ export const IndividualChat = (item) => {
   card.setAttribute("class", "card");
 
   card.innerHTML = `
-  <section class = "detail-card-total">
+  <section class = "detail">
     <aside class="detail-card-top">
       <img src="${item.imageUrl}" alt="${item.name}" class= "image-kdrama-card">
       <h3 class= "name-kdrama-card"> ${item.name} </h3>
@@ -44,8 +44,9 @@ export const IndividualChat = (item) => {
         <p class="chat-on">Conectado</p>
       </aside>
     </section>
-    <section class="box-response-total" >
-      
+    <section class="chat-box">  
+      <section class="box-response-total">
+      </section>
     </section>
     <section class="input-chat"> 
       <input type="text" id="input-user" placeholder="Interactua con el chat aqui">
@@ -77,7 +78,7 @@ export const IndividualChat = (item) => {
   buttonGroupChat.addEventListener("click", () => {
     // si el valor de local storage es null o undefined muestra el modal
     if (!getApiKey()) {
-      main.appendChild(ModalApi());
+      viewDetailCard.appendChild(ModalApi());
 
       const formApiKey = viewDetailCard.querySelector(".modal-key");
       const closeModal = viewDetailCard.querySelector(".cancel-modal-footer-key");
