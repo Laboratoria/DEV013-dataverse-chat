@@ -162,12 +162,12 @@ Además, se han creado historias de usuario para abordar cada funcionalidad, fac
     * La interfaz de usuario del chat es clara y fácil de usar para el usuario.
 
 ## 7. Prototipos
-* Prototipo de baja fidelidad
+### Prototipo de baja fidelidad
   ![Prototipo-Home](https://github.com/dev-ventura/DEV013-dataverse-chat/blob/main/src/images/home%201.png)
   ![Prototipo-IndividualChat](https://github.com/dev-ventura/DEV013-dataverse-chat/blob/main/src/images/individual%20chat%201.png)
   ![Prototipo-GroupChat](https://github.com/dev-ventura/DEV013-dataverse-chat/blob/main/src/images/group%20chat%201.png)
   
-* Prototipo de fidelidad alta
+### Prototipo de fidelidad alta
   ![Prototipo-Principal](https://github.com/dev-ventura/DEV013-dataverse-chat/blob/main/src/images/pantalla%20principal%20web.png)
   ![Prototipo-chatIndividual](https://github.com/dev-ventura/DEV013-dataverse-chat/blob/main/src/images/web%20(chat%20individual).png)
   ![Prototipo-chatGrupal](https://github.com/dev-ventura/DEV013-dataverse-chat/blob/main/src/images/web%20(chatgrupal).png)
