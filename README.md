@@ -26,6 +26,7 @@ Gracias a la integracion de la API de Open AI permite a los usuarios chatear y o
 ">Antone Gonzales Huamani</a></p>
 
 > :octocat: Melany Ventura
+
 - <p>GitHub: <a href="https://github.com/dev-ventura">@dev-ventura</a></p>
 - <p>LinkedIn: <a href="https://www.linkedin.com/in/melany-ventura/">Melany Ventura</a></p>
 
